@@ -2,15 +2,6 @@
 @section('content')
 <main class="page-content">
     <h2>Thêm thể loại</h2>
-{{-- <h2>Thêm</h2>
-<form action="{{route('category.store')}}" method = 'post'>
-    @csrf
-  <label for="fname">Tên :</label><br>
-  <input type="text" id="fname" name="name" ><br>
-  <input type="submit" value="Thêm thể loại">
-</form>
-<a href="" class="w3-button w3-red"
-type="submit"></a> --}}
 <div class="container">
 
 <div class="col-12 col-lg-12 d-flex">
@@ -25,9 +16,6 @@ type="submit"></a> --}}
                     <div style="color: red">{{$message}}</div>
             @enderror
           </div >
-
-
-
          <div class="col-12">
            <div class="d-grid">
              <button class="btn btn-primary" type="submit">Add Category</button>

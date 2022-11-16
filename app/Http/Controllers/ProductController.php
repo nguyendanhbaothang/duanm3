@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,14 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products =Product::get();
+        $categories = Category::all();
+        $param = [
+            'categories' => $categories,
+            'products' => $products,
+        ];
+
+        return view('admin.product.index', $param);
     }
 
     /**
@@ -24,7 +32,11 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $categories=Category::get();
+        $param = [
+            'categories' => $categories
+        ];
+        return view('admin.product.add', $param);
     }
 
     /**
@@ -35,7 +47,26 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = new Product();
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->amount = $request->amount;
+        $product->description = $request->description;
+        $product->category_id = $request->category_id;
+        $product->size = $request->size;
+        $product->color = $request->color;
+        if ($request->hasFile('image')) {
+            $get_image = $request->file('image');
+            $path = 'images/product/';
+            $get_name_image = $get_image->getClientOriginalName();
+            $name_image = current(explode('.', $get_name_image));
+            $new_image = $name_image . rand(0, 99) . '.' . $get_image->getClientOriginalExtension();
+            $get_image->move($path, $new_image);
+            $product->image = $new_image;
+            $data['product_image'] = $new_image;
+        }
+        $product->save();
+        return redirect()->route('product.index');
     }
 
     /**
@@ -63,7 +94,13 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        $categories=Category::get();
+        $param = [
+            'product' => $product ,
+            'categories' => $categories
+        ];
+        return view('admin.product.edit' , $param);
     }
 
     /**
@@ -75,7 +112,31 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->amount = $request->amount;
+        $product->description = $request->description;
+        $product->category_id = $request->category_id;
+        $product->size = $request->size;
+        $product->color = $request->color;
+        $get_image=$request->image;
+        if($get_image){
+            $path='public/uploads/product/'.$product->image;
+            if(file_exists($path)){
+                unlink($path);
+            }
+        $path='public/uploads/product/';
+        $get_name_image=$get_image->getClientOriginalName();
+        $name_image=current(explode('.',$get_name_image));
+        $new_image=$name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
+        $get_image->move($path,$new_image);
+        $product->image=$new_image;
+        $data['product_image']=$new_image;
+        }
+        $product->save();
+
+        return redirect()->route('product.index');
     }
 
     /**
@@ -86,6 +147,9 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+        $product->delete();
+        return redirect()->route('product.index');
+
     }
 }

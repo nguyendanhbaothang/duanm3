@@ -4,7 +4,7 @@
         <img src="assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
       </div>
       <div>
-        <h4 class="logo-text">Skodash</h4>
+        <h4 class="logo-text">Jordan Shop</h4>
       </div>
       <div class="toggle-icon ms-auto"><i class="bi bi-chevron-double-left"></i>
       </div>
@@ -36,9 +36,9 @@
           <div class="menu-title">Sản Phẩm</div>
         </a>
         <ul>
-          <li> <a href="widgets-static-widgets.html"><i class="bi bi-arrow-right-short"></i>Thêm Sản phẩm</a>
+          <li> <a href="{{ Route('product.create') }}"><i class="bi bi-arrow-right-short"></i>Thêm Sản phẩm</a>
           </li>
-          <li> <a href="widgets-data-widgets.html"><i class="bi bi-arrow-right-short"></i>Các sản phẩm</a>
+          <li> <a href="{{Route('product.index')}}"><i class="bi bi-arrow-right-short"></i>Các sản phẩm</a>
           </li>
         </ul>
       </li>

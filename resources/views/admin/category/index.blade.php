@@ -19,7 +19,7 @@
                     </tr>
                 </thead>
                 <tbody id="myTable">
-                    
+
                     @foreach ($categories as $key => $team)
                         <tr>
                             <th scope="row">{{ $key + 1 }}</th>

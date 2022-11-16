@@ -26,16 +26,19 @@
                 </thead>
                 <tbody id="myTable">
 
-                    @foreach ($categories as $key => $team)
+                    @foreach ($products as $key => $team)
                         <tr>
                             <th scope="row">{{ $key + 1 }}</th>
-                            <td><a href="{{ route('product.show', $product->id) }}">{{ $product->name }}</a></td>
-                            <td>{{ $team->categories }}</td>
+                            <td>{{ $team->name }}</td>
+                            <td>{{ $team->categories->name }}</td>
                             <td>{{ $team->amount }}</td>
                             {{-- <td>{{ $team->color }}</td>
                             <td>{{ $team->Size }}</td>
                             <td>{{ $team->price }}</td> --}}
-                            <td>{{ $team->image }}</td>
+                            <td>
+                                <img src="{{ asset('images/product/' . $team->image) }}" alt=""
+                                    style="width: 50px">
+                            </td>
 
                             <td>
                                 <form action="{{ route('product.destroy', [$team->id]) }}" method="post">
@@ -44,6 +47,7 @@
                                     <button onclick="return confirm('Bạn có chắc chắn xóa không?');"
                                         class="btn btn-danger">Xóa</button>
                                     <a href="{{ route('product.edit', [$team->id]) }}" class="btn btn-primary">Sửa</a>
+                                    <a href="{{ route('product.show', [$team->id]) }}" class="btn btn-primary">Xem chi tiết</a>
                                 </form>
                             </td>
                         </tr>
