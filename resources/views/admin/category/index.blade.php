@@ -40,7 +40,7 @@
 
                 </tbody>
             </table>
-            {{-- {{ $users->appends(request()->query()) }} --}}
+            {{ $categories->appends(request()->query()) }}
         </div>
     </main>
 @endsection

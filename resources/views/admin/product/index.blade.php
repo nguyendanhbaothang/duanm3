@@ -56,7 +56,7 @@
 
                 </tbody>
             </table>
-            {{-- {{ $users->appends(request()->query()) }} --}}
+            {{ $products->appends(request()->query()) }}
         </div>
     </main>
 @endsection

@@ -38,11 +38,11 @@
   <!--start wrapper-->
   <div class="wrapper">
     <!--start top header-->
-     @include('layout.header')
+     @include('admin.layout.header')
        <!--end top header-->
 
         <!--start sidebar -->
-        @include('layout.sidebar')
+        @include('admin.layout.sidebar')
        <!--end sidebar -->
 
        <!--start content-->
@@ -58,7 +58,7 @@
        <!--End Back To Top Button-->
 
        <!--start switcher-->
-       @include('layout.switcher')
+       @include('admin.layout.switcher')
        <!--end switcher-->
 
   </div>

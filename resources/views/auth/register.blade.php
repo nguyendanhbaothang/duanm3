@@ -167,12 +167,24 @@
             <div class="field-set">
                 Tên
                 <input class="form-input" type="text"  id="txt-input" name="name" required="">
+                @error('name')
+                <div style="color: red">{{$message}}</div>
+        @enderror
                 Gmail
                 <input class="form-input" id="txt-input" type="email" name="email" required="">
+                @error('email')
+                <div style="color: red">{{$message}}</div>
+        @enderror
                 Mật khẩu
                 <input class="form-input" type="password"  id="txt-input" name="confirm_password" required="">
+                @error('password')
+                <div style="color: red">{{$message}}</div>
+        @enderror
                 Nhập lại mật khẩu
                 <input class="form-input" type="password"  id="txt-input" name="password" required="">
+                @error('password')
+                <div style="color: red">{{$message}}</div>
+        @enderror
             </div>
 
             <button class="btn submits sign-up" name="register">Đăng kí<i class="fa fa-user-plus"></i></button>

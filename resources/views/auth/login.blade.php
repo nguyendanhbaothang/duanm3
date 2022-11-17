@@ -167,8 +167,14 @@
             <div class="field-set">
                 Email
                 <input class="form-input" id="txt-input" type="email" name="email" required="">
+                @error('email')
+                <div style="color: red">{{$message}}</div>
+        @enderror
                 Password
                 <input class="form-input" type="password" id="txt-input" name="password" required="">
+                @error('password')
+                <div style="color: red">{{$message}}</div>
+        @enderror
             </div>
             <div class="other">
                 <button class="btn submits frgt-pass" ><a href="{{ route('viewRegister') }}">Đăng kí tài khoản</a></button>

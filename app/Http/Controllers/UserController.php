@@ -21,7 +21,7 @@ class UserController extends Controller
         'password'=>'required|min:8',
     ],
         [
-            'name.required'=>'Không được để trống',
+            'email.required'=>'Không được để trống',
             'password.required'=>'Không được để trống',
             'password.min'=>'Lớn hơn :min',
         ]
@@ -33,7 +33,6 @@ class UserController extends Controller
       ]);
 
       if (Auth::attempt($credentials)) {
-          // dd($request->all());
 
           $request->session()->regenerate();
 
@@ -52,6 +51,19 @@ class UserController extends Controller
   }
   //xử lí đăng ký
   public function register(Request $request){
+    $validated = $request->validate([
+        'name' => 'required',
+        'email' => 'required|unique:users',
+        'password'=>'required|min:8',
+    ],
+        [
+            'name.required'=>'Không được để trống',
+            'email.required'=>'Không được để trống',
+            'email.unique'=>'Trùng Email',
+            'password.required'=>'Không được để trống',
+            'password.min'=>'Lớn hơn :min',
+        ]
+);
       $user = new User();
       $user->name = $request->name;
       $user->email = $request->email;
@@ -66,12 +78,9 @@ class UserController extends Controller
 
       public function logout(Request $request)
       {
-          Auth::logout();
-
-          $request->session()->invalidate();
-
-          $request->session()->regenerateToken();
-
-          return redirect()->route('login');
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('login');
       }
 }

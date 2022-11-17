@@ -17,7 +17,7 @@
             <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" data-bs-toggle="dropdown">
               <div class="user-setting d-flex align-items-center gap-1">
                 <img src="assets/images/avatars/avatar-1.png" class="user-img" alt="">
-                {{-- <b><span class="username">{{ auth()->user()->name }}</span></b> --}}
+                <b><span class="username">{{ auth()->user()->name }}</span></b>
               </div>
             </a>
             <ul class="dropdown-menu dropdown-menu-end">

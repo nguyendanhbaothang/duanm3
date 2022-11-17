@@ -15,7 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products =Product::get();
+        $products =Product::paginate(5);
         $categories = Category::all();
         $param = [
             'categories' => $categories,
@@ -47,6 +47,27 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'name' => 'required',
+            'price' => 'required',
+            'amount' => 'required',
+            'description' => 'required',
+            'category_id' => 'required',
+            'size' => 'required',
+            'color' => 'required',
+
+        ],
+            [
+                'name.required'=>'Không được để trống',
+                'price.required'=>'Không được để trống',
+                'amount.required'=>'Không được để trống',
+                'description.required'=>'Không được để trống',
+                'category_id.required'=>'Không được để trống',
+                'size.required'=>'Không được để trống',
+                'color.required'=>'Không được để trống',
+
+            ]
+    );
         $product = new Product();
         $product->name = $request->name;
         $product->price = $request->price;
@@ -112,6 +133,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $product = Product::find($id);
         $product->name = $request->name;
         $product->price = $request->price;

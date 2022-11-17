@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('master', function (){ return view('master');});
 
 
 Route::get('/login', [UserController::class, 'viewLogin'])->name('login');
@@ -25,8 +26,9 @@ Route::post('handdle-login', [UserController::class, 'login'])->name('handdle-lo
 Route::get('/register', [UserController::class, 'viewRegister'])->name('viewRegister');
 Route::post('handdle-register', [UserController::class, 'register'])->name('handdle-register');
 
-Route::get('master', function (){ return view('master');});
+Route::middleware(['auth'])->group(function () {
 Route::get('page', function (){ return view('dasboar');})->name('dasboar');
+
 
 Route::post('logout', [UserController::class, 'logout'])->name('logout');
 
@@ -50,4 +52,7 @@ Route::group(['prefix'=>'products'],function(){
     Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
     Route::put('/update/{id}', [ProductController::class, 'update'])->name('product.update');
     Route::delete('destroy/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
+});
+
+
 });
