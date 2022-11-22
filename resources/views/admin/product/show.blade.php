@@ -1,6 +1,7 @@
 @extends('master')
 @section('content')
 <main class="page-content">
+    <h1>Chi tiết sách sản phẩm</h1>
     <div class="container">
 <section class="wrapper">
 </section>
@@ -20,11 +21,11 @@
                 <tr> <th>Thể loại :{{$productshow->categories->name}} </th></tr>
                 <tr> <th>Size :{{$productshow->size}} </th></tr>
                 <tr> <th>Màu :{{$productshow->color}} </th></tr>
-                <tr> <th>Ảnh  :<img src="{{ asset('images/product/' . $productshow->image) }}" alt=""
-                    style="width: 150px"> </th></tr>
-
+                <tr> <th>Ảnh  :<img src="{{ asset('public/uploads/product/' . $productshow->image) }}" alt=""
+                    style="width: 550px"> </th></tr>
             </thead>
-          </table>
+        </table>
+        <a class="btn btn-primary px-4" href="{{ route('product.index') }}" class="w3-button w3-red">Quay Lại</a>
         </div>
       </div>
     </div>

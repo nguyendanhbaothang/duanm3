@@ -2,7 +2,7 @@
 @section('content')
 <main class="page-content">
 <a href="{{ route('product.index') }}" class="w3-button w3-red">Quay Lại</a>
-<h2>Thêm sản phẩm</h2>
+<h2>Sửa sản phẩm</h2>
 <div class="container">
 <div class="row">
     <div class="col-lg-8 mx-auto">
@@ -10,7 +10,8 @@
          </div>
        <div class="card-body">
          <div class="border p-3 rounded">
-         <form class="row g-3" action="{{ route('product.store') }}" method="post" enctype="multipart/form-data">
+         <form class="row g-3" action="{{ route('product.update',[$product->id]) }}" method="post"  enctype="multipart/form-data">
+            @method('put')
             @csrf
            <div class="col-12">
              <label class="form-label">Tên</label>
@@ -46,7 +47,7 @@
              <label class="form-label">Sự mô tả</label>
              <textarea class="form-control" placeholder="Mô tả" value="" name="description" rows="4" cols="4">{{$product->description}}</textarea>
            </div>
-
+           <label class="form-label">Chọn thể Loại</label>
            <select name="category_id" id="" class="form-control">
             <option value="">--Vui lòng chọn--</option>
             @foreach ($categories as $category)
@@ -71,10 +72,13 @@
              <input class="form-control" name="image" value="{{$product->image  }}" type="file">
            </div>
            <div class="col-12">
-             <button class="btn btn-primary px-4">Submit Item</button>
-           </div>
+             <button class="btn btn-primary px-4">Hoàn thành</button>
+            <a class="btn btn-primary px-4" href="{{ route('product.index') }}" class="w3-button w3-red">Quay Lại</a>
+        </div>
          </form>
-         </div>
+
+
+        </div>
         </div>
        </div>
     </div>

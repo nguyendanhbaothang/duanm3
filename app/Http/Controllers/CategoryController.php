@@ -55,6 +55,7 @@ class CategoryController extends Controller
         $category = new Category();
         $category->name = $request->name;
         $category->save();
+        alert()->success('Thêm sản phẩm','thành công');
         return redirect()->route('category.index');
 
     }
@@ -105,7 +106,12 @@ class CategoryController extends Controller
         $categories->save();
 
         // return redirect('category');
+        alert()->success('Thêm sản phẩm','thành công');
+
+
+        
         return redirect()->route('category.index');
+
     }
 
     /**
@@ -119,5 +125,15 @@ class CategoryController extends Controller
         Category::find($id)->delete();
         // return redirect('category');
         return redirect()->route('category.index');
+    }
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        if (!$search) {
+            return redirect()->route('category.index');
+        }
+        $categories = Category::where('name', 'LIKE', '%' . $search . '%')->paginate(5);
+
+        return view('admin.category.index', compact('categories'));
     }
 }

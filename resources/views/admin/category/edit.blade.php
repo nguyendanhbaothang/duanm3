@@ -1,11 +1,12 @@
 @extends('master')
 @section('content')
 <main class="page-content">
-<h2>Sửa</h2>
+<h2>Sửa thể loại</h2>
 
 
 <div class="container">
-    <a class="btn btn-primary" href="{{ route('category.index') }}">Quay lại</a>
+    @include('sweetalert::alert')
+
     <div class="col-12 col-lg-12 d-flex">
         <div class="card border shadow-none w-100">
           <div class="card-body">
@@ -24,7 +25,8 @@
 
              <div class="col-12">
                <div class="d-grid">
-                 <button class="btn btn-primary" type="submit">Add Category</button>
+                 <button class="btn btn-primary" type="submit">Thêm thể loại</button>
+
                </div>
              </div>
             </form>

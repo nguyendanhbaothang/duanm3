@@ -192,3 +192,7 @@
         <p><a href="{{Route('login')}}">Đăng nhập</a></p>
     </form>
 </div>
+
+
+
+

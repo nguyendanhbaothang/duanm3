@@ -1,7 +1,7 @@
 @extends('master')
 @section('content')
 <main class="page-content">
-<a href="{{ route('product.index') }}" class="w3-button w3-red">Quay Lại</a>
+
 <h2>Thêm sản phẩm</h2>
 <div class="container">
 <div class="row">
@@ -93,7 +93,8 @@
      @enderror
            </div>
            <div class="col-12">
-             <button class="btn btn-primary px-4">Submit Item</button>
+             <button class="btn btn-primary px-4">Thêm sản phảm</button>
+            <a class="btn btn-primary px-4" href="{{ route('product.index') }}" class="w3-button w3-red">Quay Lại</a>
            </div>
          </form>
          </div>
@@ -104,3 +105,4 @@
  </div>
 </main>
  @endsection
+

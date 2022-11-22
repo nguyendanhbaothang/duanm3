@@ -1,14 +1,27 @@
 @extends('master')
 @section('content')
+
     <main class="page-content">
-        <h1>Danh sách Sản phẩm</h1>
+        <h1>Danh sách sản phẩm</h1>
 
         <div class="container">
+            @include('sweetalert::alert')
 
-            <a class="btn btn-primary" href="{{ route('product.create') }}">Thêm </a>
             <table class="table">
                 <div class="col-6">
-
+                    <form class="navbar-form navbar-left" action="{{route('product.search')}}" method="GET">
+                        @csrf
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="form-group">
+                                    <input type="text" name="search" class="form-control" placeholder="Search">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <button type="submit" class="btn btn-default">Tìm kiếm</button>
+                            </div>
+                        </div>
+                    </form>
                     </form>
                 </div>
                 <thead>
@@ -36,7 +49,7 @@
                             <td>{{ $team->Size }}</td>
                             <td>{{ $team->price }}</td> --}}
                             <td>
-                                <img src="{{ asset('images/product/' . $team->image) }}" alt=""
+                                <img src="{{ asset('public/uploads/product/' . $team->image) }}" alt=""
                                     style="width: 50px">
                             </td>
 
@@ -56,7 +69,14 @@
 
                 </tbody>
             </table>
-            {{ $products->appends(request()->query()) }}
-        </div>
+            <div class="col-6">
+                <div class="pagination float-right">
+                    {{ $products->appends(request()->query()) }}
+                </div>
+            </div>
+
+
     </main>
+
+
 @endsection

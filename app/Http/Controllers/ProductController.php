@@ -55,7 +55,6 @@ class ProductController extends Controller
             'category_id' => 'required',
             'size' => 'required',
             'color' => 'required',
-
         ],
             [
                 'name.required'=>'Không được để trống',
@@ -78,7 +77,7 @@ class ProductController extends Controller
         $product->color = $request->color;
         if ($request->hasFile('image')) {
             $get_image = $request->file('image');
-            $path = 'images/product/';
+            $path = 'public/uploads/product/';
             $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.', $get_name_image));
             $new_image = $name_image . rand(0, 99) . '.' . $get_image->getClientOriginalExtension();
@@ -87,6 +86,8 @@ class ProductController extends Controller
             $data['product_image'] = $new_image;
         }
         $product->save();
+        alert()->success('Thêm sản phẩm','thành công');
+
         return redirect()->route('product.index');
     }
 
@@ -154,9 +155,12 @@ class ProductController extends Controller
         $new_image=$name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
         $get_image->move($path,$new_image);
         $product->image=$new_image;
+        // dd($product);
+
         $data['product_image']=$new_image;
         }
         $product->save();
+        alert()->success('Thêm sản phẩm','thành công');
 
         return redirect()->route('product.index');
     }
@@ -173,5 +177,15 @@ class ProductController extends Controller
         $product->delete();
         return redirect()->route('product.index');
 
+    }
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        if (!$search) {
+            return redirect()->route('product.index');
+        }
+        $products = Product::where('name', 'LIKE', '%' . $search . '%')->paginate(5);
+
+        return view('admin.product.index', compact('products'));
     }
 }

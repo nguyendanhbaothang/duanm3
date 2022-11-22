@@ -99,15 +99,10 @@
     input[id="txt-input"] {
         width: 380px;
     }
-    /* focus  */
     input:focus {
         transform: translateX(-2px);
         border-radius: 5px;
     }
-    /* //////////////////////////////////////////// */
-    /* //////////////////////////////////////////// */
-    /* input[type="text"] {min-width: 250px;} */
-    /* buttons  */
     button {
         display: inline-block;
         color: #252537;

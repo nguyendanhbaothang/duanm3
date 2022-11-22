@@ -1,14 +1,25 @@
 @extends('master')
 @section('content')
     <main class="page-content">
-        <h1>Danh sách Sản phẩm</h1>
+        <h1>Danh sách thể loại</h1>
+        @include('sweetalert::alert')
 
         <div class="container">
-
-            <a class="btn btn-primary" href="{{ route('category.create') }}">Thêm </a>
             <table class="table">
                 <div class="col-6">
-
+                    <form class="navbar-form navbar-left" action="{{route('categories.search')}}" method="GET">
+                        @csrf
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="form-group">
+                                    <input type="text" name="search" class="form-control" placeholder="Search">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <button type="submit" class="btn btn-default">Tìm kiếm</button>
+                            </div>
+                        </div>
+                    </form>
                     </form>
                 </div>
                 <thead>

@@ -1,3 +1,4 @@
+
 <aside class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
       <div>
@@ -24,7 +25,7 @@
         <ul>
           <li> <a href="{{ Route('category.create') }}"><i class="bi bi-arrow-right-short"></i>Thêm thể loại</a>
           </li>
-          <li> <a href="{{Route('category.index')}}"><i class="bi bi-arrow-right-short"></i>Các thể loại</a>
+          <li> <a href="{{Route('category.index')}}"><i class="bi bi-arrow-right-short"></i>Thể loại</a>
           </li>
 
         </ul>
@@ -38,11 +39,10 @@
         <ul>
           <li> <a href="{{ Route('product.create') }}"><i class="bi bi-arrow-right-short"></i>Thêm Sản phẩm</a>
           </li>
-          <li> <a href="{{Route('product.index')}}"><i class="bi bi-arrow-right-short"></i>Các sản phẩm</a>
+          <li> <a href="{{Route('product.index')}}"><i class="bi bi-arrow-right-short"></i>Sản phẩm</a>
           </li>
         </ul>
       </li>
 
     </ul>
-    <!--end navigation-->
  </aside>
