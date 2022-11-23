@@ -134,6 +134,26 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validated = $request->validate([
+            'name' => 'required',
+            'price' => 'required',
+            'amount' => 'required',
+            'description' => 'required',
+            'category_id' => 'required',
+            'size' => 'required',
+            'color' => 'required',
+        ],
+            [
+                'name.required'=>'Không được để trống',
+                'price.required'=>'Không được để trống',
+                'amount.required'=>'Không được để trống',
+                'description.required'=>'Không được để trống',
+                'category_id.required'=>'Không được để trống',
+                'size.required'=>'Không được để trống',
+                'color.required'=>'Không được để trống',
+
+            ]
+    );
 
         $product = Product::find($id);
         $product->name = $request->name;

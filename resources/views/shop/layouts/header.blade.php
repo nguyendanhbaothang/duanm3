@@ -122,10 +122,18 @@
                     <ul class="header-nav header-nav-main nav nav-right  nav-uppercase">
                         <li class="account-item has-icon">
                             <div class="header-button">
-                                <a href=""
-                                    class="nav-top-link nav-top-not-logged-in icon button circle is-outline is-small">
-                                    <i class="icon-user"></i>
+                                @if (isset(Auth()->guard('customers')->user()->name))
+                                {{Auth()->guard('customers')->user()->name}}
+                                <a href="{{route('viewlogin')}}" title="Đăng nhập"
+                                    class="header-cart-link icon button circle is-outline is-small">
+                                    Đăng Xuất
                                 </a>
+                                @else
+                                <a href="{{route('viewlogin')}}" title="Đăng nhập"
+                                    class="header-cart-link icon button circle is-outline is-small">
+                                    Đăng nhập
+                                </a>
+                                @endif
 
                             </div>
 
@@ -133,27 +141,14 @@
                         <li class="header-divider"></li>
                         <li class="cart-item has-icon has-dropdown">
                             <div class="header-button">
-                                <a href="" title="Giỏ hàng"
+                                <a href="{{route('shop.cart')}}" title="Giỏ hàng"
                                     class="header-cart-link icon button circle is-outline is-small">
 
 
 
-                                    <i class="icon-shopping-bag" data-icon-label="0">
-                                    </i>
+                                   Giỏ hàng
                                 </a>
                             </div>
-                            <ul class="nav-dropdown nav-dropdown-simple">
-                                <li class="html widget_shopping_cart">
-                                    <div class="widget_shopping_cart_content">
-
-
-                                        <p class="woocommerce-mini-cart__empty-message">Chưa có sản phẩm trong giỏ
-                                            hàng.</p>
-
-
-                                    </div>
-                                </li>
-                            </ul>
 
                         </li>
                     </ul>

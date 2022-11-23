@@ -29,7 +29,7 @@
   <link href="{{asset('assets/css/semi-dark.css')}}" rel="stylesheet" />
   <link href="{{asset('assets/css/header-colors.css')}}" rel="stylesheet" />
 
-  <title>Skodash - Bootstrap 5 Admin Template</title>
+  <title>Admin</title>
 </head>
 
 <body>

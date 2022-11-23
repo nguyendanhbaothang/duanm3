@@ -177,13 +177,13 @@
     <script type='text/javascript' id='wp-i18n-dependency-error-js-after'>
         console.error(
             "Payment gateway with handle 'wc-payment-method-cheque' has been deactivated in Cart and Checkout blocks because its dependency 'wp-i18n' is not registered. Read the docs about registering assets for payment methods: https://github.com/woocommerce/woocommerce-blocks/blob/060f63c04f0f34f645200b5d4da9212125c49177/docs/third-party-developers/extensibility/checkout-payment-methods/payment-method-integration.md#registering-assets"
-            );
+        );
         console.error(
             "Payment gateway with handle 'wc-payment-method-bacs' has been deactivated in Cart and Checkout blocks because its dependency 'wp-i18n' is not registered. Read the docs about registering assets for payment methods: https://github.com/woocommerce/woocommerce-blocks/blob/060f63c04f0f34f645200b5d4da9212125c49177/docs/third-party-developers/extensibility/checkout-payment-methods/payment-method-integration.md#registering-assets"
-            );
+        );
         console.error(
             "Payment gateway with handle 'wc-payment-method-cod' has been deactivated in Cart and Checkout blocks because its dependency 'wp-i18n' is not registered. Read the docs about registering assets for payment methods: https://github.com/woocommerce/woocommerce-blocks/blob/060f63c04f0f34f645200b5d4da9212125c49177/docs/third-party-developers/extensibility/checkout-payment-methods/payment-method-integration.md#registering-assets"
-            );
+        );
     </script>
     <link rel='shortlink' href='https://sneakerholicvietnam.vn/?p=49935' />
     <style>
@@ -239,6 +239,7 @@
         }
 
         .header-main {
+
             height: 76px
         }
 
@@ -920,7 +921,7 @@
         }
 
         .slider-nav-reveal div .out-of-stock-label {
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(255, 255, 255, 0.7);
             color: #ffffff;
             top: 0px;
             bottom: 0px;
@@ -1034,7 +1035,7 @@
             }
 
             #wrapper #main #content .row-collapse .col .col-inner .accordion .accordion-item a {
-                color: #202020 !important;
+                color: rgb(0, 0, 0) !important;
             }
         }
 
@@ -1077,23 +1078,19 @@
                 <div class="hot-news-cont">
                     <div class="hot-news-slide">
                         <div class="cont-item">
-                            <a
-                                href="">
+                            <a href="">
                                 HÀNG 1 TUẦN NHẬN ĐỔI - V SINH/BẢO HÀNH GIÀY 1 NĂM</a>
                         </div>
                         <div class="cont-item">
-                            <a
-                                href="">
+                            <a href="">
                                 HỖ TRỢ COD TOÀN QUỐC</a>
                         </div>
                         <div class="cont-item">
-                            <a
-                                href="">
+                            <a href="">
                                 FREE SHIPPING CHO ĐƠN HÀNG THANH TOÁN TRƯỚC</a>
                         </div>
                         <div class="cont-item">
-                            <a
-                                href="">
+                            <a href="">
                                 TÍCH LY HẠN MỨC ƯU ĐÃI CHO KHCH HÀNG THÂN THIẾT</a>
                         </div>
 
@@ -1114,8 +1111,7 @@
                         <div id="logo" class="flex-col logo">
 
                             <!-- Header logo -->
-                            <a href="" title="Sneakerholic Vietnam - Live Your Passion"
-                                rel="home">
+                            <a href="" title="Sneakerholic Vietnam - Live Your Passion" rel="home">
                                 <img width="945" height="361"
                                     src="https://sneakerholicvietnam.vn/wp-content/uploads/2018/07/Logo.-SneakerHolic.-Black-04.png"
                                     class="header_logo header-logo" alt="Sneakerholic Vietnam" /><img width="945"
@@ -1165,8 +1161,8 @@
                                                                     aria-label="Submit">
                                                                     <i class="icon-search"></i> </button>
                                                             </div> --}}
-                                                        </div>
-                                                        <div class="live-search-results text-left z-top"></div>
+                                                            </div>
+                                                            <div class="live-search-results text-left z-top"></div>
                                                     </form>
                                                 </div>
                                             </div>
@@ -1197,7 +1193,7 @@
 
                                                 <li class="">
                                                     <a target="_blank"
-                                                        href="https://beacons.ai/thesneakerholicvietnam"
+                                                        href=""
                                                         class="tooltip tooltipstered">
                                                         <i class="icon-phone" style="font-size:16px;"></i> <span>Liên
                                                             hệ</span>
@@ -1215,7 +1211,7 @@
                             <ul class="header-nav header-nav-main nav nav-right  nav-uppercase">
                                 <li class="account-item has-icon">
                                     <div class="header-button">
-                                        <a href="https://sneakerholicvietnam.vn/my-account/"
+                                        <a href="{{route('viewlogin')}}"
                                             class="nav-top-link nav-top-not-logged-in icon button circle is-outline is-small">
                                             <i class="icon-user"></i>
                                         </a>
@@ -1226,7 +1222,7 @@
                                 <li class="header-divider"></li>
                                 <li class="cart-item has-icon has-dropdown">
                                     <div class="header-button">
-                                        <a href="https://sneakerholicvietnam.vn/cart-2/" title="Giỏ hàng"
+                                        <a href="{{route('shop.cart')}}" title="Giỏ hàng"
                                             class="header-cart-link icon button circle is-outline is-small">
 
 
@@ -1240,8 +1236,6 @@
                                             <div class="widget_shopping_cart_content">
 
 
-                                                <p class="woocommerce-mini-cart__empty-message">Chưa có sản phẩm trong
-                                                    giỏ hàng.</p>
 
 
                                             </div>
@@ -1312,48 +1306,48 @@
                                 class="nav header-nav header-bottom-nav nav-center  nav-line-bottom nav-size-medium nav-spacing-xlarge">
                                 <li id="menu-item-37365"
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-37365 menu-item-design-default">
-                                    <a href="{{route('shop')}}" class="nav-top-link">HOME</a></li>
+                                    <a href="{{ route('shop') }}" class="nav-top-link">HOME</a>
+                                </li>
                                 <li id="menu-item-37366"
                                     class="menu-item menu-item-type-taxonomy menu-item-object-product_cat current-product-ancestor current-menu-parent current-product-parent menu-item-37366 active menu-item-design-default">
-                                    <a href=""
-                                        class="nav-top-link">GIÀY</a></li>
+                                    <a href="" class="nav-top-link">GIÀY</a>
+                                </li>
                                 <li id="menu-item-37360"
                                     class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-37360 menu-item-design-default">
-                                    <a href=""
-                                        class="nav-top-link">DÉP</a></li>
+                                    <a href="" class="nav-top-link">DÉP</a>
+                                </li>
                                 <li id="menu-item-37358"
                                     class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-37358 menu-item-design-default">
-                                    <a href=""
-                                        class="nav-top-link">PHỤ KIỆN</a></li>
+                                    <a href="" class="nav-top-link">PHỤ KIỆN</a>
+                                </li>
                                 <li id="menu-item-39602"
                                     class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-39602 menu-item-design-default">
-                                    <a href=""
-                                        class="nav-top-link">ÁO QUẦN</a></li>
+                                    <a href="" class="nav-top-link">ÁO QUẦN</a>
+                                </li>
                                 <li id="menu-item-37361"
                                     class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-37361 menu-item-design-default">
-                                    <a href=""
-                                        class="nav-top-link">KÍNH</a></li>
+                                    <a href="" class="nav-top-link">KÍNH</a>
+                                </li>
                                 <li id="menu-item-37362"
                                     class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-37362 menu-item-design-default">
-                                    <a href=""
-                                        class="nav-top-link">OUTLET</a></li>
+                                    <a href="" class="nav-top-link">OUTLET</a>
+                                </li>
                                 <li id="menu-item-37359"
                                     class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-37359 menu-item-design-default">
-                                    <a href=""
-                                        class="nav-top-link">SNEAKERS CLEANER</a></li>
+                                    <a href="" class="nav-top-link">SNEAKERS CLEANER</a>
+                                </li>
                                 <li id="menu-item-62027"
                                     class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-62027 menu-item-design-default">
-                                    <a href=""
-                                        class="nav-top-link">USED</a></li>
+                                    <a href="" class="nav-top-link">USED</a>
+                                </li>
                                 <li id="menu-item-45670"
                                     class="menu-item menu-item-type-post_type menu-item-object-post menu-item-45670 menu-item-design-default">
-                                    <a href=""
-                                        class="nav-top-link">KÝ GỬI</a></li>
+                                    <a href="" class="nav-top-link">KÝ GỬI</a>
+                                </li>
                                 <li class="header-search-form search-form html relative has-icon">
                                     <div class="header-search-form-wrapper">
                                         <div class="searchform-wrapper ux-search-box relative form-flat is-normal">
-                                            <form role="search" method="get" class="searchform"
-                                                action="">
+                                            <form role="search" method="get" class="searchform" action="">
                                                 <div class="flex-row relative">
                                                     <div class="flex-col flex-grow">
                                                         <label class="screen-reader-text"
@@ -1395,8 +1389,7 @@
             <div class="page-title-inner flex-row medium-flex-wrap container">
                 <div class="flex-col flex-grow medium-text-center">
                     <div class="is-large">
-                        <nav class="woocommerce-breadcrumb breadcrumbs"><a
-                                href="">Men</a></nav>
+                        <nav class="woocommerce-breadcrumb breadcrumbs"><a href="">Men</a></nav>
                     </div>
                 </div>
 
@@ -1437,93 +1430,78 @@
                                         <figure
                                             class="woocommerce-product-gallery__wrapper product-gallery-slider slider slider-nav-small mb-half"
                                             data-flickity-options='{                "cellAlign": "center",                "wrapAround": true,                "autoPlay": false,                "prevNextButtons":true,                "adaptiveHeight": true,                "imagesLoaded": true,                "lazyLoad": 1,                "dragThreshold" : 15,                "pageDots": false,                "rightToLeft": false       }'>
-                                            <div data-thumb=""
-                                                data-thumb-alt="giay-MLB-chinh-hang-32SHCM111-50W"
+                                            <div data-thumb="" data-thumb-alt="giay-MLB-chinh-hang-32SHCM111-50W"
                                                 class="woocommerce-product-gallery__image slide first"><a
-                                                    href=""><img
-                                                        width="600" height="600"
-                                                        src=""
+                                                    href=""><img width="600" height="600" src=""
                                                         class="wp-post-image skip-lazy"
                                                         alt="giay-MLB-chinh-hang-32SHCM111-50W" decoding="async"
                                                         title="mlb-big-ball-chunky-monogram-white-black-32SHCM111-50W"
                                                         data-caption="giay-MLB-chinh-hang-32SHCM111-50W"
-                                                        data-src=""
-                                                        data-large_image=""
+                                                        data-src="" data-large_image=""
                                                         data-large_image_width="900" data-large_image_height="900"
-                                                        srcset="{{asset('public/uploads/product/' . $productshow->image)}}"
+                                                        srcset="{{ asset('public/uploads/product/' . $productshow->image) }}"
                                                         sizes="(max-width: 600px) 100vw, 600px" /></a></div>
-                                            <div data-thumb=""
-                                                data-thumb-alt="giay-MLB-chinh-hang-32SHCM111-50W"
+                                            <div data-thumb="" data-thumb-alt="giay-MLB-chinh-hang-32SHCM111-50W"
                                                 class="woocommerce-product-gallery__image slide"><a
-                                                    href=""><img
-                                                        width="600" height="600"
-                                                        src=""
+                                                    href=""><img width="600" height="600" src=""
                                                         class="skip-lazy" alt="giay-MLB-chinh-hang-32SHCM111-50W"
                                                         decoding="async"
                                                         title="mlb-big-ball-chunky-monogram-white-black-32SHCM111-50W-1"
                                                         data-caption="giay-MLB-chinh-hang-32SHCM111-50W"
-                                                        data-src="{{asset('public/uploads/product/' . $productshow->image)}}"
-                                                        data-large_image="{{asset('public/uploads/product/' . $productshow->image)}}"
-                                                        srcset="{{asset('public/uploads/product/' . $productshow->image)}}"
+                                                        data-src="{{ asset('public/uploads/product/' . $productshow->image) }}"
+                                                        data-large_image="{{ asset('public/uploads/product/' . $productshow->image) }}"
+                                                        srcset="{{ asset('public/uploads/product/' . $productshow->image) }}"
                                                         data-large_image_width="900" data-large_image_height="900"
                                                         sizes="(max-width: 600px) 100vw, 600px" /></a></div>
-                                            <div data-thumb={{asset('public/uploads/product/' . $productshow->image)}}
+                                            <div data-thumb={{ asset('public/uploads/product/' . $productshow->image) }}
                                                 data-thumb-alt="giay-MLB-chinh-hang-32SHCM111-50W"
                                                 class="woocommerce-product-gallery__image slide"><a
-                                                    href="{{asset('public/uploads/product/' . $productshow->image)}}"><img
-                                                        width="600" height="600"
-                                                        src=""
+                                                    href="{{ asset('public/uploads/product/' . $productshow->image) }}"><img
+                                                        width="600" height="600" src=""
                                                         class="skip-lazy" alt="giay-MLB-chinh-hang-32SHCM111-50W"
                                                         decoding="async"
                                                         title="mlb-big-ball-chunky-monogram-white-black-32SHCM111-50W-2"
                                                         data-caption="giay-MLB-chinh-hang-32SHCM111-50W"
-                                                        data-src="{{asset('public/uploads/product/' . $productshow->image)}}"
-                                                        data-large_image="{{asset('public/uploads/product/' . $productshow->image)}}"
+                                                        data-src="{{ asset('public/uploads/product/' . $productshow->image) }}"
+                                                        data-large_image="{{ asset('public/uploads/product/' . $productshow->image) }}"
                                                         data-large_image_width="900" data-large_image_height="900"
-                                                        srcset="{{asset('public/uploads/product/' . $productshow->image)}}"
-
+                                                        srcset="{{ asset('public/uploads/product/' . $productshow->image) }}"
                                                         sizes="(max-width: 600px) 100vw, 600px" /></a></div>
-                                            <div data-thumb="{{asset('public/uploads/product/' . $productshow->image)}}"
+                                            <div data-thumb="{{ asset('public/uploads/product/' . $productshow->image) }}"
                                                 data-thumb-alt="" class="woocommerce-product-gallery__image slide"><a
-                                                    href="{{asset('public/uploads/product/' . $productshow->image)}}"><img
-                                                        width="600" height="599"
-                                                        src=""
+                                                    href="{{ asset('public/uploads/product/' . $productshow->image) }}"><img
+                                                        width="600" height="599" src=""
                                                         class="skip-lazy" alt="" decoding="async"
                                                         title="153023165_108182681322497_2525438322278507737_n"
                                                         data-caption=""
-                                                        data-src="{{asset('public/uploads/product/' . $productshow->image)}}"
-                                                        data-large_image="{{asset('public/uploads/product/' . $productshow->image)}}"
+                                                        data-src="{{ asset('public/uploads/product/' . $productshow->image) }}"
+                                                        data-large_image="{{ asset('public/uploads/product/' . $productshow->image) }}"
                                                         data-large_image_width="697" data-large_image_height="696"
-                                                        srcset="{{asset('public/uploads/product/' . $productshow->image)}}"
-
+                                                        srcset="{{ asset('public/uploads/product/' . $productshow->image) }}"
                                                         sizes="(max-width: 600px) 100vw, 600px" /></a></div>
-                                            <div data-thumb="{{asset('public/uploads/product/' . $productshow->image)}}"
+                                            <div data-thumb="{{ asset('public/uploads/product/' . $productshow->image) }}"
                                                 data-thumb-alt="" class="woocommerce-product-gallery__image slide"><a
-                                                    href="{{asset('public/uploads/product/' . $productshow->image)}}"><img
-                                                        width="600" height="599"
-                                                        src=""
+                                                    href="{{ asset('public/uploads/product/' . $productshow->image) }}"><img
+                                                        width="600" height="599" src=""
                                                         class="skip-lazy" alt="" decoding="async"
                                                         title="153391233_108182694655829_8070809154247347887_n"
                                                         data-caption=""
-                                                        data-src="{{asset('public/uploads/product/' . $productshow->image)}}"
-                                                        data-large_image="{{asset('public/uploads/product/' . $productshow->image)}}"
+                                                        data-src="{{ asset('public/uploads/product/' . $productshow->image) }}"
+                                                        data-large_image="{{ asset('public/uploads/product/' . $productshow->image) }}"
                                                         data-large_image_width="699" data-large_image_height="698"
-                                                        srcset="{{asset('public/uploads/product/' . $productshow->image)}}"
-
+                                                        srcset="{{ asset('public/uploads/product/' . $productshow->image) }}"
                                                         sizes="(max-width: 600px) 100vw, 600px" /></a></div>
-                                            <div data-thumb=""
-                                                data-thumb-alt="" class="woocommerce-product-gallery__image slide"><a
-                                                    href="{{asset('public/uploads/product/' . $productshow->image)}}"><img
-                                                        width="533" height="460"
-                                                        src=""
+                                            <div data-thumb="" data-thumb-alt=""
+                                                class="woocommerce-product-gallery__image slide"><a
+                                                    href="{{ asset('public/uploads/product/' . $productshow->image) }}"><img
+                                                        width="533" height="460" src=""
                                                         class="skip-lazy" alt="" decoding="async"
                                                         title="153192495_108182664655832_2116676122087949333_n"
                                                         data-caption=""
-                                                        data-src="{{asset('public/uploads/product/' . $productshow->image)}}"
-                                                        data-large_image="{{asset('public/uploads/product/' . $productshow->image)}}"
+                                                        data-src="{{ asset('public/uploads/product/' . $productshow->image) }}"
+                                                        data-large_image="{{ asset('public/uploads/product/' . $productshow->image) }}"
                                                         data-large_image_width="533" data-large_image_height="460"
-                                                        srcset="{{asset('public/uploads/product/' . $productshow->image)}}"
-
+                                                        srcset="{{ asset('public/uploads/product/' . $productshow->image) }}"
                                                         sizes="(max-width: 533px) 100vw, 533px" /></a></div>
                                         </figure>
 
@@ -1539,29 +1517,30 @@
                                         data-flickity-options='{			"cellAlign": "left",			"wrapAround": false,			"autoPlay": false,			"prevNextButtons": true,			"asNavFor": ".product-gallery-slider",			"percentPosition": true,			"imagesLoaded": true,			"pageDots": false,			"rightToLeft": false,			"contain": true		}'>
                                         <div class="col is-nav-selected first">
                                             <a>
-                                                <img src="{{asset('public/uploads/product/' . $productshow->image)}}"
+                                                <img src="{{ asset('public/uploads/product/' . $productshow->image) }}"
                                                     alt="giay-MLB-chinh-hang-32SHCM111-50W" width="300"
                                                     height="300" class="attachment-woocommerce_thumbnail" /> </a>
                                         </div>
                                         <div class="col"><a><img
-                                                  src="{{asset('public/uploads/product/' . $productshow->image)}}"
+                                                    src="{{ asset('public/uploads/product/' . $productshow->image) }}"
                                                     alt="giay-MLB-chinh-hang-32SHCM111-50W" width="300"
                                                     height="300" class="attachment-woocommerce_thumbnail" /></a>
                                         </div>
                                         <div class="col"><a><img
-                                            src="{{asset('public/uploads/product/' . $productshow->image)}}"
+                                                    src="{{ asset('public/uploads/product/' . $productshow->image) }}"
                                                     alt="giay-MLB-chinh-hang-32SHCM111-50W" width="300"
                                                     height="300" class="attachment-woocommerce_thumbnail" /></a>
                                         </div>
                                         <div class="col"><a><img
-                                            src="{{asset('public/uploads/product/' . $productshow->image)}}"
+                                                    src="{{ asset('public/uploads/product/' . $productshow->image) }}"
                                                     alt="" width="300" height="300"
                                                     class="attachment-woocommerce_thumbnail" /></a></div>
                                         <div class="col"><a><img
-                                            src="{{asset('public/uploads/product/' . $productshow->image)}}"
+                                                    src="{{ asset('public/uploads/product/' . $productshow->image) }}"
                                                     alt="" width="300" height="300"
                                                     class="attachment-woocommerce_thumbnail" /></a></div>
-                                        <div class="col"><a><img src="{{asset('public/uploads/product/' . $productshow->image)}}"
+                                        <div class="col"><a><img
+                                                    src="{{ asset('public/uploads/product/' . $productshow->image) }}"
                                                     alt="" width="300" height="300"
                                                     class="attachment-woocommerce_thumbnail" /></a></div>
                                     </div>
@@ -1570,11 +1549,12 @@
                                 <div class="product-info summary col-fit col entry-summary product-summary form-flat">
 
                                     <h1 class="product-title product_title entry-title">
-                                        {{$productshow->name}} </h1>
+                                        {{ $productshow->name }} </h1>
 
                                     <div class="price-wrapper">
                                         <p class="price product-page-price">
-                                            <span class="woocommerce-Price-amount amount"><bdi>{{number_format($productshow->price) }} VNĐ<span
+                                            <span class="woocommerce-Price-amount amount"><bdi>{{ number_format($productshow->price) }}
+                                                    VNĐ<span
                                                         class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
                                         </p>
                                     </div>
@@ -1614,54 +1594,43 @@
                                     <form class="variations_form cart"
                                         action="https://sneakerholicvietnam.vn/san-pham/mlb-big-ball-chunky-monogram-white-black/"
                                         method="post" enctype='multipart/form-data' data-product_id="49935"
- data-product_variations="[{&quot;attributes&quot;:{&quot;attribute_pa_size&quot;:&quot;44&quot;},&quot;availability_html&quot;:&quot;&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:2900000,&quot;display_regular_price&quot;:2900000,&quot;image&quot;:{&quot;title&quot;:&quot;mlb-big-ball-chunky-monogram-white-black-32SHCM111-50W&quot;,&quot;caption&quot;:&quot;giay-MLB-chinh-hang-32SHCM111-50W&quot;,&quot;url&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg&quot;,&quot;alt&quot;:&quot;giay-MLB-chinh-hang-32SHCM111-50W&quot;,&quot;src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-600x600.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-600x600.jpg 600w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-400x400.jpg 400w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-800x800.jpg 800w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-280x280.jpg 280w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-768x768.jpg 768w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-300x300.jpg 300w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-100x100.jpg 100w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg 900w&quot;,&quot;sizes&quot;:&quot;(max-width: 600px) 100vw, 600px&quot;,&quot;full_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg&quot;,&quot;full_src_w&quot;:900,&quot;full_src_h&quot;:900,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-100x100.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:100,&quot;gallery_thumbnail_src_h&quot;:100,&quot;thumb_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-300x300.jpg&quot;,&quot;thumb_src_w&quot;:300,&quot;thumb_src_h&quot;:300,&quot;src_w&quot;:600,&quot;src_h&quot;:600},&quot;image_id&quot;:62880,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;32SHCM111-50W | 3ASHCM01N-50WHS&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:79682,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;},{&quot;attributes&quot;:{&quot;attribute_pa_size&quot;:&quot;36-5&quot;},&quot;availability_html&quot;:&quot;&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:2900000,&quot;display_regular_price&quot;:2900000,&quot;image&quot;:{&quot;title&quot;:&quot;mlb-big-ball-chunky-monogram-white-black-32SHCM111-50W&quot;,&quot;caption&quot;:&quot;giay-MLB-chinh-hang-32SHCM111-50W&quot;,&quot;url&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg&quot;,&quot;alt&quot;:&quot;giay-MLB-chinh-hang-32SHCM111-50W&quot;,&quot;src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-600x600.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-600x600.jpg 600w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-400x400.jpg 400w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-800x800.jpg 800w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-280x280.jpg 280w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-768x768.jpg 768w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-300x300.jpg 300w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-100x100.jpg 100w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg 900w&quot;,&quot;sizes&quot;:&quot;(max-width: 600px) 100vw, 600px&quot;,&quot;full_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg&quot;,&quot;full_src_w&quot;:900,&quot;full_src_h&quot;:900,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-100x100.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:100,&quot;gallery_thumbnail_src_h&quot;:100,&quot;thumb_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-300x300.jpg&quot;,&quot;thumb_src_w&quot;:300,&quot;thumb_src_h&quot;:300,&quot;src_w&quot;:600,&quot;src_h&quot;:600},&quot;image_id&quot;:62880,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;32SHCM111-50W | 3ASHCM01N-50WHS&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:71538,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;},{&quot;attributes&quot;:{&quot;attribute_pa_size&quot;:&quot;38&quot;},&quot;availability_html&quot;:&quot;&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:2900000,&quot;display_regular_price&quot;:2900000,&quot;image&quot;:{&quot;title&quot;:&quot;mlb-big-ball-chunky-monogram-white-black-32SHCM111-50W&quot;,&quot;caption&quot;:&quot;giay-MLB-chinh-hang-32SHCM111-50W&quot;,&quot;url&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg&quot;,&quot;alt&quot;:&quot;giay-MLB-chinh-hang-32SHCM111-50W&quot;,&quot;src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-600x600.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-600x600.jpg 600w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-400x400.jpg 400w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-800x800.jpg 800w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-280x280.jpg 280w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-768x768.jpg 768w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-300x300.jpg 300w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-100x100.jpg 100w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg 900w&quot;,&quot;sizes&quot;:&quot;(max-width: 600px) 100vw, 600px&quot;,&quot;full_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg&quot;,&quot;full_src_w&quot;:900,&quot;full_src_h&quot;:900,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-100x100.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:100,&quot;gallery_thumbnail_src_h&quot;:100,&quot;thumb_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-300x300.jpg&quot;,&quot;thumb_src_w&quot;:300,&quot;thumb_src_h&quot;:300,&quot;src_w&quot;:600,&quot;src_h&quot;:600},&quot;image_id&quot;:62880,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;32SHCM111-50W | 3ASHCM01N-50WHS&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:71539,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;},{&quot;attributes&quot;:{&quot;attribute_pa_size&quot;:&quot;42-5&quot;},&quot;availability_html&quot;:&quot;&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:2900000,&quot;display_regular_price&quot;:2900000,&quot;image&quot;:{&quot;title&quot;:&quot;mlb-big-ball-chunky-monogram-white-black-32SHCM111-50W&quot;,&quot;caption&quot;:&quot;giay-MLB-chinh-hang-32SHCM111-50W&quot;,&quot;url&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg&quot;,&quot;alt&quot;:&quot;giay-MLB-chinh-hang-32SHCM111-50W&quot;,&quot;src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-600x600.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-600x600.jpg 600w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-400x400.jpg 400w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-800x800.jpg 800w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-280x280.jpg 280w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-768x768.jpg 768w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-300x300.jpg 300w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-100x100.jpg 100w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg 900w&quot;,&quot;sizes&quot;:&quot;(max-width: 600px) 100vw, 600px&quot;,&quot;full_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg&quot;,&quot;full_src_w&quot;:900,&quot;full_src_h&quot;:900,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-100x100.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:100,&quot;gallery_thumbnail_src_h&quot;:100,&quot;thumb_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-300x300.jpg&quot;,&quot;thumb_src_w&quot;:300,&quot;thumb_src_h&quot;:300,&quot;src_w&quot;:600,&quot;src_h&quot;:600},&quot;image_id&quot;:62880,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;32SHCM111-50W | 3ASHCM01N-50WHS&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:71540,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;},{&quot;attributes&quot;:{&quot;attribute_pa_size&quot;:&quot;39&quot;},&quot;availability_html&quot;:&quot;&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:2900000,&quot;display_regular_price&quot;:2900000,&quot;image&quot;:{&quot;title&quot;:&quot;mlb-big-ball-chunky-monogram-white-black-32SHCM111-50W&quot;,&quot;caption&quot;:&quot;giay-MLB-chinh-hang-32SHCM111-50W&quot;,&quot;url&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg&quot;,&quot;alt&quot;:&quot;giay-MLB-chinh-hang-32SHCM111-50W&quot;,&quot;src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-600x600.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-600x600.jpg 600w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-400x400.jpg 400w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-800x800.jpg 800w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-280x280.jpg 280w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-768x768.jpg 768w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-300x300.jpg 300w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-100x100.jpg 100w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg 900w&quot;,&quot;sizes&quot;:&quot;(max-width: 600px) 100vw, 600px&quot;,&quot;full_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg&quot;,&quot;full_src_w&quot;:900,&quot;full_src_h&quot;:900,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-100x100.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:100,&quot;gallery_thumbnail_src_h&quot;:100,&quot;thumb_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-300x300.jpg&quot;,&quot;thumb_src_w&quot;:300,&quot;thumb_src_h&quot;:300,&quot;src_w&quot;:600,&quot;src_h&quot;:600},&quot;image_id&quot;:62880,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;32SHCM111-50W | 3ASHCM01N-50WHS&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:70592,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;},{&quot;attributes&quot;:{&quot;attribute_pa_size&quot;:&quot;41&quot;},&quot;availability_html&quot;:&quot;&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:2900000,&quot;display_regular_price&quot;:2900000,&quot;image&quot;:{&quot;title&quot;:&quot;mlb-big-ball-chunky-monogram-white-black-32SHCM111-50W&quot;,&quot;caption&quot;:&quot;giay-MLB-chinh-hang-32SHCM111-50W&quot;,&quot;url&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg&quot;,&quot;alt&quot;:&quot;giay-MLB-chinh-hang-32SHCM111-50W&quot;,&quot;src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-600x600.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-600x600.jpg 600w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-400x400.jpg 400w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-800x800.jpg 800w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-280x280.jpg 280w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-768x768.jpg 768w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-300x300.jpg 300w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-100x100.jpg 100w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg 900w&quot;,&quot;sizes&quot;:&quot;(max-width: 600px) 100vw, 600px&quot;,&quot;full_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg&quot;,&quot;full_src_w&quot;:900,&quot;full_src_h&quot;:900,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-100x100.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:100,&quot;gallery_thumbnail_src_h&quot;:100,&quot;thumb_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-300x300.jpg&quot;,&quot;thumb_src_w&quot;:300,&quot;thumb_src_h&quot;:300,&quot;src_w&quot;:600,&quot;src_h&quot;:600},&quot;image_id&quot;:62880,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;32SHCM111-50W | 3ASHCM01N-50WHS&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:70593,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;}]">
+                                        data-product_variations="[{&quot;attributes&quot;:{&quot;attribute_pa_size&quot;:&quot;44&quot;},
+ &quot;availability_html&quot;:&quot;&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:2900000,&quot;display_regular_price&quot;:2900000,&quot;image&quot;
+ :{&quot;title&quot;:&quot;mlb-big-ball-chunky-monogram-white-black-32SHCM111-50W&quot;
+    ,&quot;caption&quot;:&quot;giay-MLB-chinh-hang-32SHCM111-50W&quot;
+    ,&quot;url&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg&quot;,&quot;alt&quot;:&quot;giay-MLB-chinh-hang-32SHCM111-50W&quot;,&quot;src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-600x600.jpg&quot;
+    ,&quot;srcset&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-600x600.jpg 600w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-400x400.jpg 400w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-800x800.jpg 800w,
+     https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-280x280.jpg 280w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-768x768.jpg 768w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-300x300.jpg 300w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-100x100.jpg 100w,
+      https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg 900w&quot;,&quot;sizes&quot;:&quot;(max-width: 600px) 100vw, 600px&quot;,&quot;full_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg&quot;,&quot;full_src_w&quot;:900,&quot;full_src_h&quot;:900,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-100x100.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:100,&quot;gallery_thumbnail_src_h&quot;:100,&quot;thumb_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-300x300.jpg&quot;,&quot;thumb_src_w&quot;:300,&quot;thumb_src_h&quot;:300,&quot;src_w&quot;:600,&quot
+     ;src_h&quot;:600},&quot;image_id&quot;:62880,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;
+     is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;32SHCM111-50W | 3ASHCM01N-50WHS&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:79682,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;},{&quot;attributes&quot;:{&quot;attribute_pa_size&quot;:&quot;36-5&quot;},&quot;availability_html&quot;:&quot;&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:2900000,&quot;display_regular_price&quot;:2900000,&quot;image&quot;:{&quot;title&quot;:&quot;mlb-big-ball-chunky-monogram-white-black-32SHCM111-50W&quot;
+        ,&quot;caption&quot;:&quot;giay-MLB-chinh-hang-32SHCM111-50W&quot;,&quot;url&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg&quot;,&quot;alt&quot;:&quot;giay-MLB-chinh-hang-32SHCM111-50W&quot;,&quot;src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-600x600.jpg&quot;
+        ,&quot;srcset&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-600x600.jpg 600w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-400x400.jpg 400w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-800x800.jpg 800w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-280x280.jpg 280w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-768x768.jpg 768w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-300x300.jpg 300w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-100x100.jpg 100w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg 900w&quot;,&quot;sizes&quot;:&quot;(max-width: 600px) 100vw, 600px&quot;,&quot;full_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg&quot;,&quot;full_src_w&quot;:900,&quot;full_src_h&quot;:900,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-100x100.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:100,&quot;gallery_thumbnail_src_h&quot;:100,&quot;thumb_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-300x300.jpg&quot;,&quot;thumb_src_w&quot;:300,&quot;thumb_src_h&quot;:300,&quot;src_w&quot;:600,&quot;src_h&quot;:600},&quot;image_id&quot;:62880,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;32SHCM111-50W | 3ASHCM01N-50WHS&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:71538,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;},{&quot;attributes&quot;:{&quot;attribute_pa_size&quot;:&quot;38&quot;},&quot;availability_html&quot;:&quot;&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:2900000,
+        &quot;display_regular_price&quot;:2900000,&quot;image&quot;:{&quot;title&quot;:&quot;mlb-big-ball-chunky-monogram-white-black-32SHCM111-50W&quot;,&quot;caption&quot;:&quot;giay-MLB-chinh-hang-32SHCM111-50W&quot;,&quot;url&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg&quot;,&quot;alt&quot;:&quot;giay-MLB-chinh-hang-32SHCM111-50W&quot;,&quot;src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-600x600.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-600x600.jpg 600w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-400x400.jpg 400w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-800x800.jpg 800w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-280x280.jpg 280w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-768x768.jpg 768w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-300x300.jpg 300w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-100x100.jpg 100w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg 900w&quot;,&quot;sizes&quot;:&quot;(max-width: 600px) 100vw, 600px&quot;,&quot;full_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg&quot;,&quot;full_src_w&quot;:900,&quot;full_src_h&quot;:900,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-100x100.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:100,&quot;gallery_thumbnail_src_h&quot;:100,&quot;thumb_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-300x300.jpg&quot;,&quot;thumb_src_w&quot;:300,&quot;thumb_src_h&quot;:300,&quot;src_w&quot;:600,&quot;src_h&quot;:600},&quot;image_id&quot;:62880,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;32SHCM111-50W | 3ASHCM01N-50WHS&quot;
+        ,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:71539,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;},{&quot;attributes&quot;:{&quot;attribute_pa_size&quot;:&quot;42-5&quot;},&quot;availability_html&quot;:&quot;&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:2900000,&quot;display_regular_price&quot;:2900000,&quot;image&quot;:{&quot;title&quot;:&quot;mlb-big-ball-chunky-monogram-white-black-32SHCM111-50W&quot;,&quot;caption&quot;:&quot;giay-MLB-chinh-hang-32SHCM111-50W&quot;,&quot;url&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg&quot;,&quot;alt&quot;:&quot;giay-MLB-chinh-hang-32SHCM111-50W&quot;,&quot;src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-600x600.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-600x600.jpg 600w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-400x400.jpg 400w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-800x800.jpg 800w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-280x280.jpg 280w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-768x768.jpg 768w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-300x300.jpg 300w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-100x100.jpg 100w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg 900w&quot;,&quot;sizes&quot;:&quot;(max-width: 600px) 100vw, 600px&quot;,&quot;full_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg&quot;,&quot;full_src_w&quot;:900,&quot;full_src_h&quot;:900,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-100x100.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:100,&quot;gallery_thumbnail_src_h&quot;:100,&quot;thumb_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-300x300.jpg&quot;
+            ,&quot;thumb_src_w&quot;:300,&quot;thumb_src_h&quot;:300,&quot;src_w&quot;:600,&quot;src_h&quot;:600},&quot;image_id&quot;:62880,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;32SHCM111-50W | 3ASHCM01N-50WHS&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:71540,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;},{&quot;attributes&quot;:{&quot;attribute_pa_size&quot;:&quot;39&quot;},&quot;availability_html&quot;:&quot;&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:2900000,&quot;display_regular_price&quot;:2900000,&quot;image&quot;:{&quot;title&quot;:&quot;mlb-big-ball-chunky-monogram-white-black-32SHCM111-50W&quot;,&quot;caption&quot;:&quot;giay-MLB-chinh-hang-32SHCM111-50W&quot;,&quot;url&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg&quot;,&quot;alt&quot;:&quot;giay-MLB-chinh-hang-32SHCM111-50W&quot;,&quot;src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-600x600.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-600x600.jpg 600w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-400x400.jpg 400w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-800x800.jpg 800w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-280x280.jpg 280w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-768x768.jpg 768w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-300x300.jpg 300w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-100x100.jpg 100w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg 900w&quot;,&quot;sizes&quot;:&quot;(max-width: 600px) 100vw, 600px&quot;,&quot;full_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg&quot;,&quot;full_src_w&quot;:900,&quot;full_src_h&quot;:900,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-100x100.jpg&quot;
+                ,&quot;gallery_thumbnail_src_w&quot;:100,&quot;gallery_thumbnail_src_h&quot;:100,&quot;thumb_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-300x300.jpg&quot;,&quot;thumb_src_w&quot;:300,&quot;thumb_src_h&quot;:300,&quot;src_w&quot;:600,&quot;src_h&quot;:600},&quot;image_id&quot;:62880,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;32SHCM111-50W | 3ASHCM01N-50WHS&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:70592,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;}
+            ,{&quot;attributes&quot;:{&quot;attribute_pa_size&quot;:&quot;41&quot;},&quot;availability_html&quot;:&quot;&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:2900000,&quot;display_regular_price&quot;:2900000,&quot;image&quot;:{&quot;title&quot;:&quot;mlb-big-ball-chunky-monogram-white-black-32SHCM111-50W&quot;,&quot;caption&quot;:&quot;giay-MLB-chinh-hang-32SHCM111-50W&quot;,&quot;url&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg&quot;,&quot;alt&quot;:&quot;giay-MLB-chinh-hang-32SHCM111-50W&quot;,&quot;src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-600x600.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-600x600.jpg 600w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-400x400.jpg 400w,
+             https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-800x800.jpg 800w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-280x280.jpg 280w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-768x768.jpg 768w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-300x300.jpg 300w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-100x100.jpg 100w, https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg 900w&quot;,&quot;sizes&quot;:&quot;(max-width: 600px) 100vw, 600px&quot;,&quot;full_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w.jpg&quot;,&quot;full_src_w&quot;:900,&quot;full_src_h&quot;:900,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-100x100.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:100,&quot;gallery_thumbnail_src_h&quot;:100,&quot;thumb_src&quot;:&quot;https:\/\/sneakerholicvietnam.vn\/wp-content\/uploads\/2021\/03\/mlb-big-ball-chunky-monogram-white-black-32shcm111-50w-300x300.jpg&quot;,&quot;thumb_src_w&quot;:300,&quot;thumb_src_h&quot;:300,&quot;src_w&quot;:600,&quot;src_h&quot;:600},&quot;image_id&quot;:62880,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;32SHCM111-50W | 3ASHCM01N-50WHS&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:70593,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;}]">
 
                                         <table class="variations" cellspacing="0" role="presentation">
                                             <tbody>
                                                 <tr>
-                                                    <th class="label"><label for="pa_size">Size {{$productshow->size}}</label></th>
+                                                    <div class="ux-swatch tooltip ux-swatch--label" data-value="44"
+                                                        data-name="{{ $productshow->size }}"
+                                                        title="{{ $productshow->size }}"><span
+                                                            class="ux-swatch__text">{{ $productshow->size }}</span>
+                                                    </div>
                                                     <td class="value">
                                                         <div
                                                             class="variation-selector variation-select-ux_label hidden">
-                                                            <select id="pa_size" class=""
-                                                                name="attribute_pa_size"
-                                                                data-attribute_name="attribute_pa_size"
-                                                                data-show_option_none="yes">
-                                                                {{-- <option value="">Chọn một tùy chọn</option> --}}
-                                                                {{-- {{$productshow->size}} --}}
-                                                                {{-- <option value="36-5"></option> --}}
-                                                                {{-- <option value="38">38</option>
-                                                                <option value="39">39</option>
-                                                                <option value="42-5">42.5</option>
-                                                                <option value="44">44</option> --}}
-                                                            </select></div>
-                                                        <div class="ux-swatches ux-swatches-attribute-ux_label ux-swatches--rounded"
-                                                            data-attribute_name="attribute_pa_size">
-                                                            <div class="ux-swatch tooltip ux-swatch--label"
-                                                                data-value="36-5" data-name="36.5" title="36.5">
-                                                                <span class="ux-swatch__text">36.5</span></div>
-                                                            <div class="ux-swatch tooltip ux-swatch--label"
-                                                                data-value="38" data-name="38" title="38"><span
-                                                                    class="ux-swatch__text">38</span></div>
-                                                            <div class="ux-swatch tooltip ux-swatch--label"
-                                                                data-value="39" data-name="39" title="39"><span
-                                                                    class="ux-swatch__text">39</span></div>
-                                                            <div class="ux-swatch tooltip ux-swatch--label"
-                                                                data-value="42-5" data-name="42.5" title="42.5">
-                                                                <span class="ux-swatch__text">42.5</span></div>
-                                                            <div class="ux-swatch tooltip ux-swatch--label"
-                                                                data-value="44" data-name="44" title="44"><span
-                                                                    class="ux-swatch__text">44</span></div>
-                                                        </div><a class="reset_variations" href="#">Xóa</a>
                                                     </td>
                                                 </tr>
                                             </tbody>
                                         </table>
-
                                         <div class="single_variation_wrap">
                                             <div class="woocommerce-variation single_variation"></div>
                                             <div class="woocommerce-variation-add-to-cart variations_button">
-
                                                 <div class="quantity buttons_added form-flat">
                                                     <input type="button" value="-"
                                                         class="minus button is-form"> <label
@@ -1673,11 +1642,7 @@
                                                         size="4" placeholder="" inputmode="numeric" />
                                                     <input type="button" value="+" class="plus button is-form">
                                                 </div>
-
-                                                <button type="submit"
-                                                    class="single_add_to_cart_button button alt wp-element-button">Thêm
-                                                    vào giỏ hàng</button>
-
+                                                    <a href="{{route('shop.store',$productshow->id)}}" id="{{ $productshow->id }}" class="btn btn-main mt-20">Add To Cart</a>
                                                 <style>
                                                     .chowordpress-quickbuy button.single_add_to_cart_button.loading:after {
                                                         display: none;
@@ -1744,9 +1709,7 @@
             padding: 0 10px;
         } */
                                                 </style>
-                                                <button type="button" class="button buy_now_button">
-                                                    Mua ngay <span>Miễn phí Ship với hóa đơn trên
-                                                        1.000.000đ</span></button>
+
                                                 <input type="hidden" name="is_buy_now" class="is_buy_now"
                                                     value="0" autocomplete="off" />
                                                 <script>
@@ -1804,9 +1767,10 @@
                                                 class="accordion-title plain" aria-expanded="false"
                                                 aria-controls="accordion-3578934687-content"><button class="toggle"
                                                     aria-label="Toggle"><i
-                                                        class="icon-angle-down"></i></button><span>Thông tin sản phẩm  <br></span></a>
-                                                        {{-- {{$productshow->description}} --}}
-                                            <div  id="accordion-3578934687-content" class="accordion-inner"
+                                                        class="icon-angle-down"></i></button><span>Thông tin sản phẩm
+                                                    <br></span></a>
+                                            {{ $productshow->description }}
+                                            <div id="accordion-3578934687-content" class="accordion-inner"
                                                 aria-labelledby="accordion-3578934687-label">
 
 
@@ -1832,7 +1796,8 @@
                                                     tuần <em>(đối với đơn hàng tại TP. HCM)</em> hoặc tối đa 2 tuần
                                                     <em>(đối với đơn hàng ship đi tỉnh)</em>. Trong một vài trường hợp,
                                                     cửa hàng vẫn có thể "linh hoạt" thời gian lâu hơn nếu được báo
-                                                    trước. </p>
+                                                    trước.
+                                                </p>
                                                 <p>Toàn bộ sản phẩm đều là <strong>chính hãng - AUTHENTIC</strong>, bao
                                                     check trọn đời. Hoàn tiền &amp; đền bù nếu phát hiện hàng FAKE. </p>
                                                 <ul>
@@ -2438,8 +2403,7 @@
 
 
                                     <div class="ux-menu-link flex menu-item">
-                                        <a class="ux-menu-link__link flex"
-                                            href="">
+                                        <a class="ux-menu-link__link flex" href="">
                                             <i class="ux-menu-link__icon text-center icon-angle-right"></i> <span
                                                 class="ux-menu-link__text">
                                                 425/16 Nguyễn Đình Chiểu, Phường 5, Quận 3, TP. HCM </span>
@@ -2448,8 +2412,7 @@
 
 
                                     <div class="ux-menu-link flex menu-item">
-                                        <a class="ux-menu-link__link flex"
-                                            href="">
+                                        <a class="ux-menu-link__link flex" href="">
                                             <i class="ux-menu-link__icon text-center icon-angle-right"></i> <span
                                                 class="ux-menu-link__text">
                                                 Email: sneakerholicvietnam@gmail.com </span>
@@ -2458,8 +2421,7 @@
 
 
                                     <div class="ux-menu-link flex menu-item">
-                                        <a class="ux-menu-link__link flex"
-                                            href="">
+                                        <a class="ux-menu-link__link flex" href="">
                                             <i class="ux-menu-link__icon text-center icon-angle-right"></i> <span
                                                 class="ux-menu-link__text">
                                                 Hotline 0705 185 731 </span>
@@ -2486,8 +2448,7 @@
 
 
                                     <div class="ux-menu-link flex menu-item">
-                                        <a class="ux-menu-link__link flex"
-                                            href="">
+                                        <a class="ux-menu-link__link flex" href="">
                                             <i class="ux-menu-link__icon text-center icon-angle-right"></i> <span
                                                 class="ux-menu-link__text">
                                                 Chính sách chung </span>
@@ -2496,8 +2457,7 @@
 
 
                                     <div class="ux-menu-link flex menu-item">
-                                        <a class="ux-menu-link__link flex"
-                                            href="">
+                                        <a class="ux-menu-link__link flex" href="">
                                             <i class="ux-menu-link__icon text-center icon-angle-right"></i> <span
                                                 class="ux-menu-link__text">
                                                 Ưu đãi thành viên </span>
@@ -2506,8 +2466,7 @@
 
 
                                     <div class="ux-menu-link flex menu-item">
-                                        <a class="ux-menu-link__link flex"
-                                            href="">
+                                        <a class="ux-menu-link__link flex" href="">
                                             <i class="ux-menu-link__icon text-center icon-angle-right"></i> <span
                                                 class="ux-menu-link__text">
                                                 Tra cứu đơn hàng </span>
@@ -2552,8 +2511,7 @@
 
 
                                     <div class="ux-menu-link flex menu-item">
-                                        <a class="ux-menu-link__link flex"
-                                            href="">
+                                        <a class="ux-menu-link__link flex" href="">
                                             <i class="ux-menu-link__icon text-center icon-angle-right"></i> <span
                                                 class="ux-menu-link__text">
                                                 Về Sneakerholic </span>
@@ -2572,32 +2530,32 @@
 
                         <div id="col-1015827794" class="col medium-3 small-12 large-3">
                             <div class="col-inner">
+                            </div>
+
+
+
                         </div>
-
-
 
                     </div>
 
-                </div>
 
+                    <style>
+                        #section_670258187 {
+                            padding-top: 30px;
+                            padding-bottom: 30px;
+                            background-color: rgb(255, 255, 255);
+                        }
 
-                <style>
-                    #section_670258187 {
-                        padding-top: 30px;
-                        padding-bottom: 30px;
-                        background-color: rgb(255, 255, 255);
-                    }
+                        #section_670258187 .ux-shape-divider--top svg {
+                            height: 150px;
+                            --divider-top-width: 100%;
+                        }
 
-                    #section_670258187 .ux-shape-divider--top svg {
-                        height: 150px;
-                        --divider-top-width: 100%;
-                    }
-
-                    #section_670258187 .ux-shape-divider--bottom svg {
-                        height: 150px;
-                        --divider-width: 100%;
-                    }
-                </style>
+                        #section_670258187 .ux-shape-divider--bottom svg {
+                            height: 150px;
+                            --divider-width: 100%;
+                        }
+                    </style>
             </section>
 
             <div class="absolute-footer dark medium-text-center text-center">
@@ -2629,8 +2587,7 @@
                 <li class="header-search-form search-form html relative has-icon">
                     <div class="header-search-form-wrapper">
                         <div class="searchform-wrapper ux-search-box relative form-flat is-normal">
-                            <form role="search" method="get" class="searchform"
-                                action="">
+                            <form role="search" method="get" class="searchform" action="">
                                 <div class="flex-row relative">
                                     <div class="flex-col flex-grow">
                                         <label class="screen-reader-text"
@@ -2657,7 +2614,8 @@
                         href="">HOME</a></li>
                 <li
                     class="menu-item menu-item-type-taxonomy menu-item-object-product_cat current-product-ancestor current-menu-parent current-product-parent menu-item-37366">
-                    <a href="">GIÀY</a></li>
+                    <a href="">GIÀY</a>
+                </li>
                 <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-37360"><a
                         href="">DÉP</a></li>
                 <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-37358"><a

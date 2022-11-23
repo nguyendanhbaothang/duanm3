@@ -109,7 +109,7 @@ class CategoryController extends Controller
         alert()->success('Thêm sản phẩm','thành công');
 
 
-        
+
         return redirect()->route('category.index');
 
     }

@@ -11,7 +11,7 @@
         <p class="card-description">
         </p>
         <div class="table-responsive pt-3">
-          <table class="table table-info" >
+          <table  >
             <thead>
                 <tr> <th> {{$productshow->id}} </th></tr>
                 <tr> <th>Tên sản phẩm : {{$productshow->name}} </th></tr>

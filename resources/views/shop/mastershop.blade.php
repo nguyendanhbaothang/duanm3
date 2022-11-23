@@ -1,10 +1,5 @@
 <!DOCTYPE html>
-<!--[if IE 9 ]> <html lang="vi" prefix="og: https://ogp.me/ns#" class="ie9 loading-site no-js"> <![endif]-->
-<!--[if IE 8 ]> <html lang="vi" prefix="og: https://ogp.me/ns#" class="ie8 loading-site no-js"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="vi" prefix="og: https://ogp.me/ns#" class="loading-site no-js">
-<!--<![endif]-->
-
 <head>
     <meta charset="UTF-8" />
     <script>
@@ -49,13 +44,8 @@
     <meta name="twitter:data2" content="4 minutes" />
     <script type="application/ld+json" class="rank-math-schema">{"@context":"https://schema.org","@graph":[{"@type":"Place","@id":"https://sneakerholicvietnam.vn/#place","address":{"@type":"PostalAddress","streetAddress":"425/16 Nguy\u1ec5n \u0110\u00ecnh Chi\u1ec3u","addressLocality":"Ph\u01b0\u1eddng 5, Qu\u1eadn 3","addressRegion":"TP.HCM","postalCode":"700000","addressCountry":"Vi\u1ec7t Nam"}},{"@type":"Organization","@id":"https://sneakerholicvietnam.vn/#organization","name":"Sneakerholic Vietnam","url":"https://sneakerholicvietnam.vn","address":{"@type":"PostalAddress","streetAddress":"425/16 Nguy\u1ec5n \u0110\u00ecnh Chi\u1ec3u","addressLocality":"Ph\u01b0\u1eddng 5, Qu\u1eadn 3","addressRegion":"TP.HCM","postalCode":"700000","addressCountry":"Vi\u1ec7t Nam"},"logo":{"@type":"ImageObject","@id":"https://sneakerholicvietnam.vn/#logo","url":"https://sneakerholicvietnam.vn/wp-content/uploads/2018/07/Logo.-SneakerHolic.-RGB-07.jpg","contentUrl":"https://sneakerholicvietnam.vn/wp-content/uploads/2018/07/Logo.-SneakerHolic.-RGB-07.jpg","caption":"Sneakerholic Vietnam","inLanguage":"vi","width":"1182","height":"1183"},"contactPoint":[{"@type":"ContactPoint","telephone":"0705185731","contactType":"customer support"}],"location":{"@id":"https://sneakerholicvietnam.vn/#place"}},{"@type":"WebSite","@id":"https://sneakerholicvietnam.vn/#website","url":"https://sneakerholicvietnam.vn","name":"Sneakerholic Vietnam","publisher":{"@id":"https://sneakerholicvietnam.vn/#organization"},"inLanguage":"vi","potentialAction":{"@type":"SearchAction","target":"https://sneakerholicvietnam.vn/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://sneakerholicvietnam.vn/wp-content/uploads/2018/07/sneakerholic-logo.png","url":"https://sneakerholicvietnam.vn/wp-content/uploads/2018/07/sneakerholic-logo.png","width":"600","height":"315","caption":"sneakerholic logo","inLanguage":"vi"},{"@type":"WebPage","@id":"https://sneakerholicvietnam.vn/#webpage","url":"https://sneakerholicvietnam.vn/","name":"Trang ch\u1ee7 - Sneakerholic Vietnam","datePublished":"2015-11-20T08:27:14+07:00","dateModified":"2022-10-21T07:12:41+07:00","about":{"@id":"https://sneakerholicvietnam.vn/#organization"},"isPartOf":{"@id":"https://sneakerholicvietnam.vn/#website"},"primaryImageOfPage":{"@id":"https://sneakerholicvietnam.vn/wp-content/uploads/2018/07/sneakerholic-logo.png"},"inLanguage":"vi"},{"@type":"Article","headline":"Trang ch\u1ee7 - Sneakerholic Vietnam","datePublished":"2015-11-20T08:27:14+07:00","dateModified":"2022-10-21T07:12:41+07:00","author":{"@type":"Person","name":"user"},"description":"Sneakerholic Vietnam - Live your Passion. N\u1ebfu c\u00f3 chung t\u00ecnh y\u00eau v\u1edbi s\u1ee9c s\u1ed1ng m\u00e3nh li\u1ec7t c\u1ee7a nh\u1eefng \u0111\u00f4i gi\u00e0y sneaker, h\u00e3y t\u00ecm \u0111\u1ebfn The Sneakerholic nh\u00e9.","name":"Trang ch\u1ee7 - Sneakerholic Vietnam","@id":"https://sneakerholicvietnam.vn/#schema-676155","isPartOf":{"@id":"https://sneakerholicvietnam.vn/#webpage"},"publisher":{"@id":"https://sneakerholicvietnam.vn/#organization"},"image":{"@id":"https://sneakerholicvietnam.vn/wp-content/uploads/2018/07/sneakerholic-logo.png"},"inLanguage":"vi","mainEntityOfPage":{"@id":"https://sneakerholicvietnam.vn/#webpage"}}]}</script>
     <meta name="google-site-verification" content="ylD3Y0W33GIg48_n7avtp2lZec7TQ1GUcKme1yQQ9o0" />
-    <!-- /Rank Math WordPress SEO plugin -->
-
     <link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
     <link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
-
-
-
     <link rel='prefetch'
         href='https://sneakerholicvietnam.vn/wp-content/themes/flatsome/assets/js/chunk.countup.js?ver=3.16.0' />
     <link rel='prefetch'
@@ -1932,40 +1922,40 @@
             <a class="messanger" rel="nofollow noopener" href="https://m.me/sneakerholicvn" target="_blank">
                 <span>
                     <img width="40" height="40"
-                        src="https://sneakerholicvietnam.vn/wp-content/uploads/2022/05/message.png" alt="messenger">
+                        src="" alt="messenger">
                 </span>
                 <p>Messenger</p>
             </a>
-            <a class="messanger" rel="nofollow noopener" href="https://www.instagram.com/thesneakerholicvn/"
+            <a class="messanger" rel="nofollow noopener" href=""
                 target="_blank">
                 <span>
                     <img width="40" height="40"
-                        src="https://sneakerholicvietnam.vn/wp-content/uploads/2022/05/instagram.png" alt="instagram">
+                        src="" alt="instagram">
                 </span>
                 <p>Instagram</p>
             </a>
-            <a class="messanger zaloIcon" rel="nofollow noopener" href="https://zalo.me/2288877121574468762"
+            <a class="messanger zaloIcon" rel="nofollow noopener" href=""
                 target="_blank">
                 <span>
                     <img width="40" height="40"
-                        src="https://sneakerholicvietnam.vn/wp-content/uploads/2022/05/zalo.png" alt="Zalo">
+                        src="" alt="Zalo">
                 </span>
                 <p>Chat Zalo</p>
             </a>
             <a class="messanger" target="_blank" rel="nofollow noopener"
-                href="https://beacons.ai/thesneakerholicvietnam">
+                href="">
                 <span>
                     <img width="40" height="40"
-                        src="https://sneakerholicvietnam.vn/wp-content/uploads/2022/05/call.png" alt="Gọi điện">
+                        src="" alt="Gọi điện">
                 </span>
                 <p>Liên hệ</p>
             </a>
             <a class="messanger" rel="nofollow noopener"
-                href="https://www.google.com/maps/place/The+Sneakerholic/@10.7702067,106.6837252,15z/data=!4m5!3m4!1s0x0:0x409a39727a891be3!8m2!3d10.7702067!4d106.6837252"
+                href=""
                 target="_self">
                 <span>
                     <img width="40" height="40"
-                        src="https://sneakerholicvietnam.vn/wp-content/uploads/2022/05/vitri.png" alt="Bản đồ">
+                        src="" alt="Bản đồ">
                 </span>
                 <p>Chỉ đường</p>
             </a>

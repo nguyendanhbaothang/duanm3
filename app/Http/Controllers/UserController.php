@@ -40,7 +40,7 @@ class UserController extends Controller
       }
       // dd($request->all());
       return back()->withErrors([
-          'email' => 'The provided credentials do not match our records.',
+          'email' => 'Thông tin đăng nhập được cung cấp không khớp với hồ sơ của chúng tôi.',
       ])->onlyInput('email');
   }
 
@@ -74,8 +74,7 @@ class UserController extends Controller
       } catch (\Exception $e) {
           Log::error("message:".$e->getMessage());
       }
-  }
-
+    }
       public function logout(Request $request)
       {
         Auth::logout();

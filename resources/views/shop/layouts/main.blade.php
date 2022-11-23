@@ -62,7 +62,6 @@
                     </div>
                 </div>
                 @endforeach
-                {{-- {{ $product->appends(request()->query()) }} --}}
             </div><!-- row -->
         </div>
     </div>

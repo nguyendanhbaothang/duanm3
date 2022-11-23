@@ -172,7 +172,7 @@
         @enderror
             </div>
             <div class="other">
-                <button class="btn submits frgt-pass" ><a href="{{ route('viewRegister') }}">Đăng kí tài khoản</a></button>
+                {{-- <button class="btn submits frgt-pass" ><a href="{{ route('viewRegister') }}">Đăng kí tài khoản</a></button> --}}
                 <button class="btn submits frgt-pass">Quên mật khẩu</button>
             </div>
             <button class="btn submits sign-up">Đăng nhập<i class="fa fa-user-plus" ></i></button>
