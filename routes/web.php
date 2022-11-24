@@ -42,6 +42,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('logout', [UserController::class, 'logout'])->name('logout');
     Route::get('categories/search', [CategoryController::class, 'search'])->name('categories.search');
     Route::get('/search', [ProductController::class, 'search'])->name('product.search');
+
     Route::group(['prefix' => 'categories'], function () {
         Route::get('/', [CategoryController::class, 'index'])->name('category.index');
         Route::get('/create', [CategoryController::class, 'create'])->name('category.create');
@@ -49,6 +50,11 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/edit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
         Route::put('/update/{id}', [CategoryController::class, 'update'])->name('category.update');
         Route::delete('/destroy/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
+
+
+        Route::put('/softdeletes/{id}', [CategoryController::class, 'softdeletes'])->name('category.softdeletes');
+        Route::get('/trash', [CategoryController::class, 'trash'])->name('category.trash');
+        Route::put('/restoredelete/{id}', [CategoryController::class, 'restoredelete'])->name('category.restoredelete');
     });
     Route::group(['prefix' => 'products'], function () {
         Route::get('/', [ProductController::class, 'index'])->name('product.index');

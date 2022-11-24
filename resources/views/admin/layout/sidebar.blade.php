@@ -27,7 +27,8 @@
           </li>
           <li> <a href="{{Route('category.index')}}"><i class="bi bi-arrow-right-short"></i>Thể loại</a>
           </li>
-
+          <li> <a href="{{Route('category.trash')}}"><i class="bi bi-arrow-right-short"></i>Thùng rác</a>
+          </li>
         </ul>
       </li>
       <li>

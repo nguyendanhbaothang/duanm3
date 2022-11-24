@@ -123,9 +123,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        Category::find($id)->delete();
-        // return redirect('category');
-        return redirect()->route('category.index');
+        $category=Category::onlyTrashed()->findOrFail($id);
+        
+        $category->forceDelete();
     }
     public function search(Request $request)
     {
@@ -137,4 +137,42 @@ class CategoryController extends Controller
 
         return view('admin.category.index', compact('categories'));
     }
+
+
+
+
+    public  function softdeletes($id){
+
+        date_default_timezone_set("Asia/Ho_Chi_Minh");
+        $category = Category::findOrFail($id);
+        $category->deleted_at = date("Y-m-d h:i:s");
+        $notification = [
+            'message' => 'Đã chuyển vào kho lưu!',
+            'alert-type' => 'success'
+        ];
+        $category->save();
+        return redirect()->route('category.index')->with($notification);
+
+    }
+
+    public  function trash(){
+        $categories = Category::onlyTrashed()->get();
+        $param = ['categories'    => $categories];
+        return view('admin.category.trash', $param);
+    }
+
+    public function restoredelete($id){
+        $categories=Category::withTrashed()->where('id', $id);
+        $categories->restore();
+        $notification = [
+                'message' => 'Khôi phục thành công!',
+                 'alert-type' => 'success'
+            ];
+        return redirect()->route('category.trash')->with($notification);;
+
+
+    }
+
+
+
 }

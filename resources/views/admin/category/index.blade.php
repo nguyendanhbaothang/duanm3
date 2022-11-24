@@ -37,11 +37,11 @@
                             <td>{{ $team->name }}</td>
 
                             <td>
-                                <form action="{{ route('category.destroy', [$team->id]) }}" method="post">
-                                    @method('DELETE')
+                                <form  action="{{ route('category.softdeletes', $team->id) }}" method="POST">
+                                    @method('PUT')
                                     @csrf
-                                    <button onclick="return confirm('Bạn có chắc chắn xóa không?');"
-                                        class="btn btn-danger">Xóa</button>
+                                     <button type="submit" class="btn btn-danger"
+                                    onclick="return confirm('Chuyên vào thùng rác')">Xóa</button>
                                     <a href="{{ route('category.edit', [$team->id]) }}" class="btn btn-primary">Sửa</a>
                                 </form>
                             </td>
