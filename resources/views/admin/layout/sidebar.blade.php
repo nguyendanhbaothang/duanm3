@@ -43,6 +43,33 @@
           </li>
         </ul>
       </li>
+      <li>
+        <a href="javascript:;" class="has-arrow">
+          <div class="parent-icon"><i class="bi bi-grid"></i>
+          </div>
+          <div class="menu-title">Khách hàng</div>
+        </a>
+        <ul>
+          <li> <a href="{{ Route('customer.index') }}"><i class="bi bi-arrow-right-short"></i>Khách hàng</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="javascript:;" class="has-arrow">
+          <div class="parent-icon"><i class="bi bi-grid"></i>
+          </div>
+          <div class="menu-title">Đơn hàng</div>
+        </a>
+        <ul>
+          <li> <a href="{{ Route('order.index') }}"><i class="bi bi-arrow-right-short"></i>Đơn hàng</a>
+          </li>
+        </ul>
+        <ul>
+            {{-- <li> <a href="{{ Route('order.detail') }}"><i class="bi bi-arrow-right-short"></i>Chi tiết đơn hàng</a> --}}
+            </li>
+          </ul>
+      </li>
+
 
     </ul>
  </aside>

@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserController;
@@ -26,10 +28,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('master', function () {
     return view('master');
 });
+// đáng nhập admin
 Route::get('/login', [UserController::class, 'viewLogin'])->name('login');
 Route::post('handdle-login', [UserController::class, 'login'])->name('handdle-login');
 // Route::get('/register', [UserController::class, 'viewRegister'])->name('viewRegister');
-Route::post('handdle-register', [UserController::class, 'register'])->name('handdle-register');
+// Route::post('handdle-register', [UserController::class, 'register'])->name('handdle-register');
+
+
+//admin
 Route::middleware(['auth'])->group(function () {
 
     Route::get('page', function () {return view('dasboar');})->name('dasboar');
@@ -55,13 +61,14 @@ Route::middleware(['auth'])->group(function () {
     });
 
 });
+//đăng nhập shop
 Route::get('/viewlogin', [ShopController::class, 'viewlogin'])->name('viewlogin');
 Route::post('/checklogin', [ShopController::class, 'checklogin'])->name('shop.checklogin');
 Route::get('/register', [ShopController::class, 'register'])->name('shop.register');
 Route::post('/checkregister', [ShopController::class, 'checkregister'])->name('shop.checkregister');
 
 
-
+//shop
 Route::get('/mastershop', [ShopController::class, 'index'])->name('shop');
 Route::get('/showsanpham/{id}', [ShopController::class, 'show'])->name('showsanpham');
 Route::get('/cart', [ShopController::class, 'cart'])->name('shop.cart');
@@ -72,3 +79,17 @@ Route::get('/checkOuts', [ShopController::class, 'checkOuts'])->name('checkOuts'
 Route::post('/order', [ShopController::class, 'order'])->name('order');
 Route::post('/shoplogout', [ShopController::class, 'logout'])->name('shoplogout');
 
+
+
+//khách hàng
+Route::prefix('customer')->group(function () {
+    Route::get('/', [CustomerController::class, 'index'])->name('customer.index');
+});
+
+
+//đơn hàng
+
+Route::prefix('order')->group(function () {
+    Route::get('/', [OrderController::class, 'index'])->name('order.index');
+    Route::get('/detail/{id}', [OrderController::class, 'detail'])->name('order.detail');
+});

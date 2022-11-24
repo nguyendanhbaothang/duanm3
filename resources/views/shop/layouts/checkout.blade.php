@@ -1,108 +1,5 @@
-{{--
-    <div class="page-wrapper">
-        <div class="checkout shopping">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="block billing-details">
-                            <h4 class="widget-title">Thông Tin Cơ Bản</h4>
-                            <form class="checkout-form" method="POST"  >
-                                @csrf
-                                @if (isset(
-        Auth()->guard('customers')->user()->name,
-    ))
-                                    <div class="form-group">
-                                        <label for="full_name">Họ Và Tên</label>
-                                        <input name="name" type="text" class="form-control"
-                                            value="{{ Auth()->guard('customers')->user()->name }}" id="full_name"
-                                            placeholder="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="user_address">Địa Chỉ Giao Hàng</label>
-                                        <input name="address" type="text" class="form-control"
-                                            value="{{ Auth()->guard('customers')->user()->address }}" id="user_address"
-                                            placeholder="">
-                                    </div>
-                                    <div class="checkout-country-code clearfix">
-                                        <div class="form-group">
-                                            <label for="user_post_code">Số điện thoại</label>
-                                            <input name="phone" type="text" class="form-control"
-                                                value="{{ Auth()->guard('customers')->user()->phone }}" id="user_post_code">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="user_city">Email</label>
-                                            <input type="text" class="form-control" name="email"
-                                                value="{{ Auth()->guard('customers')->user()->email }}" id="user_city">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="user_country">Ghi chú*</label>
-                                        <input type="text" class="form-control" id="user_country" name="note">
-                                    </div>
-
-                                        <a href="{{ route('checkOuts') }}" class="btn btn-main pull-right">Checkout</a>
-                                      <button type="submit" class="btn btn-main mt-20">Đặt Hàng</button>
-                                @else
-                                <h4>Vui lòng đăng nhập trước khi thanh toán nhé</h4>
-                                <a href="{{ route('viewlogin') }}" class="btn btn-main">Đăng Nhập</a>
-                                @endif
-
-                        </div>
-                    </div>
-
-                    @php $totalAll = 0 @endphp
-
-                    <div class="block">
-                        <h4 class="widget-title">Tóm Tắt</h4>
-                        <div class="media product-card">
-                            <div class="media-body">
-                                @if (session('cart'))
-                                    @foreach (session('cart') as $id => $details)
-                                        @php
-                                            $total = $details['price'] * $details['amount'];
-                                            $totalAll += $total;
-                                        @endphp
-                                            <input type="hidden" value="{{ $id }}"
-                                            name="product_id[]">{{ $details['nameVi'] ?? '' }} x
-                                            <input type="hidden" value="{{ $details['amount'] }}"
-                                            name="amount[]">{{ $details['amount'] ?? '' }}
-                                        <p class="price">Số Lượng: {{ $details['amount'] }}</p>
-                                        <p class="">Giá: {{ number_format($details['price']) }}</p>
-                                        <td><input type="hidden" value="{{ $total }}"
-                                            name="total[]">{{ number_format($total) }}.vnd</td>
-                                    @endforeach
-                                @endif
-                                <hr>
-                                <tr>
-                                    <td>Tổng tiền</td>
-                                    <td><input type="hidden" name="totalAll"
-                                            value="{{ $totalAll }}">{{ number_format($totalAll) }}.vnd</td>
-                                </tr>
-                            </div>
-                        </div>
-                        <div class="discount-code">
-
-                        </form>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div> --}}
-
-
-
-
-
 <!DOCTYPE html>
-<!--[if IE 9 ]> <html lang="vi" prefix="og: https://ogp.me/ns#" class="ie9 loading-site no-js"> <![endif]-->
-<!--[if IE 8 ]> <html lang="vi" prefix="og: https://ogp.me/ns#" class="ie8 loading-site no-js"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="vi" prefix="og: https://ogp.me/ns#" class="loading-site no-js">
-<!--<![endif]-->
-
 <head>
     <meta charset="UTF-8" />
     <script>
@@ -111,7 +8,6 @@
         })(document.documentElement);
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <!-- Search Engine Optimization by Rank Math - https://s.rankmath.com/home -->
     <title>Cart</title>
     <meta name="robots" content="noindex, follow" />
     <meta property="og:locale" content="vi_VN" />
@@ -1635,7 +1531,10 @@
                                                                                     class="form-control"
                                                                                     id="user_country" name="note">
                                                                             </div>
-                                                                            {{-- <a href="{{ route('checkOuts') }}" class="btn btn-main pull-right">Checkout</a> --}}
+                                                                            {{-- <div class="form-group">
+                                                                                <label for="user_country">Ghi chú*</label>
+                                                                                <input type="text" class="form-control" id="user_country" name="note">
+                                                                            </div> --}}
                                                                             <button type="submit"
                                                                                 class="btn btn-main mt-20">Đặt
                                                                                 Hàng</button>
@@ -1968,25 +1867,25 @@
                     </div>
                 </li>
                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-37365"><a
-                        href="https://sneakerholicvietnam.vn/">HOME</a></li>
+                        href="">HOME</a></li>
                 <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-37366"><a
-                        href="https://sneakerholicvietnam.vn/product-category/giay/">GIÀY</a></li>
+                        href="">GIÀY</a></li>
                 <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-37360"><a
-                        href="https://sneakerholicvietnam.vn/product-category/dep/">DÉP</a></li>
+                        href="">DÉP</a></li>
                 <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-37358"><a
-                        href="https://sneakerholicvietnam.vn/product-category/accessories/">PHỤ KIỆN</a></li>
+                        href="">PHỤ KIỆN</a></li>
                 <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-39602"><a
-                        href="https://sneakerholicvietnam.vn/product-category/clothing/">ÁO QUẦN</a></li>
+                        href="">ÁO QUẦN</a></li>
                 <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-37361"><a
-                        href="https://sneakerholicvietnam.vn/product-category/kinh/">KÍNH</a></li>
+                        href="">KÍNH</a></li>
                 <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-37362"><a
-                        href="https://sneakerholicvietnam.vn/product-category/outlet/">OUTLET</a></li>
+                        href="">OUTLET</a></li>
                 <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-37359"><a
-                        href="https://sneakerholicvietnam.vn/product-category/crep-protect/">SNEAKERS CLEANER</a></li>
+                        href="">SNEAKERS CLEANER</a></li>
                 <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-62027"><a
-                        href="https://sneakerholicvietnam.vn/product-category/used/">USED</a></li>
+                        href="">USED</a></li>
                 <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-45670"><a
-                        href="https://sneakerholicvietnam.vn/thong-tin-ve-chuong-trinh-ky-gui-san-pham/">KÝ GỬI</a>
+                        href="">KÝ GỬI</a>
                 </li>
                 <li class="html header-social-icons ml-0">
                     <div class="social-icons follow-icons"><a href="http://url" target="_blank"
@@ -2811,7 +2710,6 @@
             },
             "is_mini_cart_reveal": "1"
         };
-        /* ]]> */
     </script>
     <script type='text/javascript'
         src='https://sneakerholicvietnam.vn/wp-content/themes/flatsome/assets/js/flatsome.js?ver=2138faedd39ec708526d158d5a3d53d7'
@@ -2828,7 +2726,6 @@
                 "days": "days"
             }
         };
-        /* ]]> */
     </script>
     <script type='text/javascript' id='isb-scripts-js' data-type="lazy" data-src="https://sneakerholicvietnam.vn/wp-content/plugins/improved-sale-badges/assets/js/scripts.js?ver=4.4.1"></script>
     <script type='text/javascript'
@@ -2840,16 +2737,6 @@
     <script type='text/javascript'
         src='https://sneakerholicvietnam.vn/wp-content/themes/flatsome/assets/js/woocommerce.js?ver=2114c593f5a803e4039d07c9e6fef8b6'
         id='flatsome-theme-woocommerce-js-js'></script>
-    <!--[if IE]>
-<script type='text/javascript'
-    src='https://cdn.jsdelivr.net/npm/intersection-observer-polyfill@0.1.0/dist/IntersectionObserver.js?ver=0.1.0'
-    id='intersection-observer-polyfill-js'></script>
-<![endif]-->
-    <!--[if IE]>
-<script type='text/javascript'
-    src='https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.0.1/ie11CustomProperties.min.js?ver=4.0.1'
-    id='css-vars-polyfill-js'></script>
-<![endif]-->
     <script type="text/javascript" id="flying-scripts">
         const loadScriptsTimer = setTimeout(loadScripts, 5 * 1000);
         const userInteractionEvents = ["mouseover", "keydown", "touchstart", "touchmove", "wheel"];
@@ -3107,9 +2994,5 @@
 
         </ul>
     </div>
-
 </body>
-
 </html>
-
-<!-- Performance optimized by Redis Object Cache. Learn more: https://wprediscache.com -->

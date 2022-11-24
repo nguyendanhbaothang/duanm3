@@ -1,3 +1,6 @@
+@extends('master')
+@section('content')
+<main class="page-content">
 <section class="wrapper">
     <div class="panel-panel-default">
         <div class="market-updates">
@@ -39,3 +42,5 @@
         </div>
     </div>
 </section>
+</main>
+@endsection
