@@ -60,6 +60,8 @@ Route::post('/checklogin', [ShopController::class, 'checklogin'])->name('shop.ch
 Route::get('/register', [ShopController::class, 'register'])->name('shop.register');
 Route::post('/checkregister', [ShopController::class, 'checkregister'])->name('shop.checkregister');
 
+
+
 Route::get('/mastershop', [ShopController::class, 'index'])->name('shop');
 Route::get('/showsanpham/{id}', [ShopController::class, 'show'])->name('showsanpham');
 Route::get('/cart', [ShopController::class, 'cart'])->name('shop.cart');
@@ -68,3 +70,5 @@ Route::delete('/remove-from-cart/{id}', [ShopController::class, 'remove'])->name
 Route::patch('/update-cart', [ShopController::class, 'update'])->name('update.cart');
 Route::get('/checkOuts', [ShopController::class, 'checkOuts'])->name('checkOuts');
 Route::post('/order', [ShopController::class, 'order'])->name('order');
+Route::post('/shoplogout', [ShopController::class, 'logout'])->name('shoplogout');
+

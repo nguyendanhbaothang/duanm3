@@ -1327,24 +1327,28 @@
                             <ul class="header-nav header-nav-main nav nav-right  nav-uppercase">
                                 <li class="account-item has-icon">
                                     <div class="header-button">
-                                        <a href="https://sneakerholicvietnam.vn/my-account/"
-                                            class="nav-top-link nav-top-not-logged-in icon button circle is-outline is-small">
-                                            <i class="icon-user"></i>
-                                        </a>
+                                        @if (isset(Auth()->guard('customers')->user()->name))
+                                            {{ Auth()->guard('customers')->user()->name }}
+                                            <a href="{{ route('viewlogin') }}" title="Đăng nhập"
+                                                class="header-cart-link icon button circle is-outline is-small">
+                                                Đăng Xuất
+                                            </a>
+                                        @else
+                                            <a href="{{ route('viewlogin') }}" title="Đăng nhập"
+                                                class="header-cart-link icon button circle is-outline is-small">
+                                                Đăng nhập
+                                            </a>
+                                        @endif
 
                                     </div>
 
                                 </li>
                                 <li class="header-divider"></li>
-                                <li class="cart-item has-icon">
+                                <li class="cart-item has-icon has-dropdown">
                                     <div class="header-button">
-                                        <a href="https://sneakerholicvietnam.vn/cart-2/" title="Giỏ hàng"
+                                        <a href="{{ route('shop.cart') }}" title="Giỏ hàng"
                                             class="header-cart-link icon button circle is-outline is-small">
-
-
-
-                                            <i class="icon-shopping-bag" data-icon-label="1">
-                                            </i>
+                                            Giỏ hàng
                                         </a>
                                     </div>
 
@@ -1375,6 +1379,9 @@
                                 </li>
                             </ul>
                         </div>
+
+
+
 
                     </div>
 
@@ -1478,13 +1485,14 @@
         </header>
 
 
-        <!-- <div class="bo-loc-mobile">
-   </div>  -->
-
 
         <main id="main" class="">
 
+            @php $totalAll = 0 @endphp
 
+            <form class="checkout-form" method="POST"
+                        action="{{ route('order') }}">
+                        @csrf
             <div id="content" class="content-area page-wrapper" role="main">
                 <div class="row row-main">
                     <div class="large-12 col">
@@ -1498,8 +1506,7 @@
                                     <div class="col large-7 pb-0 cart-auto-refresh">
 
 
-                                        <form class="woocommerce-cart-form"
-                                            action="https://sneakerholicvietnam.vn/cart-2/" method="post">
+
                                             <div class="cart-wrapper sm-touch-scroll">
 
 
@@ -1510,7 +1517,7 @@
 
                                                         <tr class="woocommerce-cart-form__cart-item cart_item">
 
-                                                            @php $totalAll = 0 @endphp
+
 
                                                             <div class="block">
                                                                 <h4 class="widget-title">Tóm Tắt</h4>
@@ -1534,8 +1541,8 @@
                                                                                 <p class="">Giá:
                                                                                     {{ number_format($details['price']) }}
                                                                                 </p>
-                                                                                {{-- <td><input type="hidden" value="{{ $total }}"
-                                                                                    name="total[]">{{ number_format($total) }}.vnd</td> --}}
+                                                                                <td><input type="hidden" value="{{ $total }}"
+                                                                                    name="total[]"></td>
                                                                             @endforeach
                                                                         @endif
                                                                         <hr>
@@ -1549,626 +1556,113 @@
                                     </div>
                                     <div class="discount-code">
 
-                                        </form>
-
                                     </div>
                                 </div>
                                 </tr>
-
-
                                 <tr>
                                     <td colspan="6" class="actions clear">
-
-
                                         <div class="continue-shopping pull-left text-left">
                                             <a class="button-continue-shopping button primary is-outline"
                                                 href="{{ route('shop') }}">
                                                 &#8592;&nbsp;Tiếp tục xem sản phẩm </a>
                                         </div>
-
-                                        {{-- <button type="submit"
-                                                                    class="button primary mt-0 pull-left small"
-                                                                    name="update_cart" value="Cập nhật giỏ hàng">Cập nhật giỏ hàng</button>
-
-                                                                <input type="hidden" id="woocommerce-cart-nonce"
-                                                                    name="woocommerce-cart-nonce"
-                                                                    value="a713365931" /><input type="hidden"
-                                                                    name="_wp_http_referer" value="/cart-2/" /> --}}
                                     </td>
                                 </tr>
 
                                 </tbody>
                                 </table>
                             </div>
-                            </form>
                         </div>
-
-
                         <div class="cart-collaterals large-5 col pb-0">
                             <div class="is-sticky-column">
                                 <div class="is-sticky-column__inner">
                                     <div class="cart-sidebar col-inner">
                                         <div class="cart_totals">
-
-                                            {{-- <table cellspacing="0">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th class="product-name" colspan="2">Cộng giỏ hàng</th>
-                                                                </tr>
-                                                            </thead>
-                                                        </table> --}}
-
-                                            {{-- <h2>Cộng giỏ hàng</h2>
-
-                                                        <table cellspacing="0"
-                                                            class="shop_table shop_table_responsive">
-
-                                                            <tr class="cart-subtotal">
-                                                                <th>Tạm tính</th>
-                                                                <td data-title="Tạm tính"><span
-                                                                        class="woocommerce-Price-amount amount"><bdi>700.000<span
-                                                                                class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
-                                                                </td>
-                                                            </tr> --}}
-
-
-
-
-                                            {{-- <tr class="woocommerce-shipping-totals shipping">
-                                                                <td class="shipping__inner" colspan="2">
-                                                                    <table
-                                                                        class="shipping__table shipping__table--multiple">
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <th colspan="2">Giao hàng</th>
-                                                                                <td data-title="Giao hàng">
-                                                                                    <ul id="shipping_method"
-                                                                                        class="shipping__list woocommerce-shipping-methods">
-                                                                                        <li
-                                                                                            class="shipping__list_item">
-                                                                                            <input type="radio"
-                                                                                                name="shipping_method[0]"
-                                                                                                data-index="0"
-                                                                                                id="shipping_method_0_local_pickup1"
-                                                                                                value="local_pickup:1"
-                                                                                                class="shipping_method"
-                                                                                                checked='checked' /><label
-                                                                                                class="shipping__list_label"
-                                                                                                for="shipping_method_0_local_pickup1">Nhận
-                                                                                                tại cửa hàng: 425/16
-                                                                                                Nguyễn Đình Chiểu P5,
-                                                                                                Q3</label>
-                                                                                        </li> --}}
-                                            {{-- <li
-                                                                                            class="shipping__list_item">
-                                                                                            <input type="radio"
-                                                                                                name="shipping_method[0]"
-                                                                                                data-index="0"
-                                                                                                id="shipping_method_0_flat_rate2"
-                                                                                                value="flat_rate:2"
-                                                                                                class="shipping_method" /><label
-                                                                                                class="shipping__list_label"
-                                                                                                for="shipping_method_0_flat_rate2">Ship
-                                                                                                tận nơi: Phí ship sẽ
-                                                                                                được xác nhận qua điện
-                                                                                                thoại từ nhân
-                                                                                                viên</label>
-                                                                                        </li> --}}
-                                            {{-- </ul> --}}
-
-
-
-                                            {{-- <form
-                                                                                        class="woocommerce-shipping-calculator"
-                                                                                        action="https://sneakerholicvietnam.vn/cart-2/"
-                                                                                        method="post">
-
-                                                                                        <a href="#"
-                                                                                            class="shipping-calculator-button">Tính
-                                                                                            phí giao hàng</a>
-                                                                                        <section
-                                                                                            class="shipping-calculator-form"
-                                                                                            style="display:none;">
-
-                                                                                            <p class="form-row form-row-wide"
-                                                                                                id="calc_shipping_country_field">
-                                                                                                <label
-                                                                                                    for="calc_shipping_country"
-                                                                                                    class="screen-reader-text">Country
-                                                                                                    / region:</label>
-                                                                                                <select
-                                                                                                    name="calc_shipping_country"
-                                                                                                    id="calc_shipping_country"
-                                                                                                    class="country_to_state country_select"
-                                                                                                    rel="calc_shipping_state">
-                                                                                                    <option
-                                                                                                        value="default">
-                                                                                                        Chọn Quốc
-                                                                                                        gia/Khu
-                                                                                                        vực&hellip;
-                                                                                                    </option>
-                                                                                                    <option
-                                                                                                        value="VN"
-                                                                                                        selected='selected'>
-                                                                                                        Việt Nam
-                                                                                                    </option>
-                                                                                                </select>
-                                                                                            </p>
-
-                                                                                            <p class="form-row form-row-wide"
-                                                                                                id="calc_shipping_state_field">
-                                                                                                <span>
-                                                                                                    <label
-                                                                                                        for="calc_shipping_state"
-                                                                                                        class="screen-reader-text">State/County:</label>
-                                                                                                    <select
-                                                                                                        name="calc_shipping_state"
-                                                                                                        class="state_select"
-                                                                                                        id="calc_shipping_state"
-                                                                                                        data-placeholder="Tỉnh">
-                                                                                                        <option
-                                                                                                            value="">
-                                                                                                            Chọn một tùy
-                                                                                                            chọn&hellip;
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="HANOI">
-                                                                                                            Hà Nội
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="HOCHIMINH">
-                                                                                                            Hồ Chí Minh
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="ANGIANG">
-                                                                                                            An Giang
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="BACGIANG">
-                                                                                                            Bắc Giang
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="BACKAN">
-                                                                                                            Bắc Kạn
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="BACLIEU">
-                                                                                                            Bạc Liêu
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="BACNINH">
-                                                                                                            Bắc Ninh
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="BARIAVUNGTAU">
-                                                                                                            Bà Rịa -
-                                                                                                            Vũng Tàu
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="BENTRE">
-                                                                                                            Bến Tre
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="BINHDINH">
-                                                                                                            Bình Định
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="BINHDUONG">
-                                                                                                            Bình Dương
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="BINHPHUOC">
-                                                                                                            Bình Phước
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="BINHTHUAN">
-                                                                                                            Bình Thuận
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="CAMAU">
-                                                                                                            Cà Mau
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="CANTHO">
-                                                                                                            Cần Thơ
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="CAOBANG">
-                                                                                                            Cao Bằng
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="DAKLAK">
-                                                                                                            Đắk Lắk
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="DAKNONG">
-                                                                                                            Đắk Nông
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="DANANG">
-                                                                                                            Đà Nẵng
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="DIENBIEN">
-                                                                                                            Điện Biên
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="DONGNAI">
-                                                                                                            Đồng Nai
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="DONGTHAP">
-                                                                                                            Đồng Tháp
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="GIALAI">
-                                                                                                            Gia Lai
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="HAGIANG">
-                                                                                                            Hà Giang
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="HAIDUONG">
-                                                                                                            Hải Dương
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="HAIPHONG">
-                                                                                                            Hải Phòng
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="HANAM">
-                                                                                                            Hà Nam
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="HATINH">
-                                                                                                            Hà Tĩnh
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="HAUGIANG">
-                                                                                                            Hậu Giang
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="HOABINH">
-                                                                                                            Hòa Bình
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="HUNGYEN">
-                                                                                                            Hưng Yên
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="KHANHHOA">
-                                                                                                            Khánh Hòa
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="KIENGIANG">
-                                                                                                            Kiên Giang
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="KONTUM">
-                                                                                                            Kon Tum
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="LAICHAU">
-                                                                                                            Lai Châu
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="LAMDONG">
-                                                                                                            Lâm Đồng
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="LANGSON">
-                                                                                                            Lạng Sơn
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="LAOCAI">
-                                                                                                            Lào Cai
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="LONGAN">
-                                                                                                            Long An
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="NAMDINH">
-                                                                                                            Nam Định
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="NGHEAN">
-                                                                                                            Nghệ An
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="NINHBINH">
-                                                                                                            Ninh Bình
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="NINHTHUAN">
-                                                                                                            Ninh Thuận
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="PHUTHO">
-                                                                                                            Phú Thọ
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="PHUYEN">
-                                                                                                            Phú Yên
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="QUANGBINH">
-                                                                                                            Quảng Bình
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="QUANGNAM">
-                                                                                                            Quảng Nam
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="QUANGNGAI">
-                                                                                                            Quảng Ngãi
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="QUANGNINH">
-                                                                                                            Quảng Ninh
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="QUANGTRI">
-                                                                                                            Quảng Trị
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="SOCTRANG">
-                                                                                                            Sóc Trăng
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="SONLA">
-                                                                                                            Sơn La
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="TAYNINH">
-                                                                                                            Tây Ninh
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="THAIBINH">
-                                                                                                            Thái Bình
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="THAINGUYEN">
-                                                                                                            Thái Nguyên
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="THANHHOA">
-                                                                                                            Thanh Hóa
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="THUATHIENHUE">
-                                                                                                            Thừa Thiên
-                                                                                                            Huế</option>
-                                                                                                        <option
-                                                                                                            value="TIENGIANG">
-                                                                                                            Tiền Giang
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="TRAVINH">
-                                                                                                            Trà Vinh --}}
-                                            {{-- </option>
-                                                                                                        <option
-                                                                                                            value="TUYENQUANG">
-                                                                                                            Tuyên Quang
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="VINHLONG">
-                                                                                                            Vĩnh Long
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="VINHPHUC">
-                                                                                                            Vĩnh Phúc
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="YENBAI">
-                                                                                                            Yên Bái
-                                                                                                        </option>
-                                                                                                    </select>
-                                                                                                </span>
-                                                                                            </p> --}}
-
-                                            {{-- <p class="form-row form-row-wide"
-                                                                                                id="calc_shipping_city_field">
-                                                                                                <label
-                                                                                                    for="calc_shipping_city"
-                                                                                                    class="screen-reader-text">City:</label>
-                                                                                                <input type="text"
-                                                                                                    class="input-text"
-                                                                                                    value=""
-                                                                                                    placeholder="Thành phố"
-                                                                                                    name="calc_shipping_city"
-                                                                                                    id="calc_shipping_city" />
-                                                                                            </p>
-
-
-                                                                                            <p><button type="submit"
-                                                                                                    name="calc_shipping"
-                                                                                                    value="1"
-                                                                                                    class="button wp-element-button">Cập
-                                                                                                    nhật</button></p>
-                                                                                            <input type="hidden"
-                                                                                                id="woocommerce-shipping-calculator-nonce"
-                                                                                                name="woocommerce-shipping-calculator-nonce"
-                                                                                                value="41cb2c6493" /><input
-                                                                                                type="hidden"
-                                                                                                name="_wp_http_referer"
-                                                                                                value="/cart-2/" />
-                                                                                        </section>
-                                                                                    </form>
-
-                                                                                </td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                </td>
-                                                            </tr> --}}
-
-
-
-
-                                            {{--
-
-                                                            <tr class="order-total">
-                                                                <th>Tổng</th>
-                                                                <td data-title="Tổng"><strong><span
-                                                                            class="woocommerce-Price-amount amount"><bdi>700.000<span
-                                                                                    class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></strong>
-                                                                </td>
-                                                            </tr> --}}
-
-
-                                            {{-- </table> --}}
-
-                                            {{-- <div class="wc-proceed-to-checkout">
-
-                                                            <a href="https://sneakerholicvietnam.vn/checkout/"
-                                                                class="checkout-button button alt wc-forward wp-element-button">
-                                                                Tiến hành thanh toán</a>
-                                                        </div> --}}
-
-
                                         </div>
-                                        <form class="checkout_coupon mb-0" method="post">
-                                            <div class="coupon">
-                                                {{-- <input type="text" name="coupon_code"
-                                                                class="input-text" id="coupon_code" value=""
-                                                                placeholder="" /> <input type="submit"
-                                                                class="is-form expand" name="apply_coupon"
-                                                                value="Áp dụng" /> --}}
+                                        <div class="coupon">
+                                            <div class="page-wrapper">
+                                                <div class="checkout shopping">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-md-8">
+                                                                <div class="block billing-details">
+                                                                    <h4 class="widget-title">Thông Tin Cơ Bản</h4>
 
-                                                <div class="page-wrapper">
-                                                    <div class="checkout shopping">
-                                                        <div class="container">
-                                                            <div class="row">
-                                                                <div class="col-md-8">
-                                                                    <div class="block billing-details">
-                                                                        <h4 class="widget-title">Thông Tin Cơ Bản</h4>
-                                                                        <form class="checkout-form" method="POST"
-                                                                            action="{{ route('order') }}">
-                                                                            @csrf
-                                                                            @if (isset(Auth()->guard('customers')->user()->name))
+
+
+                                                                        @if (isset(Auth()->guard('customers')->user()->name))
+                                                                            <div class="form-group">
+                                                                                <label for="full_name">Họ Và
+                                                                                    Tên</label>
+                                                                                <input name="name" type="text"
+                                                                                    class="form-control"
+                                                                                    value="{{ Auth()->guard('customers')->user()->name }}"
+                                                                                    id="full_name" placeholder="">
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="user_address">Địa Chỉ
+                                                                                    Giao Hàng</label>
+                                                                                <input name="address" type="text"
+                                                                                    class="form-control"
+                                                                                    value="{{ Auth()->guard('customers')->user()->address }}"
+                                                                                    id="user_address" placeholder="">
+                                                                            </div>
+                                                                            <div
+                                                                                class="checkout-country-code clearfix">
                                                                                 <div class="form-group">
-                                                                                    <label for="full_name">Họ Và
-                                                                                        Tên</label>
-                                                                                    <input name="name"
+                                                                                    <label for="user_post_code">Số
+                                                                                        điện thoại</label>
+                                                                                    <input name="phone"
                                                                                         type="text"
                                                                                         class="form-control"
-                                                                                        value="{{ Auth()->guard('customers')->user()->name }}"
-                                                                                        id="full_name" placeholder="">
+                                                                                        value="{{ Auth()->guard('customers')->user()->phone }}"
+                                                                                        id="user_post_code">
                                                                                 </div>
                                                                                 <div class="form-group">
-                                                                                    <label for="user_address">Địa Chỉ
-                                                                                        Giao Hàng</label>
-                                                                                    <input name="address"
-                                                                                        type="text"
-                                                                                        class="form-control"
-                                                                                        value="{{ Auth()->guard('customers')->user()->address }}"
-                                                                                        id="user_address"
-                                                                                        placeholder="">
-                                                                                </div>
-                                                                                <div
-                                                                                    class="checkout-country-code clearfix">
-                                                                                    <div class="form-group">
-                                                                                        <label for="user_post_code">Số
-                                                                                            điện thoại</label>
-                                                                                        <input name="phone"
-                                                                                            type="text"
-                                                                                            class="form-control"
-                                                                                            value="{{ Auth()->guard('customers')->user()->phone }}"
-                                                                                            id="user_post_code">
-                                                                                    </div>
-                                                                                    <div class="form-group">
-                                                                                        <label
-                                                                                            for="user_city">Email</label>
-                                                                                        <input type="text"
-                                                                                            class="form-control"
-                                                                                            name="email"
-                                                                                            value="{{ Auth()->guard('customers')->user()->email }}"
-                                                                                            id="user_city">
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="form-group">
-                                                                                    <label for="user_country">Ghi
-                                                                                        chú*</label>
+                                                                                    <label
+                                                                                        for="user_city">Email</label>
                                                                                     <input type="text"
                                                                                         class="form-control"
-                                                                                        id="user_country"
-                                                                                        name="note">
+                                                                                        name="email"
+                                                                                        value="{{ Auth()->guard('customers')->user()->email }}"
+                                                                                        id="user_city">
                                                                                 </div>
-
-                                                                                {{-- <a href="{{ route('checkOuts') }}" class="btn btn-main pull-right">Checkout</a> --}}
-                                                                                <button type="submit"
-                                                                                    class="btn btn-main mt-20">Đặt
-                                                                                    Hàng</button>
-                                                                            @else
-                                                                                <h4>Vui lòng đăng nhập trước khi thanh
-                                                                                    toán nhé</h4>
-                                                                                <a href="{{ route('shop.viewlogin') }}"
-                                                                                    class="btn btn-main">Đăng Nhập</a>
-                                                                            @endif
-
-                                                                    </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="user_country">Ghi
+                                                                                    chú*</label>
+                                                                                <input type="text"
+                                                                                    class="form-control"
+                                                                                    id="user_country" name="note">
+                                                                            </div>
+                                                                            {{-- <a href="{{ route('checkOuts') }}" class="btn btn-main pull-right">Checkout</a> --}}
+                                                                            <button type="submit"
+                                                                                class="btn btn-main mt-20">Đặt
+                                                                                Hàng</button>
+                                                                        @else
+                                                                            <h4>Vui lòng đăng nhập trước khi thanh toán
+                                                                                nhé</h4>
+                                                                            <a href="{{ route('viewlogin') }}"
+                                                                                class="btn btn-main">Đăng Nhập</a>
+                                                                        @endif
                                                                 </div>
-
-                                                                @php $totalAll = 0 @endphp
-
-                                                                <div class="block">
-                                                                    <h4 class="widget-title">Tóm Tắt</h4>
-                                                                    <div class="media product-card">
-                                                                        <div class="media-body">
-                                                                            @if (session('cart'))
-                                                                                @foreach (session('cart') as $id => $details)
-                                                                                    @php
-                                                                                        $total = $details['price'] * $details['amount'];
-                                                                                        $totalAll += $total;
-                                                                                    @endphp
-                                                                                    <input type="hidden"
-                                                                                        value="{{ $id }}"
-                                                                                        name="product_id[]">{{ $details['nameVi'] ?? '' }}
-                                                                                    x
-                                                                                    <input type="hidden"
-                                                                                        value="{{ $details['amount'] }}"
-                                                                                        name="amount[]">{{ $details['amount'] ?? '' }}
-                                                                                    <p class="price">Số Lượng:
-                                                                                        {{ $details['amount'] }}</p>
-                                                                                    <p class="">Giá:
-                                                                                        {{ number_format($details['price']) }}
-                                                                                    </p>
-                                                                                    <td><input type="hidden"
-                                                                                            value="{{ $total }}"
-                                                                                            name="total[]">{{ number_format($total) }}.vnd
-                                                                                    </td>
-                                                                                @endforeach
-                                                                            @endif
-                                                                            <hr>
-                                                                            <tr>
-                                                                                <td>Tổng tiền</td>
-                                                                                <td><input type="hidden"
-                                                                                        name="totalAll"
-                                                                                        value="{{ $totalAll }}">{{ number_format($totalAll) }}.vnd
-                                                                                </td>
-                                                                            </tr>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="discount-code">
-
-                                        </form>
-
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="discount-code">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="cart-sidebar-content relative"></div>
                         </div>
+
                     </div>
                 </div>
             </div>
-            </form>
-            <div class="cart-sidebar-content relative"></div>
-    </div>
-
-    </div>
-    </div>
-    </div>
     </div>
 
     <div class="cart-footer-content after-cart-content relative"></div>
@@ -2180,7 +1674,7 @@
     </div>
     </div>
 
-
+</form>
     </main>
 
     <footer id="footer" class="footer-wrapper">

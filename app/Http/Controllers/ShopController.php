@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Customer;
+use App\Models\Order;
+use App\Models\OrderDetail;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ShopController extends Controller
 {
@@ -207,4 +210,42 @@ class ShopController extends Controller
             return redirect()->route('viewlogin');
         }
     }
+
+
+    public function order(Request $request)
+    {
+
+            $id = Auth::guard('customers')->user()->id;
+            $data = Customer::find($id);
+            $data->address = $request->address;
+            $data->email = $request->email;
+            $data->phone = $request->phone;
+            $data->address = $request->address;
+            $data->save();
+
+            $order = new Order();
+            $order->customer_id = Auth::guard('customers')->user()->id;
+            $order->date_at = date('Y-m-d H:i:s');
+            $order->total = $request->totalAll;
+            $order->save();
+
+                $count_product = count($request->product_id);
+                for ($i = 0; $i < $count_product; $i++) {
+                    $orderItem = new OrderDetail();
+                    $orderItem->order_id =  $order->id;
+                    $orderItem->product_id = $request->product_id[$i];
+                    $orderItem->quantity = $request->amount[$i];
+                    $orderItem->total = $request->total[$i];
+                    $orderItem->save();
+                    session()->forget('cart');
+                    DB::table('products')
+                        ->where('id', '=', $orderItem->product_id)
+                        ->decrement('amount', $orderItem->quantity);
+                }
+
+                return redirect()->route('shop');
+    }
+
+
+
 }

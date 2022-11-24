@@ -18,7 +18,7 @@ class UserController extends Controller
   public function login(Request $request){
     $validated = $request->validate([
         'email' => 'required',
-        'password'=>'required|min:8',
+        'password'=>'required|min:6',
     ],
         [
             'email.required'=>'Không được để trống',
