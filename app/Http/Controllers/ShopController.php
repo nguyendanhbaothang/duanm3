@@ -96,20 +96,23 @@ class ShopController extends Controller
         ];
         return view('shop.layouts.cart', $param);
     }
-    public function store($id)
+    public function store( $id)
     {
 
         $product = Product::findOrFail($id);
         $cart = session()->get('cart', []);
         if (isset($cart[$id])) {
             $cart[$id]['amount']++;
+            // dd( $cart[$id]['amount']);
+            // dd(1230);
+
         } else {
             $cart[$id] = [
                 "nameVi" => $product->name,
-                "amount" => $product->amount,
+                "amount" => 1,
                 "price" => $product->price,
                 'image' => $product->image,
-
+                'max' => $product->amount,
             ];
         }
 
@@ -246,6 +249,15 @@ class ShopController extends Controller
                 return redirect()->route('shop');
     }
 
+    public function logout(Request $request)
+    {
+        Auth::logout();
 
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect()->route('shop');
+    }
 
 }

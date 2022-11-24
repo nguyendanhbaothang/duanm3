@@ -137,19 +137,4 @@ class CategoryController extends Controller
 
         return view('admin.category.index', compact('categories'));
     }
-
-
-
-    public function logout(Request $request)
-    {
-        Auth::logout();
-
-        $request->session()->invalidate();
-
-        $request->session()->regenerateToken();
-
-        return redirect()->route('shop');
-    }
-
-
 }

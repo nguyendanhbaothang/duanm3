@@ -1209,39 +1209,38 @@
                         <!-- Right Elements -->
                         <div class="flex-col hide-for-medium flex-right">
                             <ul class="header-nav header-nav-main nav nav-right  nav-uppercase">
-                                <li class="account-item has-icon">
                                     <div class="header-button">
+
                                         @if (isset(Auth()->guard('customers')->user()->name))
-                                        {{Auth()->guard('customers')->user()->name}}
-                                        <a href="{{route('viewlogin')}}" title="Đăng nhập"
-                                            class="header-cart-link icon button circle is-outline is-small">
-                                            Đăng Xuất
-                                        </a>
-                                        @else
-                                        <a href="{{route('viewlogin')}}" title="Đăng nhập"
-                                            class="header-cart-link icon button circle is-outline is-small">
-                                            Đăng nhập
-                                        </a>
-                                        @endif
+                                        {{ Auth()->guard('customers')->user()->name }}
+                                        <form method="POST" action="{{ route('shoplogout') }}">
+                                                @csrf
+                                        <a href="#"onclick="event.preventDefault();
+                                                this.closest('form').submit();"
+                                            class="header-cart-link icon button circle is-outline is-small">Đăng xuất</a>
+                                        </form>
+                            @else
+                                <a href="{{ route('viewlogin') }}" title="Đăng nhập"
+                                    class="header-cart-link icon button circle is-outline is-small">
+                                    Đăng nhập
+                                </a>
+                            @endif
 
-                                    </div>
-
-                                </li>
-                                <li class="header-divider"></li>
-                                <li class="cart-item has-icon has-dropdown">
-                                    <div class="header-button">
-                                        <a href="{{route('shop.cart')}}" title="Giỏ hàng"
-                                            class="header-cart-link icon button circle is-outline is-small">
-
-
-
-                                           Giỏ hàng
-                                        </a>
-                                    </div>
-
-                                </li>
-                            </ul>
                         </div>
+
+                        </li>
+                        <li class="header-divider"></li>
+                        <li class="cart-item has-icon has-dropdown">
+                            <div class="header-button">
+                                <a href="{{ route('shop.cart') }}" title="Giỏ hàng"
+                                    class="header-cart-link icon button circle is-outline is-small">
+                                    Giỏ hàng
+                                </a>
+                            </div>
+
+                        </ul>
+                    </div>
+
 
                         <!-- Mobile Right Elements -->
                         <div class="flex-col show-for-medium flex-right">
@@ -1631,8 +1630,7 @@
                                                 <div class="quantity buttons_added form-flat">
                                                     <input type="button" value="-"
                                                         class="minus button is-form"> <label
-                                                        class="screen-reader-text" for="quantity_637674e6bbc12">MLB
-                                                        Big Ball Chunky Monogram - White/Black số lượng</label>
+                                                        class="screen-reader-text" for="quantity_637674e6bbc12"></label>
                                                     <input type="number" id="quantity_637674e6bbc12"
                                                         class="input-text qty text" step="1" min="1"
                                                         max="" name="quantity" value="1" title="SL"
