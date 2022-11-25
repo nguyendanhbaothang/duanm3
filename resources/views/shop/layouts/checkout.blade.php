@@ -1310,39 +1310,39 @@
                                 </li>
                                 <li id="menu-item-39602"
                                     class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-39602 menu-item-design-default">
-                                    <a href="https://sneakerholicvietnam.vn/product-category/clothing/"
+                                    <a href=""
                                         class="nav-top-link">ÁO QUẦN</a>
                                 </li>
                                 <li id="menu-item-37361"
                                     class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-37361 menu-item-design-default">
-                                    <a href="https://sneakerholicvietnam.vn/product-category/kinh/"
+                                    <a href=""
                                         class="nav-top-link">KÍNH</a>
                                 </li>
                                 <li id="menu-item-37362"
                                     class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-37362 menu-item-design-default">
-                                    <a href="https://sneakerholicvietnam.vn/product-category/outlet/"
+                                    <a href=""
                                         class="nav-top-link">OUTLET</a>
                                 </li>
                                 <li id="menu-item-37359"
                                     class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-37359 menu-item-design-default">
-                                    <a href="https://sneakerholicvietnam.vn/product-category/crep-protect/"
+                                    <a href=""
                                         class="nav-top-link">SNEAKERS CLEANER</a>
                                 </li>
                                 <li id="menu-item-62027"
                                     class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-62027 menu-item-design-default">
-                                    <a href="https://sneakerholicvietnam.vn/product-category/used/"
+                                    <a href=""
                                         class="nav-top-link">USED</a>
                                 </li>
                                 <li id="menu-item-45670"
                                     class="menu-item menu-item-type-post_type menu-item-object-post menu-item-45670 menu-item-design-default">
-                                    <a href="https://sneakerholicvietnam.vn/thong-tin-ve-chuong-trinh-ky-gui-san-pham/"
+                                    <a href=""
                                         class="nav-top-link">KÝ GỬI</a>
                                 </li>
                                 <li class="header-search-form search-form html relative has-icon">
                                     <div class="header-search-form-wrapper">
                                         <div class="searchform-wrapper ux-search-box relative form-flat is-normal">
                                             <form role="search" method="get" class="searchform"
-                                                action="https://sneakerholicvietnam.vn/">
+                                                action="">
                                                 <div class="flex-row relative">
                                                     <div class="flex-col flex-grow">
                                                         <label class="screen-reader-text"
@@ -1844,7 +1844,7 @@
                     <div class="header-search-form-wrapper">
                         <div class="searchform-wrapper ux-search-box relative form-flat is-normal">
                             <form role="search" method="get" class="searchform"
-                                action="https://sneakerholicvietnam.vn/">
+                                action="">
                                 <div class="flex-row relative">
                                     <div class="flex-col flex-grow">
                                         <label class="screen-reader-text" for="woocommerce-product-search-field-2">Tìm

@@ -99,8 +99,6 @@
             <a class="btn btn-primary px-4" href="{{ route('product.index') }}" class="w3-button w3-red">Quay Lại</a>
         </div>
          </form>
-
-
         </div>
         </div>
        </div>

@@ -269,6 +269,7 @@ if($customer){
         $data = [
             'name' => $customer->name,
             'pass' => $pass,
+            'email' =>$customer->email,
         ];
         Mail::send('shop.emails.password', compact('data'), function ($email) use($customer){
             $email->subject('Shop giày');

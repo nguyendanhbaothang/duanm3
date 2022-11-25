@@ -70,9 +70,9 @@
                                 'Deleted!',
                                 'Tệp của bạn đã bị xóa!',
                                 'success',
-                                // window.location.reload(true);
                             )
                             $('.item-' + id).remove();
+                        window.location.reload();
                         },
                     });
                     Swal.fire({

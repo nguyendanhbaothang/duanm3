@@ -207,8 +207,8 @@ class ProductController extends Controller
 
     public function destroy($id)
     {
-        $category=Product::onlyTrashed()->findOrFail($id);
-        $category->forceDelete();
+        $products=Product::onlyTrashed()->findOrFail($id);
+        $products->forceDelete();
 
     }
     public  function trash(){
