@@ -8,8 +8,7 @@
                     <main id="main" class="main">
                         <div class="pagetitle">
                             <h1>Chi tiết đơn hàng</h1>
-                            {{-- <a class="w3-button w3-red" href="{{ route('dasboar') }}">Trang chủ</a>
-                            <a class="w3-button w3-blue" href="{{ route('order.index') }}">Đơn hàng</a> --}}
+                            <a class="btn btn-primary" href="{{ route('order.index') }}">Đơn hàng</a>
                         </div>
                         <table class="table table-bordered">
                             <thead>

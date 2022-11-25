@@ -1,13 +1,13 @@
 @extends('master')
 @section('content')
 <main class="page-content">
+    <a   class="btn btn-warning" href="{{route('xuat')}}">Xuất</a>
 <section class="wrapper">
     <div class="panel-panel-default">
         <div class="market-updates">
             <div class="container">
 <main id="main" class="main">
     <div class="pagetitle">
-        {{-- <a href="{{ route('dasboar') }}" class="w3-button w3-red">Trang chủ</a> --}}
       <h1>Đơn hàng</h1>
       <hr>
     </div>
@@ -35,7 +35,7 @@
             <td>{{$item->date_at}}</td>
             <td>{{number_format($item->total)}}</td>
             <td>
-                <a  class='w3-button w3-blue' href="{{route('order.detail',$item->id)}}">Chi tiết</a>
+                <a  class="btn btn-info" href="{{route('order.detail',$item->id)}}">Chi tiết</a>
             </td>
           </tr>
           @endforeach

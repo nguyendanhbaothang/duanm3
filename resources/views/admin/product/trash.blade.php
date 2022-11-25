@@ -9,20 +9,6 @@
 
             <table class="table">
                 <div class="col-6">
-                    <form class="navbar-form navbar-left" action="{{route('product.search')}}" method="GET">
-                        @csrf
-                        <div class="row">
-                            <div class="col-8">
-                                <div class="form-group">
-                                    <input type="text" name="search" class="form-control" placeholder="Search">
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <button type="submit" class="btn btn-default">Tìm kiếm</button>
-                            </div>
-                        </div>
-                    </form>
-                    </form>
                 </div>
                 <thead>
                     <tr>
@@ -84,7 +70,6 @@
             </table>
             <div class="col-6">
                 <div class="pagination float-right">
-                    {{ $products->appends(request()->query()) }}
                 </div>
             </div>
 

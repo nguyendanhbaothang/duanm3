@@ -7,7 +7,6 @@
             <div class="container">
                 <main id="main" class="main">
                     <div class="pagetitle">
-                        <a class="w3-button w3-red" href="{{ route('dasboar') }}">Trang chủ</a>
                         <hr>
                         <h1>Danh Sách Khách hàng</h1>
                         <hr>

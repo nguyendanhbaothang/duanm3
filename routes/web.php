@@ -1,5 +1,6 @@
 <?php
 
+use App\Exports\OrderExport;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\OrderController;
@@ -36,7 +37,7 @@ Route::post('handdle-login', [UserController::class, 'login'])->name('handdle-lo
 
 
 //admin
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth','revalidate'])->group(function () {
 
     Route::get('page', function () {return view('dasboar');})->name('dasboar');
     Route::post('logout', [UserController::class, 'logout'])->name('logout');
@@ -64,6 +65,11 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
         Route::put('/update/{id}', [ProductController::class, 'update'])->name('product.update');
         Route::delete('destroy/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
+
+
+        Route::put('/softdeletes/{id}', [ProductController::class, 'softdeletes'])->name('product.softdeletes');
+        Route::get('/trash', [ProductController::class, 'trash'])->name('product.trash');
+        // Route::put('/restoredelete/{id}', [ProductController::class, 'restoredelete'])->name('product.restoredelete');
     });
 
 });
@@ -99,3 +105,6 @@ Route::prefix('order')->group(function () {
     Route::get('/', [OrderController::class, 'index'])->name('order.index');
     Route::get('/detail/{id}', [OrderController::class, 'detail'])->name('order.detail');
 });
+
+
+Route::get('/xuat',[OrderExport::class,'exportOrder'])->name('xuat');

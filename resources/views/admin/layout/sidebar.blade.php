@@ -42,6 +42,8 @@
           </li>
           <li> <a href="{{Route('product.index')}}"><i class="bi bi-arrow-right-short"></i>Sản phẩm</a>
           </li>
+          <li> <a href="{{Route('product.trash')}}"><i class="bi bi-arrow-right-short"></i>Thùng rác</a>
+          </li>
         </ul>
       </li>
       <li>

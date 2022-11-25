@@ -147,6 +147,7 @@
                 </ul>
             </div>
 
+
             <!-- Mobile Right Elements -->
             <div class="flex-col show-for-medium flex-right">
                 <ul class="mobile-nav nav nav-right">
@@ -206,7 +207,7 @@
                     class="nav header-nav header-bottom-nav nav-center  nav-line-bottom nav-size-medium nav-spacing-xlarge">
                     <li id="menu-item-37365"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-31259 current_page_item menu-item-37365 active menu-item-design-default">
-                        <a href="" aria-current="page" class="nav-top-link">HOME</a>
+                        <a href="{{ route('shop') }}" aria-current="page" class="nav-top-link">HOME</a>
                     </li>
                     <li id="menu-item-37366"
                         class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-37366 menu-item-design-default">

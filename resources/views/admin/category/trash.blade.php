@@ -6,22 +6,7 @@
 
         <div class="container">
             <table class="table">
-                {{-- <div class="col-6">
-                    <form class="navbar-form navbar-left" action="{{route('categories.search')}}" method="GET">
-                        @csrf
-                        <div class="row">
-                            <div class="col-8">
-                                <div class="form-group">
-                                    <input type="text" name="search" class="form-control" placeholder="Search">
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <button type="submit" class="btn btn-default">Tìm kiếm</button>
-                            </div>
-                        </div>
-                    </form>
-                    </form>
-                </div> --}}
+
                 <thead>
                     <tr>
                         <th scope="col">Số thứ tự</th>
@@ -42,18 +27,14 @@
                                             @method('put')
 
                                                 <button type="submit" class="btn btn-success">Khôi Phục</button>
-
-                                                <button   data-href="{{ route('category.destroy', $team->id) }}"
-                                            id="{{ $team->id }}" class="btn btn-danger deleteIcon">Xóa</button>
+                                                <a  data-href="{{ route('category.destroy', $team->id) }}"
+                                                    id="{{ $team->id }}" class="btn btn-danger deleteIcon">Xóa</a>
                                         </form>
                             </td>
                         </tr>
                     @endforeach
-
-
                 </tbody>
             </table>
-            {{-- {{ $categories->appends(request()->query()) }} --}}
         </div>
     </main>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
@@ -89,7 +70,7 @@
                                 'Deleted!',
                                 'Tệp của bạn đã bị xóa!',
                                 'success',
-                                window.location.reload(true);
+                                // window.location.reload(true);
                             )
                             $('.item-' + id).remove();
                         },

@@ -16,9 +16,10 @@ class ProductController extends Controller
     public function index()
     {
         $products =Product::paginate(5);
-        $categories = Category::all();
+        // dd($products);
+        // $categories = Category::all();
         $param = [
-            'categories' => $categories,
+            // 'categories' => $categories,
             'products' => $products,
         ];
 
@@ -193,9 +194,8 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        $product = Product::find($id);
-        $product->delete();
-        return redirect()->route('product.index');
+        $category=Product::onlyTrashed()->findOrFail($id);
+        $category->forceDelete();
 
     }
     public function search(Request $request)
@@ -207,5 +207,37 @@ class ProductController extends Controller
         $products = Product::where('name', 'LIKE', '%' . $search . '%')->paginate(5);
 
         return view('admin.product.index', compact('products'));
+    }
+
+
+
+
+
+    public  function trash(){
+        $products = Product::onlyTrashed()->get();
+        $param = ['products'    => $products];
+        return view('admin.product.trash', $param);
+    }
+
+    public  function softdeletes($id){
+        date_default_timezone_set("Asia/Ho_Chi_Minh");
+        $product = Product::findOrFail($id);
+        $product->deleted_at = date("Y-m-d h:i:s");
+        $notification = [
+            'message' => 'Đã chuyển vào kho lưu!',
+            'alert-type' => 'success'
+        ];
+        $product->save();
+        return redirect()->route('product.index')->with($notification);
+    }
+
+    public function restoredelete($id){
+        $product=Product::withTrashed()->where('id', $id);
+        $product->restore();
+        $notification = [
+                'message' => 'Khôi phục thành công!',
+                 'alert-type' => 'success'
+            ];
+        return redirect()->route('product.trash')->with($notification);;
     }
 }

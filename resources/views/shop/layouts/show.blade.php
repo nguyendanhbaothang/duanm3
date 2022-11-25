@@ -1563,20 +1563,20 @@
 
 
                                         <span class="posted_in">Danh mục: <a
-                                                href="https://sneakerholicvietnam.vn/product-category/giay/"
+                                                href=""
                                                 rel="tag">Giày</a>, <a
-                                                href="https://sneakerholicvietnam.vn/product-category/men/"
+                                                href=""
                                                 rel="tag">Men</a>, <a
-                                                href="https://sneakerholicvietnam.vn/product-category/women/"
+                                                href=""
                                                 rel="tag">Women</a></span>
                                         <span class="tagged_as">Từ khóa: <a
-                                                href="https://sneakerholicvietnam.vn/product-tag/mlb/"
+                                                href=""
                                                 rel="tag">MLB</a>, <a
-                                                href="https://sneakerholicvietnam.vn/product-tag/mlb-big-ball/"
+                                                href=""
                                                 rel="tag">MLB Big Ball</a>, <a
-                                                href="https://sneakerholicvietnam.vn/product-tag/mlb-chinh-hang/"
+                                                href=""
                                                 rel="tag">MLB chinh hang</a>, <a
-                                                href="https://sneakerholicvietnam.vn/product-tag/mlb-han-quoc/"
+                                                href=""
                                                 rel="tag">mlb han quoc</a></span>
 
                                     </div>
@@ -2606,7 +2606,7 @@
                     </div>
                 </li>
                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-37365"><a
-                        href="">HOME</a></li>
+                        href="{{ route('shop') }}">HOME</a></li>
                 <li
                     class="menu-item menu-item-type-taxonomy menu-item-object-product_cat current-product-ancestor current-menu-parent current-product-parent menu-item-37366">
                     <a href="">GIÀY</a>
