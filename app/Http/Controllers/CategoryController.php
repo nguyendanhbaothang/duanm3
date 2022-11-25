@@ -121,12 +121,7 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        $category=Category::onlyTrashed()->findOrFail($id);
-        
-        $category->forceDelete();
-    }
+
     public function search(Request $request)
     {
         $search = $request->input('search');
@@ -137,10 +132,12 @@ class CategoryController extends Controller
 
         return view('admin.category.index', compact('categories'));
     }
+    public function destroy($id)
+    {
+        $category=Category::onlyTrashed()->findOrFail($id);
 
-
-
-
+        $category->forceDelete();
+    }
     public  function softdeletes($id){
 
         date_default_timezone_set("Asia/Ho_Chi_Minh");
@@ -152,9 +149,7 @@ class CategoryController extends Controller
         ];
         $category->save();
         return redirect()->route('category.index')->with($notification);
-
     }
-
     public  function trash(){
         $categories = Category::onlyTrashed()->get();
         $param = ['categories'    => $categories];
@@ -172,6 +167,7 @@ class CategoryController extends Controller
 
 
     }
+    
 
 
 

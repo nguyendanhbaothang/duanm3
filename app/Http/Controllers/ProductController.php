@@ -192,12 +192,7 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        $category=Product::onlyTrashed()->findOrFail($id);
-        $category->forceDelete();
 
-    }
     public function search(Request $request)
     {
         $search = $request->input('search');
@@ -210,9 +205,12 @@ class ProductController extends Controller
     }
 
 
+    public function destroy($id)
+    {
+        $category=Product::onlyTrashed()->findOrFail($id);
+        $category->forceDelete();
 
-
-
+    }
     public  function trash(){
         $products = Product::onlyTrashed()->get();
         $param = ['products'    => $products];

@@ -56,14 +56,14 @@
                             <td>
                                 <form action="{{ route('product.softdeletes', $team->id) }}" method="POST">
 
-                                    <a class="w3-button w3-white" href="{{ route('product.show', $team->id) }}">Xem</a>
+                                    <a class="btn btn-info" href="{{ route('product.show', $team->id) }}">Xem</a>
 
                                     <a href="{{ route('product.edit', $team->id) }}"
-                                        class="w3-button w3-blue">Sửa</a>
+                                        class="btn btn-primary">Sửa</a>
 
                                     @csrf
                                     @method('PUT')
-                                    <button type="submit" class="w3-button w3-red"
+                                    <button type="submit" class="btn btn-danger"
                                         onclick="return confirm('Chuyên vào thùng rác')">Xóa</button>
                                         <p class="text-success">
                                         <div > <i class="fa fa-check"
@@ -71,8 +71,8 @@
                                           </div>
                                         </p>
                                         <p class="text-danger">
-                                        <div class="alert alert-danger"> <i
-                                                class="bi bi-x-circle"aria-hidden="true"></i>
+                                        <div > <i
+                                                aria-hidden="true"></i>
                                         </p>
                                 </form>
                             </td>

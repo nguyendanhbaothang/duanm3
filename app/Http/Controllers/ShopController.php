@@ -10,7 +10,8 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 class ShopController extends Controller
 {
     /**
@@ -259,5 +260,25 @@ class ShopController extends Controller
 
         return redirect()->route('shop');
     }
+    public function quenmatkhau(Request $request){
+        $customer = Customer::where('email',$request->email)->first();
+if($customer){
+    $pass = Str::random(6);
+    $customer->password = bcrypt($pass);
+    $customer->save();
+        $data = [
+            'name' => $customer->name,
+            'pass' => $pass,
+        ];
+        Mail::send('shop.emails.password', compact('data'), function ($email) use($customer){
+            $email->subject('Shop giày');
+            $email->to($customer->email, $customer->name);
+        });
+    }
+    return redirect()->route('viewlogin');
+}
+public function viewquenmatkhau(){
+    return view('shop.layouts.quenmatkhau');
+}
 
 }

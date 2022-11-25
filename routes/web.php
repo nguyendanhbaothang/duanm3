@@ -50,9 +50,9 @@ Route::middleware(['auth','revalidate'])->group(function () {
         Route::post('/store', [CategoryController::class, 'store'])->name('category.store');
         Route::get('/edit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
         Route::put('/update/{id}', [CategoryController::class, 'update'])->name('category.update');
+
+
         Route::delete('/destroy/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
-
-
         Route::put('/softdeletes/{id}', [CategoryController::class, 'softdeletes'])->name('category.softdeletes');
         Route::get('/trash', [CategoryController::class, 'trash'])->name('category.trash');
         Route::put('/restoredelete/{id}', [CategoryController::class, 'restoredelete'])->name('category.restoredelete');
@@ -64,12 +64,12 @@ Route::middleware(['auth','revalidate'])->group(function () {
         Route::get('/show/{id}', [ProductController::class, 'show'])->name('product.show');
         Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
         Route::put('/update/{id}', [ProductController::class, 'update'])->name('product.update');
+
+
         Route::delete('destroy/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
-
-
         Route::put('/softdeletes/{id}', [ProductController::class, 'softdeletes'])->name('product.softdeletes');
         Route::get('/trash', [ProductController::class, 'trash'])->name('product.trash');
-        // Route::put('/restoredelete/{id}', [ProductController::class, 'restoredelete'])->name('product.restoredelete');
+        Route::put('/restoredelete/{id}', [ProductController::class, 'restoredelete'])->name('product.restoredelete');
     });
 
 });
@@ -108,3 +108,9 @@ Route::prefix('order')->group(function () {
 
 
 Route::get('/xuat',[OrderExport::class,'exportOrder'])->name('xuat');
+
+
+//email
+
+Route::post('/email',[ShopController::class,'quenmatkhau'])->name('quenmatkhau');
+Route::get('/form',[ShopController::class,'viewquenmatkhau'])->name('view.quenmatkhau');
