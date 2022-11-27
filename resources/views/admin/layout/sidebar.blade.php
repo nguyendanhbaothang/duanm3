@@ -68,11 +68,33 @@
           </li>
         </ul>
         <ul>
-            {{-- <li> <a href="{{ Route('order.detail') }}"><i class="bi bi-arrow-right-short"></i>Chi tiết đơn hàng</a> --}}
-            </li>
           </ul>
       </li>
-
-
+      <li>
+        <a href="javascript:;" class="has-arrow">
+          <div class="parent-icon"><i class="bi bi-award"></i>
+          </div>
+          <div class="menu-title">Quản lí nhân sự</div>
+        </a>
+        <ul>
+          <li> <a href="{{route('user.admin')}}"><i class="bi bi-arrow-right-short"></i>Admin</a>
+          </li>
+          <li> <a href="{{route('user.index')}}"><i class="bi bi-arrow-right-short"></i>Nhân sự</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="javascript:;" class="has-arrow">
+          <div class="parent-icon"><i class="bi bi-award"></i>
+          </div>
+          <div class="menu-title">Quản lí chức vụ</div>
+        </a>
+        <ul>
+          <li> <a href="{{route('group.index')}}"><i class="bi bi-arrow-right-short"></i>Danh sách</a>
+          </li>
+          <li> <a href="{{route('group.create')}}"><i class="bi bi-arrow-right-short"></i>Tạo chức vụ</a>
+          </li>
+        </ul>
+      </li>
     </ul>
  </aside>

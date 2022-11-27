@@ -13,6 +13,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        $this->authorize('viewAny', Category::class);
         $categories = Category::paginate(5);
         $param = [
             'categories'=> $categories
@@ -27,6 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', Category::class);
             return view('admin.category.add');
     }
     /**
@@ -69,6 +71,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
+        $this->authorize('update', Category::class);
         $categories = Category::find($id);
         return view('admin.category.edit', compact('categories'));
     }
@@ -113,10 +116,12 @@ class CategoryController extends Controller
     }
     public function destroy($id)
     {
+        $this->authorize('forceDelete', Category::class);
         $category=Category::onlyTrashed()->findOrFail($id);
         $category->forceDelete();
     }
     public  function softdeletes($id){
+        $this->authorize('delete', Category::class);
         date_default_timezone_set("Asia/Ho_Chi_Minh");
         $category = Category::findOrFail($id);
         $category->deleted_at = date("Y-m-d h:i:s");
@@ -128,11 +133,13 @@ class CategoryController extends Controller
         return redirect()->route('category.index')->with($notification);
     }
     public  function trash(){
+        $this->authorize('viewtrash', Category::class);
         $categories = Category::onlyTrashed()->get();
         $param = ['categories'    => $categories];
         return view('admin.category.trash', $param);
     }
     public function restoredelete($id){
+        $this->authorize('restore',Category::class);
         $categories=Category::withTrashed()->where('id', $id);
         $categories->restore();
         $notification = [
