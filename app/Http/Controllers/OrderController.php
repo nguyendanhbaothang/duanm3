@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\OrderExport;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 
 class OrderController extends Controller
 {
@@ -16,7 +18,7 @@ class OrderController extends Controller
     }
     public function detail($id)
     {
-        // $this->authorize('view', Order::class);
+        $this->authorize('view', Order::class);
         $items=DB::table('orderdetail')
         ->join('orders','orderdetail.order_id','=','orders.id')
         ->join('products','orderdetail.product_id','=','products.id')
@@ -89,5 +91,9 @@ class OrderController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function exportOrder(){
+        return Excel::download(new OrderExport, 'order.xlsx');
     }
 }

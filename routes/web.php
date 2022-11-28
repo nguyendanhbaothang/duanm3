@@ -85,7 +85,7 @@ Route::prefix('order')->group(function () {
     Route::get('/detail/{id}', [OrderController::class, 'detail'])->name('order.detail');
 });
 //xuất exports
-Route::get('/xuat', [OrderExport::class, 'exportOrder'])->name('xuat');
+Route::get('/xuat', [OrderController::class, 'exportOrder'])->name('xuat');
 //gửi email
 Route::post('/email', [ShopController::class, 'quenmatkhau'])->name('quenmatkhau');
 Route::get('/form', [ShopController::class, 'viewquenmatkhau'])->name('view.quenmatkhau');
@@ -112,7 +112,6 @@ Route::get('/form', [ShopController::class, 'viewquenmatkhau'])->name('view.quen
     Route::get('/edit/{id}', [UserController::class, 'edit'])->name('user.edit');
     Route::put('/update/{id}', [UserController::class, 'update'])->name('user.update');
     Route::delete('destroy/{id}', [UserController::class, 'destroy'])->name('user.destroy');
-    Route::get('/admin', [UserController::class, 'showAdmin'])->name('user.admin');
     Route::get('/editpass/{id}', [UserController::class, 'editpass'])->name('user.editpass');
     Route::put('/updatepass/{id}', [UserController::class, 'updatepass'])->name('user.updatepass');
     Route::get('/adminpass/{id}', [UserController::class, 'adminpass'])->name('user.adminpass');

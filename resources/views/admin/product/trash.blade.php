@@ -37,10 +37,13 @@
                                 <form action="{{ route('product.restoredelete', $team->id) }}" method="POST">
                                     @csrf
                                     @method('put')
-
+                                    @if (Auth::user()->hasPermission('Product_restore'))
                                         <button type="submit" class="btn btn-success">Khôi Phục</button>
+                                        @endif
+                                        @if (Auth::user()->hasPermission('Product_forceDelete'))
                                         <a  data-href="{{ route('product.destroy', $team->id) }}"
                                             id="{{ $team->id }}" class="btn btn-danger deleteIcon">Xóa</a>
+                                        @endif
                                 </form>
                             </td>
                         </tr>

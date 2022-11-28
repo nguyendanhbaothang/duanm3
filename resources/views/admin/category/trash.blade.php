@@ -25,10 +25,13 @@
                                 <form action="{{ route('category.restoredelete', $team->id) }}" method="POST">
                                             @csrf
                                             @method('put')
-
+                                            @if (Auth::user()->hasPermission('Category_restore'))
                                                 <button type="submit" class="btn btn-success">Khôi Phục</button>
+                                                @endif
+                                                @if (Auth::user()->hasPermission('Category_forceDelete'))
                                                 <a  data-href="{{ route('category.destroy', $team->id) }}"
                                                     id="{{ $team->id }}" class="btn btn-danger deleteIcon">Xóa</a>
+                                                    @endif
                                         </form>
                             </td>
                         </tr>

@@ -40,9 +40,13 @@
                                 <form  action="{{ route('category.softdeletes', $team->id) }}" method="POST">
                                     @method('PUT')
                                     @csrf
+                                    @if (Auth::user()->hasPermission('Category_delete'))
                                      <button type="submit" class="btn btn-danger"
                                     onclick="return confirm('Chuyên vào thùng rác')">Xóa</button>
+                                    @endif
+                                    @if (Auth::user()->hasPermission('Category_update'))
                                     <a href="{{ route('category.edit', [$team->id]) }}" class="btn btn-primary">Sửa</a>
+                                    @endif
                                 </form>
                             </td>
                         </tr>

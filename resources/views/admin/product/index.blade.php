@@ -44,13 +44,19 @@
                             </td>
                             <td>
                                 <form action="{{ route('product.softdeletes', $team->id) }}" method="POST">
+                                    @if (Auth::user()->hasPermission('Product_view'))
                                     <a class="btn btn-info" href="{{ route('product.show', $team->id) }}">Xem</a>
+                                    @endif
+                                    @if (Auth::user()->hasPermission('Product_update'))
                                     <a href="{{ route('product.edit', $team->id) }}"
                                         class="btn btn-primary">Sửa</a>
+                                    @endif
                                     @csrf
                                     @method('PUT')
+                                    @if (Auth::user()->hasPermission('Product_delete'))
                                     <button type="submit" class="btn btn-danger"
                                         onclick="return confirm('Chuyên vào thùng rác')">Xóa</button>
+                                        @endif
                                         <p class="text-success">
                                         <div > <i class="fa fa-check"
                                                 aria-hidden="true"></i>
