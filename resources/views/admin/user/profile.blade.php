@@ -17,7 +17,7 @@
         <div class="table-agile-info">
             <div class="panel-panel-default">
                 <header class="page-title-bar">
-                    <a href="{{ route('dashboard.home') }}" class="w3-button w3-red">Trang chủ</a>
+                   
                     <h1 class="page-title">Thông tin</h1>
                 </header>
                  <!-- Modal -->

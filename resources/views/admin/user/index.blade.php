@@ -17,7 +17,7 @@ border-radius:50%;
             <div class="panel-panel-default">
                     <header class="page-title-bar">
                         <h1 class="page-title">Sản phẩm</h1>
-                        <a href="{{ route('user.create') }}" class="w3-button w3-red">Đăng ký tài khoản user</a>
+                        <a href="{{ route('user.create') }}" class="btn btn-info">Đăng ký tài khoản user</a>
                     </header>
 
                     {{-- <button data-swal-toast-template="#my-template">
@@ -31,7 +31,7 @@ border-radius:50%;
 
                     <hr>
                     <div class="panel-heading">
-                        Nhân sự
+                      <h3> Nhân sự</h3>
                     </div>
                     <div>
                         <table class="table" ui-jq="footable"
@@ -61,7 +61,8 @@ border-radius:50%;
                                 @foreach ($users as $key => $user)
                                     <tr data-expanded="true" class="item-{{ $user->id }}">
                                         <td>{{  ++$key }}</td>
-                                        <td><a href="{{ route('user.show', $user->id) }}"><img id="avt" src="{{ asset('storage/images/' . $user->image) }}" alt=""></a></td>
+                                        {{-- <td><a href="{{ route('user.show', $user->id) }}"><img id="avt" src="{{ asset('storage/images/' . $user->image) }}" alt=""></a></td> --}}
+                                        <td><a href="{{ route('user.show', $user->id) }}"><img id="avt" src="{{asset('public/uploads/product/' . $user->image)}}" alt=""></a></td>
                                         <td><a href="{{ route('user.show', $user->id) }}">{{ $user->name }}</a></td>
                                         <td>{{ $user->phone }}</td>
                                         <td>{{ $user->group->name }}</td>
@@ -79,7 +80,7 @@ border-radius:50%;
                                 @endforeach
                             </tbody>
                         </table>
-                       {{ $users->appends(request()->query()) }}
+                       {{-- {{ $users->appends(request()->query()) }} --}}
                     </div>
                 </div>
             </div>

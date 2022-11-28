@@ -1,6 +1,7 @@
 @extends('master')
 @section('content')
 <main class="page-content">
+    <div class="container">
 
 <h2>Thêm sản phẩm</h2>
 <div class="container">
@@ -101,6 +102,7 @@
         </div>
        </div>
     </div>
+ </div>
  </div>
  </div>
 </main>

@@ -112,12 +112,9 @@ Route::get('/form', [ShopController::class, 'viewquenmatkhau'])->name('view.quen
     Route::get('/edit/{id}', [UserController::class, 'edit'])->name('user.edit');
     Route::put('/update/{id}', [UserController::class, 'update'])->name('user.update');
     Route::delete('destroy/{id}', [UserController::class, 'destroy'])->name('user.destroy');
-
     Route::get('/admin', [UserController::class, 'showAdmin'])->name('user.admin');
-
     Route::get('/editpass/{id}', [UserController::class, 'editpass'])->name('user.editpass');
     Route::put('/updatepass/{id}', [UserController::class, 'updatepass'])->name('user.updatepass');
-
     Route::get('/adminpass/{id}', [UserController::class, 'adminpass'])->name('user.adminpass');
     Route::put('/adminUpdatePass/{id}', [UserController::class, 'adminUpdatePass'])->name('user.adminUpdatePass');
 });

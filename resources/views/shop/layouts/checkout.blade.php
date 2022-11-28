@@ -1093,22 +1093,22 @@
                     <div class="hot-news-slide">
                         <div class="cont-item">
                             <a
-                                href="https://sneakerholicvietnam.vn/chinh-sach-doi-tra-hoan-tien-san-pham-tai-the-sneakerholic/">
+                                href="">
                                 HÀNG 1 TUẦN NHẬN ĐỔI - V SINH/BẢO HÀNH GIÀY 1 NĂM</a>
                         </div>
                         <div class="cont-item">
                             <a
-                                href="https://sneakerholicvietnam.vn/chinh-sach-doi-tra-hoan-tien-san-pham-tai-the-sneakerholic/">
+                                href="">
                                 HỖ TRỢ COD TOÀN QUỐC</a>
                         </div>
                         <div class="cont-item">
                             <a
-                                href="https://sneakerholicvietnam.vn/chinh-sach-doi-tra-hoan-tien-san-pham-tai-the-sneakerholic/">
+                                href="">
                                 FREE SHIPPING CHO ĐƠN HÀNG THANH TOÁN TRƯỚC</a>
                         </div>
                         <div class="cont-item">
                             <a
-                                href="https://sneakerholicvietnam.vn/the-sneakerholic-rewards-dac-quyen-danh-rieng-cho-khach-hang-than-thiet/">
+                                href="">
                                 TÍCH LY HẠN MỨC ƯU ĐÃI CHO KHCH HÀNG THÂN THIẾT</a>
                         </div>
 
@@ -1122,7 +1122,7 @@
                         <div id="logo" class="flex-col logo">
 
                             <!-- Header logo -->
-                            <a href="https://sneakerholicvietnam.vn/" title="Sneakerholic Vietnam - Live Your Passion"
+                            <a href="" title="Sneakerholic Vietnam - Live Your Passion"
                                 rel="home">
                                 <img width="945" height="361"
                                     src="https://sneakerholicvietnam.vn/wp-content/uploads/2018/07/Logo.-SneakerHolic.-Black-04.png"
@@ -1205,7 +1205,7 @@
 
                                                 <li class="">
                                                     <a target="_blank"
-                                                        href="https://beacons.ai/thesneakerholicvietnam"
+                                                        href=""
                                                         class="tooltip tooltipstered">
                                                         <i class="icon-phone" style="font-size:16px;"></i> <span>Liên
                                                             hệ</span>
@@ -1256,7 +1256,7 @@
                         <div class="flex-col show-for-medium flex-right">
                             <ul class="mobile-nav nav nav-right">
                                 <li class="account-item has-icon">
-                                    <div class="header-button"> <a href="https://sneakerholicvietnam.vn/my-account/"
+                                    <div class="header-button"> <a href=""
                                             class="account-link-mobile icon button circle is-outline is-small"
                                             title="Tài khoản">
                                             <i class="icon-user"></i> </a>
@@ -1264,7 +1264,7 @@
                                 </li>
                                 <li class="cart-item has-icon">
 
-                                    <div class="header-button"> <a href="https://sneakerholicvietnam.vn/cart-2/"
+                                    <div class="header-button"> <a href=""
                                             title="Giỏ hàng"
                                             class="header-cart-link icon button circle is-outline is-small">
 
@@ -1606,7 +1606,7 @@
 
                                 <div class="ux-menu-link flex menu-item">
                                     <a class="ux-menu-link__link flex"
-                                        href="https://sneakerholicvietnam.vn/contact-us/">
+                                        href="">
                                         <i class="ux-menu-link__icon text-center icon-angle-right"></i> <span
                                             class="ux-menu-link__text">
                                             425/16 Nguyễn Đình Chiểu, Phường 5, Quận 3, TP. HCM </span>
@@ -1616,7 +1616,7 @@
 
                                 <div class="ux-menu-link flex menu-item">
                                     <a class="ux-menu-link__link flex"
-                                        href="https://sneakerholicvietnam.vn/mail.to:sneakerholicvietnam@gmail.com">
+                                        href="">
                                         <i class="ux-menu-link__icon text-center icon-angle-right"></i> <span
                                             class="ux-menu-link__text">
                                             Email: sneakerholicvietnam@gmail.com </span>
@@ -1626,7 +1626,7 @@
 
                                 <div class="ux-menu-link flex menu-item">
                                     <a class="ux-menu-link__link flex"
-                                        href="https://sneakerholicvietnam.vn/contact-us/">
+                                        href="">
                                         <i class="ux-menu-link__icon text-center icon-angle-right"></i> <span
                                             class="ux-menu-link__text">
                                             Hotline 0705 185 731 </span>
@@ -1654,7 +1654,7 @@
 
                                 <div class="ux-menu-link flex menu-item">
                                     <a class="ux-menu-link__link flex"
-                                        href="https://sneakerholicvietnam.vn/2018/07/16/chinh-sach-doi-tra-hoan-tien-san-pham-tai-the-sneakerholic/">
+                                        href="">
                                         <i class="ux-menu-link__icon text-center icon-angle-right"></i> <span
                                             class="ux-menu-link__text">
                                             Chính sách chung </span>
@@ -1664,7 +1664,7 @@
 
                                 <div class="ux-menu-link flex menu-item">
                                     <a class="ux-menu-link__link flex"
-                                        href="https://sneakerholicvietnam.vn/2018/12/10/the-sneakerholic-rewards-dac-quyen-danh-rieng-cho-khach-hang-than-thiet/">
+                                        href="">
                                         <i class="ux-menu-link__icon text-center icon-angle-right"></i> <span
                                             class="ux-menu-link__text">
                                             Ưu đãi thành viên </span>
@@ -1674,7 +1674,7 @@
 
                                 <div class="ux-menu-link flex menu-item">
                                     <a class="ux-menu-link__link flex"
-                                        href="https://sneakerholicvietnam.vn/tra-cuu-don-hang/">
+                                        href="">
                                         <i class="ux-menu-link__icon text-center icon-angle-right"></i> <span
                                             class="ux-menu-link__text">
                                             Tra cứu đơn hàng </span>
@@ -1701,7 +1701,7 @@
 
 
                                 <div class="ux-menu-link flex menu-item">
-                                    <a class="ux-menu-link__link flex" href="https://sneakerholicvietnam.vn">
+                                    <a class="ux-menu-link__link flex" href="">
                                         <i class="ux-menu-link__icon text-center icon-angle-right"></i> <span
                                             class="ux-menu-link__text">
                                             Tuyển Dụng </span>
@@ -1710,7 +1710,7 @@
 
 
                                 <div class="ux-menu-link flex menu-item">
-                                    <a class="ux-menu-link__link flex" href="https://sneakerholicvietnam.vn">
+                                    <a class="ux-menu-link__link flex" href="">
                                         <i class="ux-menu-link__icon text-center icon-angle-right"></i> <span
                                             class="ux-menu-link__text">
                                             Liên hệ </span>
@@ -1720,7 +1720,7 @@
 
                                 <div class="ux-menu-link flex menu-item">
                                     <a class="ux-menu-link__link flex"
-                                        href="https://sneakerholicvietnam.vn/2018/07/16/the-sneakerholic-live-your-passion">
+                                        href="">
                                         <i class="ux-menu-link__icon text-center icon-angle-right"></i> <span
                                             class="ux-menu-link__text">
                                             Về Sneakerholic </span>
@@ -1770,16 +1770,16 @@
                             </div>
 
                             <div class="social-icons follow-icons full-width text-center"><span>Follow us:</span><a
-                                    href="https://www.facebook.com/sneakerholicvn/" target="_blank"
+                                    href="" target="_blank"
                                     data-label="Facebook" rel="noopener noreferrer nofollow"
                                     class="icon button circle is-outline facebook tooltip" title="Follow on Facebook"
                                     aria-label="Follow on Facebook"><i class="icon-facebook"></i></a><a
-                                    href="https://www.instagram.com/thesneakerholicvn/" target="_blank"
+                                    href="" target="_blank"
                                     rel="noopener noreferrer nofollow" data-label="Instagram"
                                     class="icon button circle is-outline  instagram tooltip"
                                     title="Follow on Instagram" aria-label="Follow on Instagram"><i
                                         class="icon-instagram"></i></a><a
-                                    href="https://www.tiktok.com/@thesneakerholicvn" target="_blank"
+                                    href="" target="_blank"
                                     rel="noopener noreferrer nofollow" data-label="TikTok"
                                     class="icon button circle is-outline tiktok tooltip" title="Follow on TikTok"
                                     aria-label="Follow on TikTok"><i class="icon-tiktok"></i></a></div>

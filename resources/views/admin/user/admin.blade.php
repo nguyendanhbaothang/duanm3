@@ -17,10 +17,9 @@
         <div class="table-agile-info">
             <div class="panel-panel-default">
                 <header class="page-title-bar">
-                    {{-- <a href="{{ route('dashboard.home') }}" class="w3-button w3-red">Trang chủ</a> --}}
+
                     <h1 class="page-title">Thông tin</h1>
                 </header>
-                 <!-- Modal -->
                  <div style="color: red" class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -82,20 +81,9 @@
             "sorting": {
               "enabled": true
             }}'>
-
                         <div class="gallery-grids">
-
-
-
-
-
-
                             <div class="gallery-top-grids">
-
-
-
                                 @foreach ( $admins as $admin )
-
                                 <div class="col-sm-3 com-w3ls">
                                     <section class="panel">
                                         <div class="gallery-grid">
@@ -104,9 +92,10 @@
                                                 href="{{ asset('storage/images/' . $admin->image) }}"
                                                 data-lightbox="example-set"
                                                 data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae cursus ligula">
-                                                <img id="avtshow" src="{{ asset('storage/images/' . $admin->image) }}"
+                                                {{-- <img id="avtshow" src="{{ asset('storage/images/' . $admin->image) }}" --}}
+                                                <img id="avtshow" src="{{asset('public/uploads/product/' . $admin->image)}}"
                                                     alt="" />
-                                                <div class="captn"> 
+                                                <div class="captn">
                                                     <h4>Xem Avt</h4>
                                                 </div>
                                             </a>
@@ -132,13 +121,11 @@
                                 </div>
 
                                 @endforeach
-
-                                    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+                        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
                                         <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-                                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> --}}
+                                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-
-                            </div>
+                </div>
                         </div>
                     </table>
                 </div>
@@ -147,3 +134,17 @@
     </section>
 </main>
 @endsection
+
+
+{{--
+ @extends('master')
+@section('content') --}}
+
+
+
+
+
+
+
+
+{{-- @endsection  --}}
