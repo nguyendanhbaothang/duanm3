@@ -10,6 +10,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 class ShopController extends Controller
@@ -188,6 +189,12 @@ class ShopController extends Controller
         $customer->address = 'Chưa Nhập';
         $customer->email = $request->email;
         $customer->password = bcrypt($request->password);
+        try {
+            $customer->save();
+            return redirect()->route('viewlogin');
+        } catch (\Exception $e) {
+            Log::error("message:".$e->getMessage());
+        }
 
             if ($request->password == $request->confirmpassword) {
                 $customer->save();

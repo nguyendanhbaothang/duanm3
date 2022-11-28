@@ -20,7 +20,6 @@ class UserSeeder extends Seeder
 
 
         $item = new User();
-        $item->id = 1;
         $item->name = "Nguyễn Danh Bảo Thắng";
         $item->email = "thang@gmail.com";
         $item->password = Hash::make('123456');

@@ -14,7 +14,7 @@ class UserController extends Controller
 {
 
     public function index(){
-        // $this->authorize('viewAny', User::class);
+        $this->authorize('viewAny', User::class);
         $users = User::all();
         // $users = User::search()->paginate(4);
         $param = [
@@ -38,7 +38,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        // $this->authorize('create', User::class);
+        $this->authorize('create', User::class);
         $groups = Group::get();
         $param = [
             'groups' => $groups,
@@ -67,7 +67,7 @@ class UserController extends Controller
         if ($request->hasFile('image')) {
             $fileExtension = $file->getClientOriginalName();
             //Lưu file vào thư mục storage/app/public/image với tên mới
-            $request->file('image')->storeAs('public/images', $fileExtension);
+            $request->file('image')->storeAs('public/images/user', $fileExtension);
             // Gán trường image của đối tượng task với tên mới
             $user->image = $fileExtension;
         }
@@ -91,7 +91,7 @@ class UserController extends Controller
 
     public function show($id)
     {
-        // $this->authorize('view', User::class);
+        $this->authorize('view', User::class);
         $user = User::findOrFail($id);
         $param =[
             'user'=>$user,
@@ -104,7 +104,7 @@ class UserController extends Controller
 
     public function edit($id)
     {
-        // $this->authorize('view', User::class);
+        $this->authorize('view', User::class);
         $user = User::find($id);
         $groups=Group::get();
         $param = [
@@ -130,7 +130,7 @@ class UserController extends Controller
         if ($request->hasFile('image')) {
             $fileExtension = $file->getClientOriginalName();
             //Lưu file vào thư mục storage/app/public/image với tên mới
-            $request->file('image')->storeAs('public/images', $fileExtension);
+            $request->file('image')->storeAs('public/images/user', $fileExtension);
             // Gán trường image của đối tượng task với tên mới
             $user->image = $fileExtension;
         }
@@ -144,7 +144,7 @@ class UserController extends Controller
 
     // hiển thị form đổi mật khẩu
     public function editpass($id){
-        // $this->authorize('view', User::class);
+        $this->authorize('view', User::class);
         $user = User::find($id);
         $param =[
             'user'=>$user,
@@ -154,7 +154,7 @@ class UserController extends Controller
 
      // hiển thị form đổi mật khẩu
      public function adminpass($id){
-        // $this->authorize('adminUpdatePass', User::class);
+        $this->authorize('adminUpdatePass', User::class);
         $user = User::find($id);
         $param =[
             'user'=>$user,
@@ -164,7 +164,7 @@ class UserController extends Controller
 
     // chỉ có superAdmin mới có quyền đổi mật khẩu người kh
     public function adminUpdatePass(Request $request, $id){
-        // $this->authorize('adminUpdatePass', User::class);
+        $this->authorize('adminUpdatePass', User::class);
         $user = User::find($id);
         if($request->renewpassword==$request->newpassword)
         {
@@ -225,7 +225,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        // $this->authorize('forceDelete', Product::class);
+        $this->authorize('forceDelete', Product::class);
         $notification = [
             'sainhap' => '!',
         ];

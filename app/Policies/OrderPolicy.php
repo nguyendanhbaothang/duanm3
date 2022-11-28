@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\Category;
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class CategoryPolicy
+class OrderPolicy
 {
     use HandlesAuthorization;
 
@@ -18,7 +18,7 @@ class CategoryPolicy
      */
     public function viewAny(User $user)
     {
-       return $user->hasPermission('Category_viewAny');
+       return $user->hasPermission('Order_viewAny');
        //
     }
 
@@ -26,13 +26,13 @@ class CategoryPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Order  $order
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user)
+    public function view(User $user, Order $order)
     {
-        return $user->hasPermission('Category_view');
-        //
+       return $user->hasPermission('Order_view');
+       //
     }
 
     /**
@@ -44,19 +44,17 @@ class CategoryPolicy
     public function create(User $user)
     {
         //
-        return $user->hasPermission('Category_create');
     }
 
     /**
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Order  $order
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user)
+    public function update(User $user, Order $order)
     {
-        return $user->hasPermission('Category_update');
         //
     }
 
@@ -64,12 +62,11 @@ class CategoryPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Order  $order
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user)
+    public function delete(User $user, Order $order)
     {
-        return $user->hasPermission('Category_delete');
         //
     }
 
@@ -77,31 +74,23 @@ class CategoryPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Order  $order
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user)
+    public function restore(User $user, Order $order)
     {
-       return $user->hasPermission('Category_restore');
-       //
+        //
     }
 
     /**
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Order  $order
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user)
+    public function forceDelete(User $user, Order $order)
     {
-        return $user->hasPermission('Category_forceDelete');
-        //
-    }
-
-    public function viewtrash(User $user)
-    {
-        return $user->hasPermission('Category_viewtrash');
         //
     }
 }

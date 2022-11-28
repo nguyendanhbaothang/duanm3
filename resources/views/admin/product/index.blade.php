@@ -3,7 +3,7 @@
     <main class="page-content">
         <h1>Danh sách sản phẩm</h1>
         <div class="container">
-            @include('sweetalert::alert')
+                @include('sweetalert::alert')
             <table class="table">
                 <div class="col-6">
                     <form class="navbar-form navbar-left" action="{{route('product.search')}}" method="GET">

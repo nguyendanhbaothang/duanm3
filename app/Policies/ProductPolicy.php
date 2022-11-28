@@ -29,7 +29,7 @@ class ProductPolicy
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Product $product)
+    public function view(User $user)
     {
        return $user->hasPermission('Product_view');
        //
@@ -54,7 +54,7 @@ class ProductPolicy
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Product $product)
+    public function update(User $user)
     {
        return $user->hasPermission('Product_update');
        //
@@ -67,7 +67,7 @@ class ProductPolicy
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Product $product)
+    public function delete(User $user)
     {
        return $user->hasPermission('Product_delete');
        //
@@ -80,7 +80,7 @@ class ProductPolicy
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Product $product)
+    public function restore(User $user)
     {
        return $user->hasPermission('Product_restore');
        //
@@ -93,9 +93,14 @@ class ProductPolicy
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Product $product)
+    public function forceDelete(User $user)
     {
        return $user->hasPermission('Product_forceDelete');
        //
+    }
+    public function viewtrash(User $user)
+    {
+        return $user->hasPermission('Category_viewtrash');
+        //
     }
 }

@@ -1031,6 +1031,8 @@
             font-weight: 700;
         }
 
+
+
         @media (max-width:549px) {
             .accordion .accordion-item a {
                 text-align: center;
@@ -1145,7 +1147,7 @@
                                     </tbody>
                                 </table>
                                 @if (session('cart'))
-                                    <a href="{{ route('checkOuts') }}" class="btn btn-main pull-right">Checkout</a>
+                                    <a href="{{ route('checkOuts') }}" class="btn btn-main pull-right"><h3>Checkout</h3></a>
                                 @endif
 
 

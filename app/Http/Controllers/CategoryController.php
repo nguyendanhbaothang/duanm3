@@ -13,7 +13,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        // $this->authorize('viewAny', Category::class);
+        $this->authorize('viewAny', Category::class);
         $categories = Category::paginate(5);
         $param = [
             'categories'=> $categories
@@ -28,7 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        // $this->authorize('create', Category::class);
+        $this->authorize('create', Category::class);
             return view('admin.category.add');
     }
     /**
@@ -71,7 +71,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        // $this->authorize('update', Category::class);
+        $this->authorize('update', Category::class);
         $categories = Category::find($id);
         return view('admin.category.edit', compact('categories'));
     }
@@ -96,7 +96,7 @@ class CategoryController extends Controller
         $categories = Category::find($id);
         $categories->name = $request->name;
         $categories->save();
-        alert()->success('Thêm sản phẩm','thành công');
+        alert()->success('Sửa ','thành công');
         return redirect()->route('category.index');
     }
     /**
@@ -116,36 +116,40 @@ class CategoryController extends Controller
     }
     public function destroy($id)
     {
-        // $this->authorize('forceDelete', Category::class);
+        $this->authorize('forceDelete', Category::class);
         $category=Category::onlyTrashed()->findOrFail($id);
         $category->forceDelete();
     }
     public  function softdeletes($id){
-        // $this->authorize('delete', Category::class);
+        $this->authorize('delete', Category::class);
         date_default_timezone_set("Asia/Ho_Chi_Minh");
         $category = Category::findOrFail($id);
         $category->deleted_at = date("Y-m-d h:i:s");
-        $notification = [
-            'message' => 'Đã chuyển vào kho lưu!',
-            'alert-type' => 'success'
-        ];
+        // $notification = [
+        //     'message' => 'Đã chuyển vào kho lưu!',
+        //     'alert-type' => 'success'
+        // ];
         $category->save();
-        return redirect()->route('category.index')->with($notification);
+        alert()->success('Đã chuyển vào kho lưu trữ','thành công');
+
+        return redirect()->route('category.index');
     }
     public  function trash(){
-        // $this->authorize('viewtrash', Category::class);
+        $this->authorize('viewtrash', Category::class);
         $categories = Category::onlyTrashed()->get();
         $param = ['categories'    => $categories];
         return view('admin.category.trash', $param);
     }
     public function restoredelete($id){
-        // $this->authorize('restore',Category::class);
+        $this->authorize('restore',Category::class);
         $categories=Category::withTrashed()->where('id', $id);
         $categories->restore();
-        $notification = [
-                'message' => 'Khôi phục thành công!',
-                 'alert-type' => 'success'
-            ];
-        return redirect()->route('category.trash')->with($notification);;
+        // $notification = [
+        //         'message' => 'Khôi phục thành công!',
+        //          'alert-type' => 'success'
+        //     ];
+        alert()->success('Khôi phục ','thành công');
+
+        return redirect()->route('category.trash');
     }
 }

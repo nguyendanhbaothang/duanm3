@@ -10,7 +10,7 @@ class OrderController extends Controller
 {
     public function index()
     {
-        // $this->authorize('viewAny', Order::class);
+        $this->authorize('viewAny', Order::class);
         $items=Order::search()->paginate(5);
         return view('admin.order.index',compact('items'));
     }

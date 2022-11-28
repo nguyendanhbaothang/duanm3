@@ -15,7 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        // $this->authorize('viewAny', Product::class);
+        $this->authorize('viewAny', Product::class);
 
         $products =Product::paginate(5);
         // dd($products);
@@ -35,7 +35,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        // $this->authorize('create', Product::class);
+        $this->authorize('create', Product::class);
 
         $categories=Category::get();
         $param = [
@@ -104,7 +104,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        // $this->authorize('view', Product::class);
+        $this->authorize('view', Product::class);
 
         $productshow = Product::findOrFail($id);
         $param =[
@@ -123,7 +123,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        // $this->authorize('update', Product::class);
+        $this->authorize('update', Product::class);
 
         $product = Product::find($id);
         $categories=Category::get();
@@ -189,7 +189,7 @@ class ProductController extends Controller
         $data['product_image']=$new_image;
         }
         $product->save();
-        alert()->success('Thêm sản phẩm','thành công');
+        alert()->success('Sửa ','thành công');
 
         return redirect()->route('product.index');
     }
@@ -215,39 +215,43 @@ class ProductController extends Controller
 
     public function destroy($id)
     {
-        // $this->authorize('forceDelete', Product::class);
+        $this->authorize('forceDelete', Product::class);
         $products=Product::onlyTrashed()->findOrFail($id);
         $products->forceDelete();
 
     }
     public  function trash(){
-        // $this->authorize('viewtrash', Product::class);
+        $this->authorize('viewtrash', Product::class);
         $products = Product::onlyTrashed()->get();
         $param = ['products'    => $products];
         return view('admin.product.trash', $param);
     }
 
     public  function softdeletes($id){
-        // $this->authorize('delete', Product::class);
+        $this->authorize('delete', Product::class);
         date_default_timezone_set("Asia/Ho_Chi_Minh");
         $product = Product::findOrFail($id);
         $product->deleted_at = date("Y-m-d h:i:s");
-        $notification = [
-            'message' => 'Đã chuyển vào kho lưu!',
-            'alert-type' => 'success'
-        ];
+        // $notification = [
+        //     'message' => 'Đã chuyển vào kho lưu!',
+        //     'alert-type' => 'success'
+        // ];
         $product->save();
-        return redirect()->route('product.index')->with($notification);
+        alert()->success('Đã chuyển vào kho lưu trữ ','thành công');
+
+        return redirect()->route('product.index');
     }
 
     public function restoredelete($id){
-        // $this->authorize('restore', Product::class); 
+        $this->authorize('restore', Product::class);
         $product=Product::withTrashed()->where('id', $id);
         $product->restore();
-        $notification = [
-                'message' => 'Khôi phục thành công!',
-                 'alert-type' => 'success'
-            ];
-        return redirect()->route('product.trash')->with($notification);;
+        // $notification = [
+        //         'message' => 'Khôi phục thành công!',
+        //          'alert-type' => 'success'
+        //     ];
+        alert()->success('Khôi phục ','thành công');
+
+        return redirect()->route('product.trash');
     }
 }

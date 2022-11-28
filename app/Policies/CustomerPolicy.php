@@ -29,7 +29,7 @@ class CustomerPolicy
      * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Customer $customer)
+    public function view(User $user)
     {
        return $user->hasPermission('Customer_view');
        //
@@ -54,7 +54,7 @@ class CustomerPolicy
      * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Customer $customer)
+    public function update(User $user)
     {
        return $user->hasPermission('Customer_update');
        //
@@ -67,7 +67,7 @@ class CustomerPolicy
      * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Customer $customer)
+    public function delete(User $user)
     {
        return $user->hasPermission('Customer_delete');
        //
@@ -80,7 +80,7 @@ class CustomerPolicy
      * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Customer $customer)
+    public function restore(User $user)
     {
        return $user->hasPermission('Customer_restore');
        //
@@ -93,7 +93,7 @@ class CustomerPolicy
      * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Customer $customer)
+    public function forceDelete(User $user)
     {
        return $user->hasPermission('Customer_forceDelete');
        //

@@ -17,6 +17,8 @@ class GroupController extends Controller
      */
     public function index()
     {
+        $this->authorize('viewAny',Group::class);
+
         $groups = Group::search()->paginate(4);;
         $users= User::get();
         $param = [
@@ -33,6 +35,8 @@ class GroupController extends Controller
      */
     public function create()
     {
+        $this->authorize('create',Group::class);
+
         return view('admin.group.add');
     }
 
@@ -44,6 +48,7 @@ class GroupController extends Controller
      */
     public function store(Request $request)
     {
+
         $notification = [
             'addgroup' => 'Thêm Tên Quyền Thành Công!',
         ];
@@ -72,6 +77,8 @@ class GroupController extends Controller
      */
     public function edit($id)
     {
+        $this->authorize('update',Group::class);
+
         $group = Group::find($id);
         return view('admin.group.edit', compact('group') );
     }
