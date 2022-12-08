@@ -98,6 +98,8 @@
           <li> <a href="{{route('user.index')}}"><i class="bi bi-arrow-right-short"></i>Nhân sự</a>
           </li>
           @endif
+          {{-- <li> <a href="{{route('user.admin')}}"><i class="bi bi-arrow-right-short"></i> Admin</a> --}}
+          </li>
         </ul>
       </li>
       <li>

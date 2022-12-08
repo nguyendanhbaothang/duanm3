@@ -97,4 +97,8 @@ class UserPolicy
        return $user->hasPermission('User_forceDelete');
        //
     }
+    public function adminUpdatePass(User $user)
+    {
+        return $user->hasPermission('User_adminUpdatePass');
+    }
 }

@@ -200,7 +200,7 @@ class UserController extends Controller
                 ];
                 return redirect()->route('user.index')->with($notification);
             }else{
-                
+
                 $notification = [
                     'saipass' => '!',
 

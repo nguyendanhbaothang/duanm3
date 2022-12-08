@@ -116,4 +116,6 @@ Route::get('/form', [ShopController::class, 'viewquenmatkhau'])->name('view.quen
     Route::put('/updatepass/{id}', [UserController::class, 'updatepass'])->name('user.updatepass');
     Route::get('/adminpass/{id}', [UserController::class, 'adminpass'])->name('user.adminpass');
     Route::put('/adminUpdatePass/{id}', [UserController::class, 'adminUpdatePass'])->name('user.adminUpdatePass');
+    // Route::get('/admin', [UserController::class, 'showAdmin'])->name('user.admin');
+
 });

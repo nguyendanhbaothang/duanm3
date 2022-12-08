@@ -17,7 +17,7 @@
         <div class="table-agile-info">
             <div class="panel-panel-default">
                 <header class="page-title-bar">
-                   
+
                     <h1 class="page-title">Thông tin</h1>
                 </header>
                  <!-- Modal -->

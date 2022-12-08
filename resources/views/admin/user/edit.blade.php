@@ -120,7 +120,7 @@
                                                 <div class="col-lg-4">
                                                     <input accept="image/*" type='file' value="{{ $user->image }}" id="inputFile" name="image" /><br>
                                                     <img type="hidden" width="90px" height="90px" id="blah1"
-                                                    src="{{ asset('storage/images/' . $user->image) ?? asset('storage/images/' . $request->image) }}"
+                                                    src="{{ asset('storage/app/piblic/images/user/' . $user->image) ?? asset('storage/app/piblic/images/user/' . $request->image) }}"
                                                     alt="" />
                                                 @if ('image')
                                                     <p style="color:red">{{ $errors->first('image') }}</p>
