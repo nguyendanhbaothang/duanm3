@@ -6,19 +6,9 @@
                 @include('sweetalert::alert')
             <table class="table">
                 <div class="col-6">
-                    <form class="navbar-form navbar-left" action="{{route('product.search')}}" method="GET">
-                        @csrf
-                        <div class="row">
-                            <div class="col-8">
-                                <div class="form-group">
-                                    <input type="text" name="search" class="form-control" placeholder="Search">
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <button type="submit" class="btn btn-default">Tìm kiếm</button>
-                            </div>
-                        </div>
-                    </form>
+                    <form>
+                    <a class="btn btn-sm btn-icon btn-warning" type="button" name="key" value="{{ $f_key }}" data-bs-toggle="modal" data-bs-target="#basicModal">Tìm nâng cao</a>
+                        @include('admin.product.modals.modalproductcolumns')
                     </form>
                 </div>
                 <thead>

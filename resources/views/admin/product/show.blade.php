@@ -18,7 +18,7 @@
                 <tr> <th>Giá :{{$productshow->price}} </th></tr>
                 <tr> <th>Số lượng :{{$productshow->amount}} </th></tr>
                 <tr> <th>Mô tả :{{$productshow->description}} </th></tr>
-                <tr> <th>Thể loại :{{$productshow->categories->name}} </th></tr>
+                <tr> <th>Thể loại :{{$productshow->category->name}} </th></tr>
                 <tr> <th>Size :{{$productshow->size}} </th></tr>
                 <tr> <th>Màu :{{$productshow->color}} </th></tr>
                 <tr> <th>Ảnh  :<img src="{{ asset('public/uploads/product/' . $productshow->image) }}" alt=""

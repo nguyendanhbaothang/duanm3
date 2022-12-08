@@ -13,19 +13,62 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $this->authorize('viewAny', Product::class);
 
-        $products =Product::paginate(5);
-        // dd($products);
-        // $categories = Category::all();
-        $param = [
-            // 'categories' => $categories,
-            'products' => $products,
-        ];
+        $products =Product::all();
+        $categories = Category::all();
+        $key        = $request->key ?? '';
+        $name      = $request->name ?? '';
+        $price      = $request->price ?? '';
+        $category_id       = $request->category_id ?? '';
+        $size      = $request->	size ?? '';
+        $color      = $request->	color ?? '';
+        $id         = $request->id ?? '';
+        $query = Product::query(true);
 
-        return view('admin.product.index', $param);
+        if ($name) {
+            $query->where('name', 'LIKE', '%' . $name . '%');
+        }
+        if ($price) {
+            $query->where('price', 'LIKE', '%' . $price . '%');
+        }
+        if ($category_id) {
+            $query->where('category_id', 'LIKE', '%' . $category_id . '%');
+        }
+        if ($size) {
+            $query->where('size', 'LIKE', '%' . $size . '%');
+        }
+        if ($color) {
+            $query->where('color', 'LIKE', '%' . $color . '%');
+        }
+        if ($id) {
+            $query->where('id', $id);
+        }
+        if ($key) {
+            $query->orWhere('id', $key);
+            $query->orWhere('name', 'LIKE', '%' . $key . '%');
+            $query->orWhere('price', 'LIKE', '%' . $key . '%');
+            $query->orWhere('category_id', 'LIKE', '%' . $key . '%');
+            $query->orWhere('size', 'LIKE', '%' . $key . '%');
+            $query->orWhere('color', 'LIKE', '%' . $key . '%');
+        }
+
+        $products = $query->paginate(1);
+
+       $params = [
+            'f_id'        => $id,
+            'f_name'     => $name,
+            'f_price'     => $price,
+            'f_category_id'     => $category_id,
+            'f_size'     => $size,
+            'f_key'       => $key,
+            'f_categories' => $categories,
+            'f_color' => $color,
+            'products'    => $products,
+        ];
+        return view('admin.product.index', $params);
     }
 
     /**
@@ -201,18 +244,7 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function search(Request $request)
-    {
-        $search = $request->input('search');
-        if (!$search) {
-            return redirect()->route('product.index');
-        }
-        $products = Product::where('name', 'LIKE', '%' . $search . '%')->paginate(5);
-
-        return view('admin.product.index', compact('products'));
-    }
-
-
+    
     public function destroy($id)
     {
         $this->authorize('forceDelete', Product::class);

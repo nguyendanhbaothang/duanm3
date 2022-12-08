@@ -32,7 +32,7 @@ Route::middleware(['auth', 'revalidate'])->group(function () {
     Route::post('logout', [UserController::class, 'logout'])->name('logout');
 //tìm kiếm admin
     Route::get('categories/search', [CategoryController::class, 'search'])->name('categories.search');
-    Route::get('/search', [ProductController::class, 'search'])->name('product.search');
+    // Route::get('/search', [ProductController::class, 'search'])->name('product.search');
     //Thêm sửa xóa admin
     Route::group(['prefix' => 'categories'], function () {
         Route::get('/', [CategoryController::class, 'index'])->name('category.index');
