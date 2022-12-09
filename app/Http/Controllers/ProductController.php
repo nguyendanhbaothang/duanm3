@@ -125,7 +125,7 @@ class ProductController extends Controller
         $product->color = $request->color;
         if ($request->hasFile('image')) {
             $get_image = $request->file('image');
-            $path = 'public/uploads/product/';
+            $path = 'public/assets/product/';
             $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.', $get_name_image));
             $new_image = $name_image . rand(0, 99) . '.' . $get_image->getClientOriginalExtension();
@@ -244,7 +244,7 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    
+
     public function destroy($id)
     {
         $this->authorize('forceDelete', Product::class);

@@ -101,13 +101,13 @@
                                         <div class="gallery-grid">
                                             <br>
                                             <a class="example-image-link"
-                                                href="{{ asset('storage/images/' . $user->image) }}"
+                                                href="{{ asset('public/assets/images/user/' . $user->image) }}"
                                                 data-lightbox="example-set"
                                                 data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae cursus ligula">
-                                                <img id="avtshow" src="{{ asset('storage/images/' . $user->image) }}"
+                                                <img id="avtshow" src="{{ asset('public/assets/images/user/' . $user->image) }}"
                                                     alt="" />
                                                 <div class="captn">
-                                                    <h4>Xem Avt</h4>
+                                                    <h4>Xem Avt</h4>`
                                                 </div>
                                             </a>
                                         </div>

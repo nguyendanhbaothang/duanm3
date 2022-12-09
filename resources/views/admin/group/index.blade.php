@@ -9,13 +9,13 @@
                     <h1 class="page-title">Nhóm Quyền</h1>
                     <nav aria-label="breadcrumb">
                         @if (Auth::user()->hasPermission('Group_create'))
-                                <a href="{{ route('group.create') }}" class="w3-button w3-red">Tạo nhóm quyền</a>
+                                <a href="{{ route('group.create') }}" class="btn btn-info">Tạo nhóm quyền</a>
                         @endif
                     </nav>
                 </header>
                 <hr>
                 <div class="panel-heading">
-                   <h3>Danh Sách Nhóm Quyền</h3> 
+                   <h3>Danh Sách Nhóm Quyền</h3>
                 </div>
                 <div>
                     <table class="table" ui-jq="footable"
@@ -51,11 +51,11 @@
                                             @csrf
                                             @method('PUT')
                                             @if (Auth::user()->hasPermission('Group_update'))
-                                            <a class="w3-btn w3-white " href="{{route('group.detail', $group->id)}}">Trao Quyền</a>
+                                            <a class="btn btn-primary " href="{{route('group.detail', $group->id)}}">Trao Quyền</a>
                                             @endif
                                             @if (Auth::user()->hasPermission('Group_update'))
                                             <a href="{{ route('group.edit', $group->id) }}"
-                                                class="w3-button w3-blue">Sửa</a>
+                                                class="btn btn-warning">Sửa</a>
                                             @endif
                                                 @if (Auth::user()->hasPermission('Group_forcedelete '))
                                                 <a data-href="{{ route('group.destroy', $group->id) }}"

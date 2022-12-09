@@ -63,13 +63,16 @@ class UserController extends Controller
         $user->birthday = $request->birthday;
         $user->gender = $request->gender;
         $user->group_id = $request->group_id;
-        $file = $request->image;
+        // $file = $request->image;
         if ($request->hasFile('image')) {
-            $fileExtension = $file->getClientOriginalName();
-            //Lưu file vào thư mục storage/app/public/image với tên mới
-            $request->file('image')->storeAs('public/images/user', $fileExtension);
-            // Gán trường image của đối tượng task với tên mới
-            $user->image = $fileExtension;
+            $get_image = $request->file('image');
+            $path = 'public/assets/images/user/';
+            $get_name_image = $get_image->getClientOriginalName();
+            $name_image = current(explode('.', $get_name_image));
+            $new_image = $name_image . rand(0, 99) . '.' . $get_image->getClientOriginalExtension();
+            $get_image->move($path, $new_image);
+            $user->image = $new_image;
+            $data['user_image'] = $new_image;
         }
         $user->save();
 
@@ -128,11 +131,14 @@ class UserController extends Controller
         $user->group_id = $request->group_id;
         $file = $request->image;
         if ($request->hasFile('image')) {
-            $fileExtension = $file->getClientOriginalName();
-            //Lưu file vào thư mục storage/app/public/image với tên mới
-            $request->file('image')->storeAs('public/images/user', $fileExtension);
-            // Gán trường image của đối tượng task với tên mới
-            $user->image = $fileExtension;
+            $get_image = $request->file('image');
+            $path = 'public/assets/images/user/';
+            $get_name_image = $get_image->getClientOriginalName();
+            $name_image = current(explode('.', $get_name_image));
+            $new_image = $name_image . rand(0, 99) . '.' . $get_image->getClientOriginalExtension();
+            $get_image->move($path, $new_image);
+            $user->image = $new_image;
+            $data['user_image'] = $new_image;
         }
         $user->save();
         $notification = [

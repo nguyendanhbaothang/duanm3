@@ -61,22 +61,22 @@ border-radius:50%;
                                 @foreach ($users as $key => $user)
                                     <tr data-expanded="true" class="item-{{ $user->id }}">
                                         <td>{{  ++$key }}</td>
-                                        <td><a href="{{ route('user.show', $user->id) }}"><img id="avt" src="{{asset('storage/app/piblic/images/user/' . $user->image)}}" alt=""></a></td>
+                                        <td><a href="{{ route('user.show', $user->id) }}"><img id="avt" src="{{asset('public/assets/images/user/' . $user->image)}}" alt=""></a></td>
                                         <td><a href="{{ route('user.show', $user->id) }}">{{ $user->name }}</a></td>
                                         <td>{{ $user->phone }}</td>
                                         <td>{{ $user->group->name }}</td>
                                         <td>
                                             @if (Auth::user()->hasPermission('User_update'))
                                             <a href="{{ route('user.edit', $user->id) }}"
-                                                class="w3-button w3-blue">Sửa</a>
+                                                class="btn btn-primary">Sửa</a>
                                             @endif
                                             @if (Auth::user()->hasPermission('User_forceDelete'))
                                             <a data-href="{{ route('user.destroy', $user->id) }}"
-                                                id="{{ $user->id }}" class="w3-button w3-red sm deleteIcon">Xóa</i></a>
+                                                id="{{ $user->id }}" class="btn btn-danger deleteIcon">Xóa</i></a>
                                             @endif
                                             @if (Auth::user()->hasPermission('User_adminUpdatePass'))
                                             <a href="{{ route('user.adminpass', $user->id) }}"
-                                                class="w3-button w3-blue">Đổi mật khẩu</a>
+                                                class="btn btn-info">Đổi mật khẩu</a>
                                             @endif
 
                                         </td>

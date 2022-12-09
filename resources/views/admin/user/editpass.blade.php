@@ -9,7 +9,6 @@
                     <div class="page-inner">
                         <header class="page-title-bar">
                             <nav aria-label="breadcrumb">
-                                {{-- <a href="{{ route('user.index') }}" class="w3-button w3-red">Quay Lại</a> --}}
                             </nav>
                             <h1 class="page-title">Thay đổi mật khẩu của {{ auth()->user()->name }}</h1>
                         </header>
