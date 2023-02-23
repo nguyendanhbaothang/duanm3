@@ -32,7 +32,6 @@
                         <thead>
                             <tr>
                                 <th>STT</th>
-                                <th>id</th>
                                 <th>Tên</th>
                                 <th>Người đảm nhận</th>
                                 <th data-breakpoints="xs">Tùy Chỉnh</th>
@@ -42,7 +41,6 @@
                             @foreach ($groups as $key => $group)
                                 <tr data-expanded="true" class="item-{{ $group->id }}">
                                     <td>{{ $key + 1 }}</td>
-                                    <td>{{ $group->id }}</td>
                                     <td>{{ $group->name }} </td>
                                     <td>Hiện có {{ count($group->users) }} người</td>
                                     <td>
@@ -59,7 +57,7 @@
                                             @endif
                                                 @if (Auth::user()->hasPermission('Group_forcedelete '))
                                                 <a data-href="{{ route('group.destroy', $group->id) }}"
-                                                    id="{{ $group->id }}" class="btn btn-danger sm deleteIcon">Xóa</a>
+                                                    id="{{ $group->id }}" class="btn btn-danger sm d    ">Xóa</a>
                                                 @endif
                                         </form>
 
@@ -73,7 +71,7 @@
             </div>
     </section>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js'></script>
+    {{-- <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js'></script> --}}
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.10.25/datatables.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

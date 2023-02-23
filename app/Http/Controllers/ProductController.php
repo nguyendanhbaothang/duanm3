@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ProductExport;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ProductController extends Controller
 {
@@ -55,7 +57,7 @@ class ProductController extends Controller
             $query->orWhere('color', 'LIKE', '%' . $key . '%');
         }
 
-        $products = $query->paginate(1);
+        $products = $query->paginate(5);
 
        $params = [
             'f_id'        => $id,
@@ -285,5 +287,9 @@ class ProductController extends Controller
         alert()->success('Khôi phục ','thành công');
 
         return redirect()->route('product.trash');
+    }
+    public function exportExcel()
+    {
+        return Excel::download(new ProductExport, 'products.xlsx');
     }
 }

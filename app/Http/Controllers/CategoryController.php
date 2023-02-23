@@ -97,6 +97,7 @@ class CategoryController extends Controller
         $categories->name = $request->name;
         $categories->save();
         alert()->success('Sửa ','thành công');
+
         return redirect()->route('category.index');
     }
     /**

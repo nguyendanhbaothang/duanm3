@@ -18,7 +18,7 @@ class CategoryPolicy
      */
     public function viewAny(User $user)
     {
-       return $user->hasPermission('Category_viewAny');
+        return $user->hasPermission('Category_viewAny');
        //
     }
 

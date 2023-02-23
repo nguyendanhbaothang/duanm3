@@ -24,7 +24,6 @@ class OrderController extends Controller
         ->join('products','orderdetail.product_id','=','products.id')
         ->select('products.*', 'orderdetail.*','orders.id')
         ->where('orders.id','=',$id)->get();
-        // dd($items);
         return view('admin.order.orderdetail',compact('items'));
     }
     /**

@@ -17,7 +17,6 @@ trait HasPermissions
         }
 
         if (is_string($permission)) {
-            // dd($this->getPermissions()->contains('name', $permission));
             return $this->getPermissions()->contains('name', $permission);
         }
         return false;

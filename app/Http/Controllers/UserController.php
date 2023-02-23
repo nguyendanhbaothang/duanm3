@@ -80,10 +80,6 @@ class UserController extends Controller
             'name' => $request->name,
             'pass' => $request->password,
         ];
-        // Mail::send('admin.mail.mail', compact('data'), function ($email) use($request) {
-        //     $email->subject('NowSaiGon');
-        //     $email->to($request->email, $request->name);
-        // });
 
         $notification = [
             'message' => 'Đăng ký thành công!',
@@ -244,33 +240,6 @@ class UserController extends Controller
             return dd(__METHOD__);
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   //Hiển Thị Đăng Nhập
   public function viewLogin()
   {
@@ -299,7 +268,7 @@ class UserController extends Controller
 
           $request->session()->regenerate();
 
-          return redirect()->route('dasboar');
+          return redirect()->route('home');
       }
       // dd($request->all());
       return back()->withErrors([

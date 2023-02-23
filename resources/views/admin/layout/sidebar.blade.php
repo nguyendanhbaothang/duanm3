@@ -13,7 +13,7 @@
     <!--navigation-->
     <ul class="metismenu" id="menu">
       <li>
-        <li class="parent-icon" > <a href="{{ Route('dasboar') }}"><i class="bi bi-house-door"></i>Trang chủ</a></li>
+        <li class="parent-icon" > <a href="{{ Route('home') }}"><i class="bi bi-house-door"></i>Trang chủ</a></li>
 
       </li>
       <li>

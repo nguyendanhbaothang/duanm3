@@ -7,9 +7,10 @@
             <table class="table">
                 <div class="col-6">
                     <form>
-                    <a class="btn btn-sm btn-icon btn-warning" type="button" name="key" value="{{ $f_key }}" data-bs-toggle="modal" data-bs-target="#basicModal">Tìm nâng cao</a>
+                    <a class="btn btn-warning" type="button" name="key" value="{{ $f_key }}" data-bs-toggle="modal" data-bs-target="#basicModal">Tìm nâng cao</a>
                         @include('admin.product.modals.modalproductcolumns')
                     </form>
+                    <a class="btn btn-warning" href="{{route('product.xuat')}}">Xuất</a>
                 </div>
                 <thead>
                     <tr>

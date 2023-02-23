@@ -6,22 +6,13 @@ use App\Models\Order;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Facades\Excel;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class OrderExport implements FromCollection
+class OrderExport implements FromCollection,WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection
     */
-//     public function collection()
-//     {
-//         return Order::all();
-//     }
-//     public function exportOrder(){
-//         return Excel::download(new OrderExport ,'sanpham.xlsx' );
-//     }
-
-
-
 
 
 public function collection()

@@ -88,8 +88,10 @@
           </div>
 
            <div class="col-12">
-             <label class="form-label">Images</label>
-             <input class="form-control" name="image" value="{{$product->image  }}" type="file">
+              <label for="inputTitle">Ảnh Sản Phẩm</label><br>
+              <input accept="image/*" type='file' id="imgInp" name="image" /><br><br>
+              <img type="hidden" width="90px" height="90px" id="blah1"
+                  src="{{ asset('public/uploads/product/' .$product->image) ?? $request->inputFile }}" alt="" /> <br>
              @error('image')
              <div style="color: red">{{$message}}</div>
      @enderror

@@ -22,7 +22,6 @@
 
   <!-- loader-->
 	<link href="{{asset('assets/css/pace.min.css')}}" rel="stylesheet" />
-
   <!--Theme Styles-->
   <link href="{{asset('assets/css/dark-theme.css')}}" rel="stylesheet" />
   <link href="{{asset('assets/css/light-theme.css')}}" rel="stylesheet" />

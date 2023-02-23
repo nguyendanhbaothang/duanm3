@@ -11,8 +11,7 @@
               <div class="d-flex align-items-center">
                   <div>
                       <p class="mb-0 text-secondary">Tổng số đơn đặt hàng</p>
-                      <h4 class="my-1">4805</h4>
-                      <p class="mb-0 font-13 text-success"><i class="bi bi-caret-up-fill"></i> 5% Từ tuần trước</p>
+                      <h4 class="my-1">{{$totalOrder}} Đơn hàng</h4>
                   </div>
                   <div class="widget-icon-large bg-gradient-purple text-white ms-auto"><i class="bi bi-basket2-fill"></i>
                   </div>
@@ -25,9 +24,8 @@
             <div class="card-body">
                 <div class="d-flex align-items-center">
                     <div>
-                        <p class="mb-0 text-secondary">Tổng doanh thu</p>
-                        <h4 class="my-1">$24K</h4>
-                        <p class="mb-0 font-13 text-success"><i class="bi bi-caret-up-fill"></i> 4.6 Từ tuần trước</p>
+                        <p class="mb-0 text-secondary">Tổng số sản phẩm</p>
+                        <h4 class="my-1">{{$totalProduct}} Sản phẩm</h4>
                     </div>
                     <div class="widget-icon-large bg-gradient-success text-white ms-auto"><i class="bi bi-currency-exchange"></i>
                     </div>
@@ -41,9 +39,7 @@
               <div class="d-flex align-items-center">
                   <div>
                       <p class="mb-0 text-secondary">Tổng số khách hàng</p>
-                      <h4 class="my-1">5.8K</h4>
-                      <p class="mb-0 font-13 text-danger"><i class="bi bi-caret-down-fill"></i> 2.7 Từ tuần trước
-                      </p>
+                      <h4 class="my-1">{{$totalCustomer}} Khách hàng</h4>
                   </div>
                   <div class="widget-icon-large bg-gradient-danger text-white ms-auto"><i class="bi bi-people-fill"></i>
                   </div>
@@ -56,10 +52,8 @@
           <div class="card-body">
               <div class="d-flex align-items-center">
                   <div>
-                      <p class="mb-0 text-secondary">Tỷ lệ thoát</p>
-                      <h4 class="my-1">38.15%</h4>
-                      <p class="mb-0 font-13 text-success"><i class="bi bi-caret-up-fill"></i> 12.2% Từ tuần trước
-                      </p>
+                      <p class="mb-0 text-secondary">Tổng nhân viên</p>
+                      <h4 class="my-1">{{$totalUser}} Nhân viên </h4>
                   </div>
                   <div class="widget-icon-large bg-gradient-info text-white ms-auto"><i class="bi bi-bar-chart-line-fill"></i>
                   </div>

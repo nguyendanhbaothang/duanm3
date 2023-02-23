@@ -1,14 +1,6 @@
 <section class="section hide-for-small" id="section_1759100511">
     <div class="bg section-bg fill bg-fill  bg-loaded">
-
-
-
-
-
     </div>
-
-
-
     <div class="section-content relative">
 
         <div class="woocommerce columns-4">

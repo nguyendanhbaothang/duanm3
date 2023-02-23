@@ -19,7 +19,7 @@ class GroupController extends Controller
     {
         $this->authorize('viewAny',Group::class);
 
-        $groups = Group::search()->paginate(4);;
+        $groups = Group::search()->paginate(4);
         $users= User::get();
         $param = [
             'groups' => $groups,

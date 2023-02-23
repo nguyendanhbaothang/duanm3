@@ -85,7 +85,6 @@
             <div style="color: red">{{$message}}</div>
     @enderror
           </div>
-
            <div class="col-12">
              <label class="form-label">Images</label>
              <input class="form-control" name="image" type="file">

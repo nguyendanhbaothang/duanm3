@@ -16,7 +16,7 @@
           <li class="nav-item dropdown dropdown-large">
             <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" data-bs-toggle="dropdown">
               <div class="user-setting d-flex align-items-center gap-1">
-                <img src="assets/images/avatars/avatar-1.png" class="user-img" alt="">
+                <img src="{{asset('public/assets/images/user/'. auth()->user()->image)}}" class="user-img" alt="">
                 <b><span class="username">{{ auth()->user()->name }}</span></b>
               </div>
             </a>
@@ -24,7 +24,7 @@
               <li>
                  <a class="dropdown-item" href="#">
                    <div class="d-flex align-items-center">
-                      <img src="assets/images/avatars/avatar-1.png" alt="" class="rounded-circle" width="60" height="60">
+                      <img src="{{asset('public/assets/images/user/'. auth()->user()->image)}}" alt="" class="rounded-circle" width="60" height="60">
                       <div class="ms-3">
                       </div>
                    </div>
@@ -32,8 +32,6 @@
                </li>
 
                 <li>
-                  <a class="dropdown-item" href="authentication-signup-with-header-footer.html">
-
                        <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <div class="setting-text ms-3"><a  href="{{ route('logout') }}"onclick="event.preventDefault();

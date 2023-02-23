@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
+
 class ShopController extends Controller
 {
     /**
@@ -22,13 +23,13 @@ class ShopController extends Controller
      */
     public function index()
     {
-        $products =Product::all();
+        $products = Product::all();
         // $products =Product::paginate(5);
         $param = [
             'products' => $products,
         ];
 
-        return view('shop.mastershop', $param);
+        return view('shop.layouts.mastershop', $param);
     }
 
 
@@ -59,12 +60,12 @@ class ShopController extends Controller
     public function show($id)
     {
         $productshow = Product::findOrFail($id);
-        $param =[
-            'productshow'=>$productshow,
+        $param = [
+            'productshow' => $productshow,
         ];
 
         // $productshow-> show();
-        return view('shop.layouts.show',  $param );
+        return view('shop.layouts.show',  $param);
     }
 
     /**
@@ -98,7 +99,7 @@ class ShopController extends Controller
         ];
         return view('shop.layouts.cart', $param);
     }
-    public function store( $id)
+    public function store($id)
     {
 
         $product = Product::findOrFail($id);
@@ -193,16 +194,15 @@ class ShopController extends Controller
             $customer->save();
             return redirect()->route('viewlogin');
         } catch (\Exception $e) {
-            Log::error("message:".$e->getMessage());
+            Log::error("message:" . $e->getMessage());
         }
 
-            if ($request->password == $request->confirmpassword) {
-                $customer->save();
-                return redirect()->route('viewlogin')->with($notifications);
-            }else{
-                return redirect()->route('shop.register')->with($notification);
-
-            }
+        if ($request->password == $request->confirmpassword) {
+            $customer->save();
+            return redirect()->route('viewlogin')->with($notifications);
+        } else {
+            return redirect()->route('shop.register')->with($notification);
+        }
     }
     public function viewlogin()
     {
@@ -226,35 +226,35 @@ class ShopController extends Controller
     public function order(Request $request)
     {
 
-            $id = Auth::guard('customers')->user()->id;
-            $data = Customer::find($id);
-            $data->address = $request->address;
-            $data->email = $request->email;
-            $data->phone = $request->phone;
-            $data->address = $request->address;
-            $data->save();
+        $id = Auth::guard('customers')->user()->id;
+        $data = Customer::find($id);
+        $data->address = $request->address;
+        $data->email = $request->email;
+        $data->phone = $request->phone;
+        $data->address = $request->address;
+        $data->save();
 
-            $order = new Order();
-            $order->customer_id = Auth::guard('customers')->user()->id;
-            $order->date_at = date('Y-m-d H:i:s');
-            $order->total = $request->totalAll;
-            $order->save();
+        $order = new Order();
+        $order->customer_id = Auth::guard('customers')->user()->id;
+        $order->date_at = date('Y-m-d H:i:s');
+        $order->total = $request->totalAll;
+        $order->save();
 
-                $count_product = count($request->product_id);
-                for ($i = 0; $i < $count_product; $i++) {
-                    $orderItem = new OrderDetail();
-                    $orderItem->order_id =  $order->id;
-                    $orderItem->product_id = $request->product_id[$i];
-                    $orderItem->quantity = $request->amount[$i];
-                    $orderItem->total = $request->total[$i];
-                    $orderItem->save();
-                    session()->forget('cart');
-                    DB::table('products')
-                        ->where('id', '=', $orderItem->product_id)
-                        ->decrement('amount', $orderItem->quantity);
-                }
+        $count_product = count($request->product_id);
+        for ($i = 0; $i < $count_product; $i++) {
+            $orderItem = new OrderDetail();
+            $orderItem->order_id =  $order->id;
+            $orderItem->product_id = $request->product_id[$i];
+            $orderItem->quantity = $request->amount[$i];
+            $orderItem->total = $request->total[$i];
+            $orderItem->save();
+            session()->forget('cart');
+            DB::table('products')
+                ->where('id', '=', $orderItem->product_id)
+                ->decrement('amount', $orderItem->quantity);
+        }
 
-                return redirect()->route('shop');
+        return redirect()->route('shop');
     }
 
     public function logout(Request $request)
@@ -267,26 +267,27 @@ class ShopController extends Controller
 
         return redirect()->route('shop');
     }
-    public function quenmatkhau(Request $request){
-        $customer = Customer::where('email',$request->email)->first();
-if($customer){
-    $pass = Str::random(6);
-    $customer->password = bcrypt($pass);
-    $customer->save();
-        $data = [
-            'name' => $customer->name,
-            'pass' => $pass,
-            'email' =>$customer->email,
-        ];
-        Mail::send('shop.emails.password', compact('data'), function ($email) use($customer){
-            $email->subject('Shop giày');
-            $email->to($customer->email, $customer->name);
-        });
+    public function quenmatkhau(Request $request)
+    {
+        $customer = Customer::where('email', $request->email)->first();
+        if ($customer) {
+            $pass = Str::random(6);
+            $customer->password = bcrypt($pass);
+            $customer->save();
+            $data = [
+                'name' => $customer->name,
+                'pass' => $pass,
+                'email' => $customer->email,
+            ];
+            Mail::send('shop.emails.password', compact('data'), function ($email) use ($customer) {
+                $email->subject('Shop giày');
+                $email->to($customer->email, $customer->name);
+            });
+        }
+        return redirect()->route('viewlogin');
     }
-    return redirect()->route('viewlogin');
-}
-public function viewquenmatkhau(){
-    return view('shop.layouts.quenmatkhau');
-}
-
+    public function viewquenmatkhau()
+    {
+        return view('shop.layouts.quenmatkhau');
+    }
 }

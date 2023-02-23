@@ -18,6 +18,8 @@
           </div >
          <div class="col-12">
            <div class="d-grid">
+
+            
              <button class="btn btn-primary" type="submit">Add Category</button>
            </div>
          </div>

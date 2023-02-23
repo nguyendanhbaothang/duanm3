@@ -1053,6 +1053,7 @@
 
         @yield('content')
         @include('shop.layouts.main')
+        
 
 
         @include('shop.layouts.footer')
