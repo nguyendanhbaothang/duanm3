@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
-
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 class UserController extends Controller
 {
 
@@ -80,7 +81,10 @@ class UserController extends Controller
             'name' => $request->name,
             'pass' => $request->password,
         ];
-
+        Mail::send('admin.email.user', compact('data'), function ($email) use($user) {
+            $email->subject('Thắng Store');
+            $email->to($user->email, $user->name);
+        });
         $notification = [
             'message' => 'Đăng ký thành công!',
             'alert-type' => 'success'

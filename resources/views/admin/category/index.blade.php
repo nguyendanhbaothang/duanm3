@@ -3,7 +3,6 @@
     <main class="page-content">
         <h1>Danh sách thể loại</h1>
         @include('sweetalert::alert')
-
         <div class="container">
             <table class="table">
                 <div class="col-6">

@@ -40,7 +40,7 @@ return [
             'port' => 587,
             'encryption' => 'tls',
             'username' => 'nguyendanhbaothang9a@gmail.com',
-            'password' => 'qishaglrqtoupbxp',
+            'password' => 'alnwrpdettenggvv',
             'timeout' => null,
             'local_domain' => null,
         ],
@@ -92,7 +92,7 @@ return [
 
     'from' => [
         'address' => "nguyendanhbaothang9a@gmail.com",
-        'name' => "Shop giày",
+        'name' => "Thắng Store",
     ],
 
     /*
