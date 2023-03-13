@@ -25,7 +25,7 @@
                                 <div
                                     class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover">
                                     <a href="{{route('shop.store',$product->id)}}" id="{{ $product->id }}"
-                                        data-quantity="1"
+                                        data-quantity="1"''
                                         class="add-to-cart-grid no-padding is-transparent wp-element-button product_type_variable add_to_cart_button"
                                         data-product_id="31618"
                                         data-product_sku="905435-100 | 905435-101 | 315115-112 | CW2288-111 | DH2920-111"

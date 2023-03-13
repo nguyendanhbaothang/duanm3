@@ -8,18 +8,18 @@ use Illuminate\Notifications\Notifiable;
 
 class Group extends Model
 {
-    protected $table ='groups';
-    use HasFactory;
-    use Notifiable;
-    protected $fillable = ['name'];
-    public function users()
-    {
-        return $this->hasMany(User::class, 'group_id', 'id');
-    }
-    public function roles()
-    {
-        return $this->belongsToMany(Role::class,'group_role','group_id','role_id');
-    }
+        protected $table ='groups';
+        use HasFactory;
+        use Notifiable;
+        protected $fillable = ['name'];
+        public function users()
+        {
+            return $this->hasMany(User::class, 'group_id', 'id');
+        }
+        public function roles()
+        {
+            return $this->belongsToMany(Role::class,'group_role','group_id','role_id');
+        }
     public function scopesearch($query)
     {
         if ($key = request()->search) {
